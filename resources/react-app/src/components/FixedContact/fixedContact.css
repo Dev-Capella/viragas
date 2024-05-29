@@ -1,0 +1,34 @@
+@keyframes kaydirma {
+    0% {
+        right: -75%;
+    }
+    80% {
+        right: 5%;
+    }
+    100% {
+        right: 2%;
+    }
+}
+
+@keyframes kaydirmadiv {
+    0% {
+        right: -100%;
+    }
+    80% {
+        right: 5%;
+    }
+    100% {
+        right: 2%;
+    }
+}
+
+.kaydirilan-div {
+    position: relative;
+    animation: kaydirmadiv 1s cubic-bezier(0.42, 0, 0.58, 1);
+    transition: right 1s ease; /* Geçiş süresi uzatıldı */
+}
+
+.kay {
+    position: relative;
+    animation: kaydirma 1s cubic-bezier(0.42, 0, 0.58, 1);
+}
