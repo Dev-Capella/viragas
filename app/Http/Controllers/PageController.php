@@ -20,17 +20,23 @@ class PageController extends Controller
         } else {
             $data->image = null;
         }
+        if($data->meta_tag > 0)
+        {
+            $metaTags = explode(',', $data->meta_tag);
 
-        $metaTags = explode(',', $data->meta_tag);
-
-        // Ayrıştırılan meta tag değerlerini temizleme ve düzenleme
-        foreach ($metaTags as $tag) {
-            $tag = trim($tag); // Boşlukları temizle
-            if (!empty($tag)) { // Boş olmayanları ekle
-                $cleanedMetaTags[] = $tag;
+            // Ayrıştırılan meta tag değerlerini temizleme ve düzenleme
+            foreach ($metaTags as $tag) {
+                $tag = trim($tag); // Boşlukları temizle
+                if (!empty($tag)) { // Boş olmayanları ekle
+                    $cleanedMetaTags[] = $tag;
+                }
             }
+            $data->meta_tag = $cleanedMetaTags; // Değişken adını düzeltme: cleanedMetaTags -> $cleanedMetaTags
+        }else
+        {
+            $data->meta_tag = null;
         }
-        $data->meta_tag = $cleanedMetaTags; // Değişken adını düzeltme: cleanedMetaTags -> $cleanedMetaTags
+       
 
         // Temizlenmiş meta tag değerlerini içeren $data nesnesini JSON olarak döndürme
         return response()->json($data);

@@ -6,37 +6,9 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import generalService from "../../services/generalService";
 import { useTranslation } from "react-i18next";
 
-function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-        <MdKeyboardArrowRight
-            className="slick-arrow slick-next right-4 max-md:right-6 max-md:h-24 max-md:w-24 max-lg:right-2 max-lg:w-28 max-lg:h-28 max-sm:right-2  max-sm:h-16 max-sm:w-16 h-56 w-56 z-50 transition-all duration-900 ease-in-out
-            custom-hover-color-herocarousel"
-            style={{
-                ...style,
-                display: "block",
-                color: "white",
-            }}
-            onClick={onClick}
-        />
-    );
-}
 
-function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-        <MdKeyboardArrowLeft
-            className="slick-arrow slick-next left-4 max-md:left-6 max-md:h-24 max-md:w-24 max-lg:left-2 max-lg:w-28 max-lg:h-28 max-sm:left-2 max-sm:h-16 max-sm:w-16 h-56 w-56 z-50 transition-all duration-900 ease-in-out
-            custom-hover-color-herocarousel"
-            style={{
-                ...style,
-                display: "block",
-                color: "white",
-            }}
-            onClick={onClick}
-        />
-    );
-}
+
+
 
 const HeroCarousel = () => {
     const [products, setProducts] = useState(null);
@@ -56,36 +28,47 @@ const HeroCarousel = () => {
         fade: true,
         infinite: true,
         speed: 1000,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 5000,
         slidesToShow: 1,
         slidesToScroll: 1,
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />,
         waitForAnimate: false,
+        appendDots: dots => (
+            <div
+              style={{
+            
+                borderRadius: "10px",
+                padding: "10px",
+                bottom:"1.2rem"
+              }}
+            >
+              <ul className="flex justify-center items-center gap-8" style={{ margin: "0px" }}> {dots} </ul>
+            </div>
+          ),
     };
 
     return (
-        <div className="slider-container w-full h-screen overflow-hidden relative">
+        <div className="slider-container w-full h-screen max-lg:h-[500px] max-sm:h-[350px] overflow-hidden relative">
             <Slider {...settings}>
                 {products &&
                     products.map((item, i) => {
                         return (
                             <div
                                 key={i}
-                                className="text-center w-full h-screen relative "
+                                className="text-center w-full h-screen max-lg:h-[500px] max-sm:h-[350px] relative "
                             >
                                 <img
                                     className="w-screen h-full object-cover scale-up-center"
                                     src={item.image}
                                     alt="HomeSlider"
                                 />
-                                <div className="absolute inset-0 bg-black opacity-50"></div>
-                                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white">
-                                    <h1 className="text-4xl font-bold">
-                                        {item.title}
-                                    </h1>
+                                <div className="absolute inset-0 bg-black opacity-70"></div>
+                                <div class=" animate-fade-in absolute top-1/2 max-lg:top-[40%]  left-1/2 max-xl:left-0 transform -translate-x-1/2 -translate-y-1/2 max-xl:translate-x-0 max-xl:transltae-y-0 text-white w-full flex justify-center items-center">
+                                    <p class=" w-full text-white text-[20rem]  max-2xl:text-[16rem] max-xl:text-[12rem] max-lg:text-[8rem] max-md:text-[4rem] font-bold opacity-10">VİRA GAS</p>
+                                    <p class=" absolute text-6xl font-extrabold max-xl:text-4xl text-white max-md:text-2xl">Kalıp Gazlı Yaylar</p>
+                                    <p class=" absolute text-2xl max-xl:text-xl max-md:text-lg font-medium tracking-wider text-white bottom-0">Kalıp Gazlı Yayları İlk Defa Türkiye’de VİRA Tarafından üretilmiştir.</p>
                                 </div>
+
                             </div>
                         );
                     })}
