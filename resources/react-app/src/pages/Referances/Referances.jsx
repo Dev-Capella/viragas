@@ -28,9 +28,7 @@ const Referances = () => {
                     <title>{page?.meta_title}</title>
                     <link rel="canonical" href={`/referanslar`} />
                     <meta name="description" content="Niksa Metal" />
-                    {page?.meta_tag.map((item, i) => (
-                        <meta key={i} name="description" content={item} />
-                    ))}
+                 
                 </Helmet>
                 <BreadcrumbsNav imageSrc={page?.image} text={page?.title} />
                 <ReferancesComponent />

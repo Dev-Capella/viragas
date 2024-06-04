@@ -8,15 +8,15 @@ import { BsTelephone } from "react-icons/bs";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import generalService from "../../services/generalService";
-
-const contactComponent = () => {
+const ContactComponent = () => {
     const { t, i18n } = useTranslation();
     const clickHandle = async (lang) => {
         await i18n.changeLanguage(lang);
     };
 
     return (
-        <div className=" border-radius-6px box-shadow-double-large flex flex-col justify-center w-full items-center -mt-16  relative z-10">
+ 
+        <div className=" border-radius-6px box-shadow-double-large flex flex-col justify-center w-full items-center mt-10  relative z-10">
             <ContactForm />
             <div className="flex flex-row  justify-center items-center mt-24 mb-8 w-full gap-8 max-sm:p-2 max-sm:gap-4">
                 <p className="font-semibold lg:text-2xl max-sm:text-xl max-sm:text-center">
@@ -113,7 +113,8 @@ const contactComponent = () => {
                 </div>
             </div>
         </div>
+      
     );
 };
 
-export default contactComponent;
+export default ContactComponent;

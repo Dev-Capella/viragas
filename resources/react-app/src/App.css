@@ -221,3 +221,32 @@ body {
         transform: scale(1.5);
     }
 }
+
+
+
+/* Slider dost */
+
+.slick-dots li.slick-active button:before {
+    opacity: 1;
+    background-color: orange !important;
+    border-radius: 50px;
+}
+
+
+
+.slick-dots li button:before {
+    font-family: 'slick';
+    font-size: 0; /* Font boyutunu sıfırlayarak içeriği gizliyoruz */
+    position: absolute;
+    top: 50%; /* Dikeyde ortalamak için */
+    left: 50%;
+    width: 50px; /* Çizginin genişliği */
+    height: 5px; /* Çizginin kalınlığı */
+    border-radius: 50px;
+    background-color: white; /* Çizginin rengi */
+    content: ''; /* İçerik boş */
+    opacity: 1; /* Opaklık arttırıldı */
+    transform: translate(-50%, -50%); /* Hem yatayda hem dikeyde ortalamak için */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
