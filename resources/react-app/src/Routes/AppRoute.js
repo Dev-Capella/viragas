@@ -6,6 +6,7 @@ import RootLayout from "../layouts/RootLayout";
 import Products from "../pages/Product/Products";
 import Referances from "../pages/Referances/Referances";
 import Activities from "../pages/Activities/Activities";
+import OurDealers from "../pages/OurDealers/OurDealers";
 
 function AppRoute() {
     return (
@@ -19,6 +20,7 @@ function AppRoute() {
                     <Route path="/iletisim" element={<Contact />} />
                     <Route path="/referanslar" element={<Referances />} />
                     <Route path="/faaliyetler" element={<Activities />} />
+                    <Route path="/bayilerimiz" element={<OurDealers />} />
                 </Route>
             </Route>
             {/* Örnek tanımlama. 
