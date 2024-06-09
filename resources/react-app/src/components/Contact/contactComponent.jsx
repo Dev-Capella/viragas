@@ -15,105 +15,67 @@ const ContactComponent = () => {
     };
 
     return (
- 
         <div className=" border-radius-6px box-shadow-double-large flex flex-col justify-center w-full items-center mt-10  relative z-10">
-            <ContactForm />
-            <div className="flex flex-row  justify-center items-center mt-24 mb-8 w-full gap-8 max-sm:p-2 max-sm:gap-4">
-                <p className="font-semibold lg:text-2xl max-sm:text-xl max-sm:text-center">
-                    {t("ContactSocialMedia")}
-                </p>
-                <hr className=" border-t w-56 max-sm:w-48 border-gray-300" />
-                <FaFacebook
-                    size={32}
-                    className="hover:text-blue-500 
-                    transition-all 
-                    duration-300
-                    cursor-pointer 
-                    max-sm:max-h-6"
-                />
-                <FaInstagram
-                    size={34}
-                    className="hover:text-[#F60485]  
-                    transition-all
-                    duration-300 
-                    cursor-pointer 
-                    max-sm:max-h-6"
-                />
-                <IoLogoYoutube
-                    size={34}
-                    className="hover:text-[#FF0000]
-                transition-all
-                duration-300
-                cursor-pointer 
-                max-sm:max-h-8
-                "
-                />
+            <div className="flex justify-between items-start w-full my-5 mt-10 flex-col">
+                <div className="w-full flex justify-center items-center relative">
+                    <div className="container mx-auto px-5 flex justify-between items-center max-md:flex-col">
+                        <div className="flex flex-col justify-center items-center my-5 w-2/6 max-md:w-full">
+                            <div className="w-24 h-24 bg-white shadow-2xl rounded-full flex justify-center items-center relative">
+                                <BsTelephone className="text-3xl " />
+                                <div className="absolute right-0 top-0 circle pulse bg-orange-500"></div>
+                            </div>
+                            <div className="w-80 h-20 bg-white shadow-2xl flex justify-center items-center p-4">
+                                <a
+                                    className="text-center"
+                                    href="tel:+9022448244271"
+                                >
+                                    0224 482 44 271
+                                </a>
+                            </div>
+                        </div>
+                        <div className="flex flex-col justify-center items-center my-5 w-2/6 max-md:w-full">
+                            <div className="w-24 h-24 bg-white shadow-2xl rounded-full flex justify-center items-center relative">
+                                <IoMailUnreadOutline className="text-3xl" />
+                                <div className="absolute right-0 top-0 circle pulse bg-orange-500"></div>
+                            </div>
+                            <div className="w-80 h-20 bg-white shadow-2xl flex justify-center items-center p-4">
+                                <a
+                                    className="text-center"
+                                    href="mailto:sales@viragas.com"
+                                >
+                                    sales@viragas.com
+                                </a>
+                            </div>
+                        </div>
+                        <div className="flex flex-col justify-center items-center my-5 w-2/6 max-md:w-full">
+                            <div className="w-24 h-24 bg-white shadow-2xl rounded-full flex justify-center items-center relative">
+                                <FaMapMarkerAlt className="text-3xl " />
+                                <div className="absolute right-0 top-0 circle pulse bg-orange-500"></div>
+                            </div>
+                            <div className="w-80 h-20 bg-white shadow-2xl flex justify-center items-center p-4">
+                                <p className="text-center">
+                                    Çalı Sanayi Bölgesi Karaali Mah. 7. Sokak
+                                    No:19 Çalı / Nilüfer 16370 BURSA /TÜRKİYE
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="bg-gray-50 justify-around  w-full h-auto max-sm:w-full max-sm:h-auto max-sm:pl-4 max-sm:pr-4 max-md:pl-4 max-md:pr-4 max-lg:pl-4 max-lg:pr-4 max-xl:pl-4 max-xl:pr-4 flex flex-row pl-80 pr-80 pt-16 pb-8 ">
-                <div className="flex flex-col items-center pb-8 ">
-                    <div className="pb-8">
-                        <BsTelephone
-                            size={56}
-                            className="hover:text-green-700
-                            transition-all
-                            duration-300
-                            max-sm:max-h-8"
-                        />
-                    </div>
-
-                    <p className="font-semibold max-sm:text-xs max-sm:text-center">
-                        {" "}
-                        <a href="tel:05558313066" target="blank">
-                            {" "}
-                            0555 831 30 66
-                        </a>{" "}
-                    </p>
-                    <p className="font-semibold max-sm:text-xs max-sm:text-center">
-                        <a href="https://wa.me/905332014873" target="blank">
-                            0533 201 48 73
-                        </a>
-                    </p>
-                </div>
-                <div className="flex flex-col items-center pb-8">
-                    <div className="pb-8">
-                        <FaMapMarkerAlt
-                            size={56}
-                            className="hover:text-orange-500
-                           transition-all
-                           duration-300
-                   
-                           max-sm:max-h-8"
-                        />
-                    </div>
-
-                    <p className="font-semibold max-sm:text-xs max-sm:text-center max-sm:w-1/2">
-                        {" "}
-                        Hacıvat Mh. 5. Aksu Sk. No: 41/7 Yıldırım / BURSA
-                    </p>
-                </div>
-                <div className="flex flex-col items-center pb-8 ">
-                    <div className="pb-8 ">
-                        <IoMailUnreadOutline
-                            size={56}
-                            className="hover:text-blue-500
-                            transition-all
-                            duration-300
-                    
-                            max-sm:max-h-8"
-                        />
-                    </div>
-
-                    <p className="font-semibold max-sm:text-xs">
-                        {" "}
-                        <a href="mailto:info@niksametal.com">
-                            {" "}
-                            info@niksametal.com{" "}
-                        </a>
-                    </p>
-                </div>
+            <ContactForm />
+            <div className="w-full">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1077.8064538351641!2d28.92843892064158!3d40.1737720478578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca10e9d95a85a7%3A0x8e18a1adc915ad2f!2sVira!5e0!3m2!1str!2str!4v1717938894248!5m2!1str!2str"
+                    width="100%"
+                    height="500"
+                    style={{ border: "0" }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    alt="Vira Gas Spring"
+                ></iframe>
             </div>
         </div>
-      
     );
 };
 
