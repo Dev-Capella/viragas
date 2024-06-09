@@ -96,7 +96,29 @@ const getReferance = async (lang) => {
     });
     return result.data;
 };
+//Haberler
+const getNewsData = async (lang) => {
+    const result = await axiosInstance.get(`get-news`, {
+        headers: {
+            "Content-Type": "application/json",
+            "Accept-Language": lang,
+        },
+    });
+    return result.data;
+};
+
+const getNewData = async (lang, slug) => {
+    const result = await axiosInstance.get(`get-new/${slug}`, {
+        headers: {
+            "Content-Type": "application/json",
+            "Accept-Language": lang,
+        },
+    });
+    return result.data;
+};
 const exportFunction = {
+    getNewData,
+    getNewsData,
     getProducts,
     getActivities,
     getCatalog,

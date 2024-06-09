@@ -1,34 +1,32 @@
 import React, { useEffect, useState } from "react";
 import BreadcrumbsNav from "../../components/BreadcrumbsNav/BreadcrumbsNav";
-import ContactComponent from "../../components/Contact/contactComponent.jsx";
 import { useTranslation } from "react-i18next";
-import generalService from "../../services/generalService.js";
-import { Helmet } from "react-helmet";
-const Contact = () => {
+import generalService from "../../services/generalService";
+import CatalogComponent from "../../components/Catalog/CatalogComponent";
+
+function Catalog() {
     const { t, i18n } = useTranslation();
-    const clickHandle = async (lang) => {
-        await i18n.changeLanguage(lang);
-    };
     const [page, setPage] = useState(null);
+    const [data, setData] = useState(null);
     const getPage = async () => {
-        const result = await generalService.getPage(i18n.language, "iletisim");
+        const result = await generalService.getPage(i18n.language, "katalog");
         setPage(result);
     };
     useEffect(() => {
         getPage();
-    }, [i18n.language]);
+    }, []);
     return (
         <>
-            <Helmet>
+            {/* <Helmet>
                 <meta charSet="utf-8" />
                 <title>{page?.meta_title}</title>
-                <link rel="canonical" href={`/iletisim`} />
+                <link rel="canonical" href={`/referanslar`} />
                 <meta name="description" content="Niksa Metal" />
-            </Helmet>
+            </Helmet> */}
             <BreadcrumbsNav imageSrc={page?.image} text={page?.title} />
-            <ContactComponent />
+            <CatalogComponent />
         </>
     );
-};
+}
 
-export default Contact;
+export default Catalog;

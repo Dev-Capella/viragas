@@ -2,7 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mooli&family=Quicksand:wght@300;400;500;600;700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+.anton-regular {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 .slick-initialized .slick-slide {
     display: flex;
     justify-content: center;
@@ -222,8 +227,6 @@ body {
     }
 }
 
-
-
 /* Slider dost */
 
 .slick-dots li.slick-active button:before {
@@ -232,10 +235,8 @@ body {
     border-radius: 50px;
 }
 
-
-
 .slick-dots li button:before {
-    font-family: 'slick';
+    font-family: "slick";
     font-size: 0; /* Font boyutunu sıfırlayarak içeriği gizliyoruz */
     position: absolute;
     top: 50%; /* Dikeyde ortalamak için */
@@ -244,9 +245,85 @@ body {
     height: 5px; /* Çizginin kalınlığı */
     border-radius: 50px;
     background-color: white; /* Çizginin rengi */
-    content: ''; /* İçerik boş */
+    content: ""; /* İçerik boş */
     opacity: 1; /* Opaklık arttırıldı */
-    transform: translate(-50%, -50%); /* Hem yatayda hem dikeyde ortalamak için */
+    transform: translate(
+        -50%,
+        -50%
+    ); /* Hem yatayda hem dikeyde ortalamak için */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+/* Danger Html yazıları */
+.danger-html-write {
+    /* Ortak yazı formatı özellikleri buraya eklenir */
+    font-size: 16px; /* Örnek yazı boyutu */
+    font-weight: normal; /* Örnek yazı kalınlığı */
+    font-family: Arial, sans-serif; /* Örnek yazı tipi */
+    color: #333; /* Örnek yazı rengi */
+    line-height: 1.5; /* Örnek satır yüksekliği */
+    margin: 0; /* Örnek kenar boşluğu */
+    padding: 0; /* Örnek dolgu */
+}
+.danger-html-write strong p {
+    /* Ortak yazı formatı özellikleri buraya eklenir */
+    font-size: 16px; /* Örnek yazı boyutu */
+    font-weight: normal; /* Örnek yazı kalınlığı */
+    font-family: Arial, sans-serif; /* Örnek yazı tipi */
+    color: #333; /* Örnek yazı rengi */
+    line-height: 1.5; /* Örnek satır yüksekliği */
+    margin: 0; /* Örnek kenar boşluğu */
+    padding: 0; /* Örnek dolgu */
+}
+
+.danger-html-write p {
+    /* Ortak yazı formatı özellikleri buraya eklenir */
+    font-size: 16px; /* Örnek yazı boyutu */
+    font-weight: normal; /* Örnek yazı kalınlığı */
+    font-family: Arial, sans-serif; /* Örnek yazı tipi */
+    color: #333; /* Örnek yazı rengi */
+    line-height: 1.5; /* Örnek satır yüksekliği */
+    margin: 0; /* Örnek kenar boşluğu */
+    padding: 0; /* Örnek dolgu */
+}
+.danger-html-write div p {
+    /* Ortak yazı formatı özellikleri buraya eklenir */
+    font-size: 16px; /* Örnek yazı boyutu */
+    font-weight: normal; /* Örnek yazı kalınlığı */
+    font-family: Arial, sans-serif; /* Örnek yazı tipi */
+    color: #333; /* Örnek yazı rengi */
+    line-height: 1.5; /* Örnek satır yüksekliği */
+    margin: 0; /* Örnek kenar boşluğu */
+    padding: 0; /* Örnek dolgu */
+}
+.danger-html-write strong {
+    /* Ortak yazı formatı özellikleri buraya eklenir */
+    font-size: 16px; /* Örnek yazı boyutu */
+    font-weight: normal; /* Örnek yazı kalınlığı */
+    font-family: Arial, sans-serif; /* Örnek yazı tipi */
+    color: #333; /* Örnek yazı rengi */
+    line-height: 1.5; /* Örnek satır yüksekliği */
+    margin: 0; /* Örnek kenar boşluğu */
+    padding: 0; /* Örnek dolgu */
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 1px 1px #0000001a;
+}
+
+.pulse {
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+    }
 }
