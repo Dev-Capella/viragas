@@ -9,6 +9,7 @@ import Activities from "../pages/Activities/Activities";
 import News from "../pages/News/News";
 import NewsDetail from "../pages/News/NewsDetail";
 import Catalog from "../pages/Catalog/Catalog";
+import OurDealers from "../pages/OurDealers/OurDealers";
 
 function AppRoute() {
     return (
@@ -26,6 +27,7 @@ function AppRoute() {
                     <Route path="/haberler" element={<News />} />
                     <Route path="/haberler/:slug" element={<NewsDetail />} />
                     <Route path="/katalog" element={<Catalog />} />
+                    <Route path="/bayilerimiz" element={<OurDealers />} />
                 </Route>
             </Route>
             {/* Örnek tanımlama. 

@@ -49,6 +49,7 @@ const Header = ({ data }) => {
         { name: "Anasayfa", href: "/" },
         { name: "Hakkımızda", href: "/hakkimizda" },
         { name: "Ürünlerimiz", href: "/urunler" },
+        { name: "Bayilerimiz", href: "/bayilerimiz" },
         {
             name: "Katalog",
             href:
@@ -226,6 +227,24 @@ const Header = ({ data }) => {
                                                 href="/urunler"
                                             >
                                                 {t("HeaderProduct")}
+                                            </a>
+                                            <a
+                                                className={
+                                                    navItem === "/bayilerimiz"
+                                                        ? `text-base font-semibold underline-offset-8 ${
+                                                              navbar
+                                                                  ? "text-black underline"
+                                                                  : "underline"
+                                                          }`
+                                                        : `text-base font-medium ${
+                                                              navbar
+                                                                  ? "text-black text-with-underline2"
+                                                                  : "text-with-underline"
+                                                          }`
+                                                }
+                                                href="/bayilerimiz"
+                                            >
+                                                {t("HeaderOurDealers")}
                                             </a>
                                             <a
                                                 className={
