@@ -81,23 +81,39 @@ class HomeController extends Controller
     }
     public function getCatalog()
     {
+      
+    
+        // Get the catalog data
+        $data = Catalog::get();
+    
+        // Process each catalog entry
+        foreach ($data as $catalog) {
+          
+            // tr
+            $catalogUrls = json_decode($catalog['catalog_url'], true);
+            if( $catalogUrls)
+            {
+                $downloadLink = $catalogUrls[0]['download_link'];
+                $catalog->catalog_url = url('storage/' . str_replace('\\', '/', $downloadLink));
+            }else
+            {
+                $catalog->catalog_url = null;
+            }
+           
+            // en 
+            $catalogUrls_en = json_decode($catalog['catalog_url_en'], true);
+            if($catalogUrls_en)
+            {
+                $downloadLink = $catalogUrls_en[0]['download_link'];
+                $catalog->catalog_url_en = url('storage/' . str_replace('\\', '/', $downloadLink));
+            }else{
+                $catalog->catalog_url_en = null;
+            }
+           
 
-        $data = Catalog::first();
-        $catalog_url = json_decode($data->catalog_url);
-
-        // İlgili URL'nin düzenlenmesi
-        $download_link = url('storage/' . str_replace('\\', '/', $catalog_url[0]->download_link));
-
-
-        $data->catalog_url = $download_link;
-
-        $catalog_url_en = json_decode($data->catalog_url_en);
-
-        // İlgili URL'nin düzenlenmesi
-        $download_link_en = url('storage/' . str_replace('\\', '/', $catalog_url_en[0]->download_link));
-
-
-        $data->catalog_url_en = $download_link_en;
+            $catalog->image = url('storage/' . str_replace('\\', '/', $catalog->image));
+        }
+    
         return response()->json($data);
     }
     public function getCertificate(Request $request)

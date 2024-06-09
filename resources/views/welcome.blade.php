@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{ asset('../css/app.css') }}" rel="stylesheet">
     <link rel="icon" href="../images/icon.ico">
-    <title>Niksa Metal</title>
+    <title>Vira Gas</title>
 </head>
 
 <body class="antialiased">

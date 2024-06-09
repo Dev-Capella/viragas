@@ -9,10 +9,9 @@ import generalService from "../../services/generalService";
 import { useTranslation } from "react-i18next";
 import turkishflag from "../../assets/HeaderFlag/turkishflag.jpg";
 import englishflag from "../../assets/HeaderFlag/englishflag.jpg";
-import { FaMapMarkerAlt,FaPhoneAlt  } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 const Header = ({ data }) => {
-    
     const [navbar, setNavbar] = useState(false);
     const [navItem, setNavItem] = useState(" ");
     const [langOpen, setLangOpen] = useState(false);
@@ -75,20 +74,32 @@ const Header = ({ data }) => {
         >
             {({ open }) => (
                 <>
-                {
-                !navbar &&  <div className="w-full border-b border-[#ffffff1a]">
-                    <div className="w-[85%] flex justify-between items-center text-white text-sm  mx-auto px-2  max-xl:mx-0 max-xl:px-0">
-                        <div className="border-r  border-[#ffffff1a] p-2 flex justify-start items-center"><FaMapMarkerAlt className="text-orange-600 text-lg mr-2" /> Çalı Sanayi Bölgesi Karaali Mah. 7. Sokak No:19 Çalı / Nilüfer 16370 BURSA /TÜRKİYE</div>
-                        <div className="border-r  border-[#ffffff1a] p-2 flex justify-start items-center"><IoMdMail className="text-orange-600 text-lg mr-2" /> sales@viragas.com</div>
-                        <div className="border-r border-[#ffffff1a] p-2 flex justify-start items-center"><FaPhoneAlt  className="text-orange-600 text-lg mr-2" /> 0224 482 44 27</div>
-                        <div className="border-r border-[#ffffff1a] p-2 flex justify-start items-center">insta</div>
-                        <div className="border-r border-[#ffffff1a] p-2 flex justify-start items-center">TR/EN</div>
-                    </div>
-                </div>
-                }
-                
+                    {!navbar && (
+                        <div className="w-full border-b border-[#ffffff1a]">
+                            <div className="w-[85%] flex justify-between items-center text-white text-sm  mx-auto px-2  max-xl:mx-0 max-xl:px-0">
+                                <div className="border-r  border-[#ffffff1a] p-2 flex justify-start items-center">
+                                    <FaMapMarkerAlt className="text-orange-600 text-lg mr-2" />{" "}
+                                    Çalı Sanayi Bölgesi Karaali Mah. 7. Sokak
+                                    No:19 Çalı / Nilüfer 16370 BURSA /TÜRKİYE
+                                </div>
+                                <div className="border-r  border-[#ffffff1a] p-2 flex justify-start items-center">
+                                    <IoMdMail className="text-orange-600 text-lg mr-2" />{" "}
+                                    sales@viragas.com
+                                </div>
+                                <div className="border-r border-[#ffffff1a] p-2 flex justify-start items-center">
+                                    <FaPhoneAlt className="text-orange-600 text-lg mr-2" />{" "}
+                                    0224 482 44 27
+                                </div>
+                                <div className="border-r border-[#ffffff1a] p-2 flex justify-start items-center">
+                                    insta
+                                </div>
+                                <div className="border-r border-[#ffffff1a] p-2 flex justify-start items-center">
+                                    TR/EN
+                                </div>
+                            </div>
+                        </div>
+                    )}
 
-           
                     <div className="mx-auto px-2   max-xl:mx-0 max-xl:px-0 ">
                         <div
                             className={
@@ -114,10 +125,10 @@ const Header = ({ data }) => {
                                     className="block lg:hidden h-12"
                                     src={HeaderLogo}
                                     onClick={() => navigate("/")}
-                                    alt="Niksa Metal"
+                                    alt="Vira Gas"
                                 />
                             </div>
-                            
+
                             <div className="flex items-center justify-center sm:items-stretch sm:justify-around text-[#191919] font-semibold w-full ">
                                 <div className="hidden sm:ml-6 md:block w-[85%] max-xl:w-full">
                                     <div
@@ -131,14 +142,14 @@ const Header = ({ data }) => {
                                                     <img
                                                         className="block w-auto lg:hidden"
                                                         src={HeaderLogo}
-                                                        alt="Niksa Metal"
+                                                        alt="Vira Gas"
                                                     />
                                                 </a>
                                                 <a href="/">
                                                     <img
                                                         className="hidden w-auto lg:block"
                                                         src={HeaderLogo}
-                                                        alt="Niksa Metal"
+                                                        alt="Vira Gas"
                                                     />
                                                 </a>
                                             </div>
@@ -148,14 +159,14 @@ const Header = ({ data }) => {
                                                     <img
                                                         className="block w-auto lg:hidden"
                                                         src={whitelogo}
-                                                        alt="Niksa Metal"
+                                                        alt="Vira Gas"
                                                     />
                                                 </a>
                                                 <a href="/">
                                                     <img
                                                         className="hidden w-auto lg:block"
                                                         src={whitelogo}
-                                                        alt="Niksa Metal"
+                                                        alt="Vira Gas"
                                                     />
                                                 </a>
                                             </div>
@@ -300,7 +311,7 @@ const Header = ({ data }) => {
                                                     <img
                                                         className="w-6 cursor-pointer"
                                                         src={turkishflag}
-                                                        alt="Niksa Metal"
+                                                        alt="Vira Gas"
                                                         onClick={() =>
                                                             changeLanguagee(
                                                                 "tr"
@@ -311,7 +322,7 @@ const Header = ({ data }) => {
                                                     <img
                                                         className="w-6 cursor-pointer"
                                                         src={englishflag}
-                                                        alt="Niksa Metal"
+                                                        alt="Vira Gas"
                                                         onClick={() =>
                                                             changeLanguagee(
                                                                 "en"
