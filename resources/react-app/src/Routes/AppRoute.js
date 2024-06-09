@@ -6,6 +6,9 @@ import RootLayout from "../layouts/RootLayout";
 import Products from "../pages/Product/Products";
 import Referances from "../pages/Referances/Referances";
 import Activities from "../pages/Activities/Activities";
+import News from "../pages/News/News";
+import NewsDetail from "../pages/News/NewsDetail";
+import Catalog from "../pages/Catalog/Catalog";
 import OurDealers from "../pages/OurDealers/OurDealers";
 
 function AppRoute() {
@@ -20,6 +23,10 @@ function AppRoute() {
                     <Route path="/iletisim" element={<Contact />} />
                     <Route path="/referanslar" element={<Referances />} />
                     <Route path="/faaliyetler" element={<Activities />} />
+                    {/* Haberler */}
+                    <Route path="/haberler" element={<News />} />
+                    <Route path="/haberler/:slug" element={<NewsDetail />} />
+                    <Route path="/katalog" element={<Catalog />} />
                     <Route path="/bayilerimiz" element={<OurDealers />} />
                 </Route>
             </Route>

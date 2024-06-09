@@ -126,7 +126,7 @@ const Header = ({ data }) => {
                                     className="block lg:hidden h-12"
                                     src={HeaderLogo}
                                     onClick={() => navigate("/")}
-                                    alt="Niksa Metal"
+                                    alt="Vira Gas"
                                 />
                             </div>
 
@@ -143,14 +143,14 @@ const Header = ({ data }) => {
                                                     <img
                                                         className="block w-auto lg:hidden"
                                                         src={HeaderLogo}
-                                                        alt="Niksa Metal"
+                                                        alt="Vira Gas"
                                                     />
                                                 </a>
                                                 <a href="/">
                                                     <img
                                                         className="hidden w-auto lg:block"
                                                         src={HeaderLogo}
-                                                        alt="Niksa Metal"
+                                                        alt="Vira Gas"
                                                     />
                                                 </a>
                                             </div>
@@ -160,14 +160,14 @@ const Header = ({ data }) => {
                                                     <img
                                                         className="block w-auto lg:hidden"
                                                         src={whitelogo}
-                                                        alt="Niksa Metal"
+                                                        alt="Vira Gas"
                                                     />
                                                 </a>
                                                 <a href="/">
                                                     <img
                                                         className="hidden w-auto lg:block"
                                                         src={whitelogo}
-                                                        alt="Niksa Metal"
+                                                        alt="Vira Gas"
                                                     />
                                                 </a>
                                             </div>
@@ -330,7 +330,7 @@ const Header = ({ data }) => {
                                                     <img
                                                         className="w-6 cursor-pointer"
                                                         src={turkishflag}
-                                                        alt="Niksa Metal"
+                                                        alt="Vira Gas"
                                                         onClick={() =>
                                                             changeLanguagee(
                                                                 "tr"
@@ -341,7 +341,7 @@ const Header = ({ data }) => {
                                                     <img
                                                         className="w-6 cursor-pointer"
                                                         src={englishflag}
-                                                        alt="Niksa Metal"
+                                                        alt="Vira Gas"
                                                         onClick={() =>
                                                             changeLanguagee(
                                                                 "en"

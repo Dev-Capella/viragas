@@ -1,34 +1,38 @@
 import React, { useEffect, useState } from "react";
 import BreadcrumbsNav from "../../components/BreadcrumbsNav/BreadcrumbsNav";
-import ContactComponent from "../../components/Contact/contactComponent.jsx";
 import { useTranslation } from "react-i18next";
-import generalService from "../../services/generalService.js";
+import generalService from "../../services/generalService";
 import { Helmet } from "react-helmet";
-const Contact = () => {
+import NewsContent from "../../components/News/NewsContent";
+
+function News() {
     const { t, i18n } = useTranslation();
-    const clickHandle = async (lang) => {
-        await i18n.changeLanguage(lang);
-    };
     const [page, setPage] = useState(null);
+    const [data, setData] = useState(null);
     const getPage = async () => {
-        const result = await generalService.getPage(i18n.language, "iletisim");
+        const result = await generalService.getPage(i18n.language, "haberler");
         setPage(result);
+    };
+    const getData = async () => {
+        const result = await generalService.getNewsData(i18n.language);
+        setData(result);
     };
     useEffect(() => {
         getPage();
+        getData();
     }, [i18n.language]);
     return (
         <>
-            <Helmet>
+            {/* <Helmet>
                 <meta charSet="utf-8" />
                 <title>{page?.meta_title}</title>
-                <link rel="canonical" href={`/iletisim`} />
+                <link rel="canonical" href={`/referanslar`} />
                 <meta name="description" content="Niksa Metal" />
-            </Helmet>
+            </Helmet> */}
             <BreadcrumbsNav imageSrc={page?.image} text={page?.title} />
-            <ContactComponent />
+            <NewsContent data={data} />
         </>
     );
-};
+}
 
-export default Contact;
+export default News;
