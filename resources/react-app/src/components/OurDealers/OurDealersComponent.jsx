@@ -1,63 +1,83 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../../../../node_modules/flag-icons/css/flag-icons.min.css";
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const OurDealersComponent = () => {
+    const { t, i18n } = useTranslation();
     const europeCountry = [
-        { code: "de", name: "Almanya" },
-        { code: "be", name: "Belçika" },
-        { code: "si", name: "Slovenya" },
-        { code: "fr", name: "Fransa" },
-        { code: "it", name: "İtalya" },
-        { code: "pt", name: "Portekiz" },
-        { code: "cz", name: "Çek Cumhuriyeti" },
-        { code: "at", name: "Avusturya" },
-        { code: "dk", name: "Danimarka" },
-        { code: "sk", name: "Slovakya" },
-        { code: "hu", name: "Macaristan" },
-        { code: "no", name: "Norveç" },
-        { code: "gb", name: "Birleşik Krallık" },
-        { code: "ro", name: "Romanya" },
+        { code: "de", name: t("Almanya") },
+        { code: "be", name: t("Belcika") },
+        { code: "si", name: t("Slovenya") },
+        { code: "fr", name: t("Fransa") },
+        { code: "it", name: t("Italya") },
+        { code: "pt", name: t("Portekiz") },
+        { code: "cz", name: t("CekCumhuriyeti") },
+        { code: "at", name: t("Avusturya") },
+        { code: "dk", name: t("Danimarka") },
+        { code: "sk", name: t("Slovakya") },
+        { code: "hu", name: t("Macaristan") },
+        { code: "no", name: t("Norvec") },
+        { code: "gb", name: t("BirlesikKrallik") },
+        { code: "ro", name: t("Romanya") },
         // Diğer ülkeler buraya eklenebilir
     ];
 
     const worldCountry = [
-        { code: "ar", name: "Arjantin" },
-        { code: "cn", name: "Çin" },
-        { code: "in", name: "Hindistan" },
-        { code: "jp", name: "Japonya" },
-        { code: "sg", name: "Singapur" },
-        { code: "tr", name: "Türkiye" },
-        { code: "tw", name: "Tayvan" },
-        { code: "br", name: "Brezilya" },
-        { code: "us", name: "Amerika" },
-        { code: "ir", name: "İran" },
-        { code: "mx", name: "Meksika" },
-        { code: "za", name: "Güney Afrika" },
-        { code: "kr", name: "Kore" },
+        { code: "ar", name: t("Arjantin") },
+        { code: "cn", name: t("Çin") },
+        { code: "in", name: t("Hindistan") },
+        { code: "jp", name: t("Japonya") },
+        { code: "sg", name: t("Singapur") },
+        { code: "tr", name: t("Türkiye") },
+        { code: "tw", name: t("Tayvan") },
+        { code: "br", name: t("Brezilya") },
+        { code: "us", name: t("Amerika") },
+        { code: "ir", name: t("İran") },
+        { code: "mx", name: t("Meksika") },
+        { code: "za", name: t("GüneyAfrika") },
+        { code: "kr", name: t("Kore") },
     ];
 
-    const [hoveredCountry, setHoveredCountry] = useState(null);
+    const container = {
+        hidden: { opacity: 1, scale: 0 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+                staggerChildren: 0.2,
+            },
+        },
+    };
+
+    const item = {
+        hidden: { y: 20, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+        },
+    };
 
     return (
-        <div className="flex flex-col container mx-auto pt-12 w-full">
-            <span className="text-5xl pl-2">Avrupada</span>
-            <div className="flag-container flex flex-row flex-wrap mb-16 w-full ">
+        <motion.div
+            variants={container}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-col container mx-auto pt-12 w-full"
+        >
+            <span className="text-5xl pl-2 max-sm:text-4xl">Avrupada</span>
+            <div className="flag-container flex flex-row flex-wrap mb-16 w-full max-sm:justify-center">
                 {europeCountry.map(({ code, name }) => (
-                    <div
+                    <motion.div
+                        variants={item}
                         key={code}
-                        className="flex flex-col items-center m-2 relative transition-opacity duration-300"
-                        onMouseEnter={() => setHoveredCountry(name)}
-                        onMouseLeave={() => setHoveredCountry(null)}
+                        className="flex flex-col items-center m-2  transition-opacity duration-300"
                     >
                         <span
                             className={`fi fi-${code} w-44 h-32 object-contain cursor-pointer`}
                         ></span>
-                        {hoveredCountry === name && (
-                            <div className="overlay absolute bottom-0  left-0 w-full h-full bg-black bg-opacity-50 text-white py-2 text-center transition-all duration-300">
-                                <span> {name} </span>
-                            </div>
-                        )}
-                    </div>
+                        <span className="text-lg p-2"> {name} </span>
+                    </motion.div>
                 ))}
             </div>
 
@@ -66,13 +86,13 @@ const OurDealersComponent = () => {
                 {worldCountry.map(({ code, name }) => (
                     <div key={code} className="flex flex-col items-center m-2">
                         <span
-                            className={`fi fi-${code} w-44 h-36 object-contain cursor-pointer`}
+                            className={`fi fi-${code} w-44 h-32 object-contain cursor-pointer`}
                         ></span>
-                        <span className="text-lg">{name}</span>
+                        <span className="text-lg p-2">{name}</span>
                     </div>
                 ))}
             </div>
-        </div>
+        </motion.div>
     );
 };
 

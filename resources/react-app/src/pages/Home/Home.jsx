@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HeroCarousel from "../../components/HeroCarousel/HeroCarousel";
 import ProductCarousel from "../../components/ProductCarousel/ProductCarousel";
-import AboutCompany from "../../components/AboutCompany/AboutCompany";
 import SloganBanner from "../../components/SloganBanner/SloganBanner";
 import ContactForm from "../../components/Contact/contactForm.jsx";
 import { Helmet } from "react-helmet";
@@ -25,14 +24,12 @@ function Home() {
                 <meta charSet="utf-8" />
                 <title>{page?.meta_title}</title>
                 <link rel="canonical" href={`/`} />
-                <meta name="description" content="Niksa Metal" />
-                
+                <meta name="description" content="Vira Gas" />
             </Helmet>
             <HeroCarousel />
             <ProductCarousel />
             <SloganBanner />
             <ContactForm />
-            <AboutCompany />
         </>
     );
 }

@@ -21,7 +21,7 @@ function Catalog() {
                 <meta charSet="utf-8" />
                 <title>{page?.meta_title}</title>
                 <link rel="canonical" href={`/referanslar`} />
-                <meta name="description" content="Niksa Metal" />
+                <meta name="description" content="Vira Gas" />
             </Helmet> */}
             <BreadcrumbsNav imageSrc={page?.image} text={page?.title} />
             <CatalogComponent />

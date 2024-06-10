@@ -23,29 +23,41 @@ const Footer = ({ data }) => {
                         ></img>
                     </div>
                     <p className="mt-4 text-[#878898] w-[82%] leading-7">
-                        VIRA GAS SPRINGS sac şekillendirme sektöründe faaliyet
-                        gösteren ve 2002 yılında kalıp gazlı yayları üretmek
-                        amacıyla kurulmuş bir firmadır
+                        {t("FooterInfo")}
                     </p>
                     <div className="flex flex-row mt-4">
                         <ul className="flex flex-row gap-4 items-center justify-center">
                             <li>
-                                <FaFacebookF
-                                    size={18}
-                                    className="hover:text-blue-500 transition-colors duration-300"
-                                />
+                                <Link
+                                    to={
+                                        "https://www.facebook.com/viragassprings"
+                                    }
+                                    target="blank"
+                                >
+                                    <FaFacebookF
+                                        size={18}
+                                        className="hover:text-blue-500 cursor-pointer transition-colors duration-300"
+                                    />
+                                </Link>
                             </li>
                             <li>
                                 <BsTwitterX
                                     size={18}
-                                    className="hover:text-gray-400 transition-colors duration-300"
+                                    className="hover:text-gray-400 cursor-pointer transition-colors duration-300"
                                 />
                             </li>
                             <li>
-                                <CiInstagram
-                                    size={22}
-                                    className="hover:text-orange-700 transition-colors duration-300"
-                                />
+                                <Link
+                                    to={
+                                        "https://www.instagram.com/viragassprings/"
+                                    }
+                                    target="blank"
+                                >
+                                    <CiInstagram
+                                        size={22}
+                                        className="hover:text-orange-700 cursor-pointer transition-colors duration-300"
+                                    />
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -61,7 +73,7 @@ const Footer = ({ data }) => {
                                 to="/kurumsal"
                                 className="hover:text-[#334162] transition-colors duration-300"
                             >
-                                Kurumsal
+                                {t("FooterInstitutional")}
                             </Link>
                         </li>
                         <li className="text-[#878898] text-lg">
@@ -69,7 +81,7 @@ const Footer = ({ data }) => {
                                 to="/faaliyetler"
                                 className="hover:text-[#334162] transition-colors duration-300"
                             >
-                                Faaliyetler
+                                {t("FooterActivities")}
                             </Link>
                         </li>
                         <li className="text-[#878898] text-lg">
@@ -77,7 +89,7 @@ const Footer = ({ data }) => {
                                 to="/referanslar"
                                 className="hover:text-[#334162] transition-colors duration-300"
                             >
-                                Referanslar
+                                {t("FooterReference")}
                             </Link>
                         </li>
                         <li className="text-[#878898] text-lg">
@@ -85,7 +97,7 @@ const Footer = ({ data }) => {
                                 to="/iletisim"
                                 className="hover:text-[#334162] transition-colors duration-300"
                             >
-                                İletişim
+                                {t("FooterContact")}
                             </Link>
                         </li>
                     </ul>
@@ -100,7 +112,7 @@ const Footer = ({ data }) => {
                                 to="/urunler"
                                 className="hover:text-[#334162] transition-colors duration-300"
                             >
-                                Ürünler
+                                {t("FooterProduct")}
                             </Link>
                         </li>
                         <li className="text-[#878898] text-lg">
@@ -108,7 +120,7 @@ const Footer = ({ data }) => {
                                 to="/katalog"
                                 className="hover:text-[#334162] transition-colors duration-300"
                             >
-                                Katalog
+                                {t("FooterCatalog")}
                             </Link>
                         </li>
                         <li className="text-[#878898] text-lg">
@@ -116,7 +128,7 @@ const Footer = ({ data }) => {
                                 to="/bayilerimiz"
                                 className="hover:text-[#334162] transition-colors duration-300"
                             >
-                                Bayiler
+                                {t("FooterOurDealers")}
                             </Link>
                         </li>
                         <li className="text-[#878898] text-lg">
@@ -124,7 +136,7 @@ const Footer = ({ data }) => {
                                 to="/belgelerimiz"
                                 className="hover:text-[#334162] transition-colors duration-300"
                             >
-                                Belgelerimiz
+                                {t("FooterDocuments")}
                             </Link>
                         </li>
                     </ul>
@@ -132,26 +144,24 @@ const Footer = ({ data }) => {
                 <div className="flex flex-col px-4 w-1/5 max-sm:w-full max-sm:pb-8 max-lg:w-[22%]">
                     <ul className="list-none">
                         <p className="font-semibold text-[#242e45] mb-2 text-xl">
-                            İletişim
+                            {t("FooterContact")}
                         </p>
                         <li className="text-[#878898] text-lg flex flex-row items-center gap-2 ">
                             <MdOutlinePhoneInTalk className="hover:text-green-500 transition-colors duration-300" />
                             <a
-                                href="tel:02244824427"
+                                href="tel:+902244824427"
                                 className="hover:text-[#334162] transition-colors duration-300"
                             >
-                                {" "}
-                                0224 482 44 27{" "}
+                                0224 482 44 27
                             </a>
                         </li>
                         <li className="text-[#878898] text-lg flex flex-row items-center gap-2">
                             <MdOutlineFax className="hover:text-orange-400 transition-colors duration-300" />
                             <a
-                                href="fax:02244824427"
+                                href="fax:+902244824427"
                                 className="hover:text-[#334162] transition-colors duration-300"
                             >
-                                {" "}
-                                0224 482 44 27{" "}
+                                0224 482 44 27
                             </a>
                         </li>
                         <li className="text-[#878898] text-lg flex flex-row items-center gap-2 ">
@@ -168,7 +178,7 @@ const Footer = ({ data }) => {
                 <div className="flex flex-col px-4 w-1/5 max-sm:w-full">
                     <ul className="list-none">
                         <p className="font-semibold text-[#242e45] mb-2 text-xl">
-                            Adres
+                            {t("FooterAdress")}
                         </p>
                         <li className="text-[#878898] text-base">
                             Çalı Sanayi Bölgesi Karaali Mah. 7. Sokak No:19 Çalı
