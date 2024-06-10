@@ -37,7 +37,7 @@ const SloganBanner = () => {
                     VİRA GAS
                 </span>
                 <span className="text-6xl max-lg:text-3xl max-md:text-4xl flex justify-center font-extrabold text-[#303849] max-xl:text-4xl -mb-3">
-                    HABERLER
+                    {t("News")}
                 </span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-md:px-5 ">
@@ -65,7 +65,7 @@ const SloganBanner = () => {
                                 }
                                 className="mt-3 bg-yellow-500 hover:bg-gray-700 duration-300 delay-100 py-4 px-6 text-black anton-regular  hover:text-white"
                             >
-                                Devamını Oku
+                                {t("ReadContinue")}
                             </button>
                         </div>
                     ))}

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import BreadcrumbsNav from "../../components/BreadcrumbsNav/BreadcrumbsNav";
 import ReferancesComponent from "../../components/Referances/ReferancesComponent";
 import { useTranslation } from "react-i18next";
-import references from "../../assets/Referances/referances.jpg";
+import references from "../../assets/Referances/banner1.jpg";
 import generalService from "../../services/generalService";
 import { Helmet } from "react-helmet";
 const Referances = () => {
@@ -27,10 +27,9 @@ const Referances = () => {
                     <meta charSet="utf-8" />
                     <title>{page?.meta_title}</title>
                     <link rel="canonical" href={`/referanslar`} />
-                    <meta name="description" content="Niksa Metal" />
-                 
+                    <meta name="description" content="Vira Gas" />
                 </Helmet>
-                <BreadcrumbsNav imageSrc={page?.image} text={page?.title} />
+                <BreadcrumbsNav imageSrc={references} text={page?.title} />
                 <ReferancesComponent />
             </>
         </div>

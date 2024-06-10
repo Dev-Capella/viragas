@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useState } from "react";
 import BreadcrumbsNav from "../../components/BreadcrumbsNav/BreadcrumbsNav";
-import prodcutBanner from "../../assets/product/productbanner.jpg";
+import productBanner from "../../assets/product/productbanner5.jpg";
 import generalService from "../../services/generalService";
 import { useParams } from "react-router-dom";
 import LoadingPage from "../../components/Loading/Loading.jsx";
@@ -71,10 +71,9 @@ function Products() {
                 <meta charSet="utf-8" />
                 <title>{page?.meta_title}</title>
                 <link rel="canonical" href={`/urunler`} />
-                <meta name="description" content="Niksa Metal" />
-                
+                <meta name="description" content="Vira Gas" />
             </Helmet>
-            <BreadcrumbsNav imageSrc={page?.image} text={page?.title} />
+            <BreadcrumbsNav imageSrc={productBanner} text={page?.title} />
             {loading ? (
                 <LoadingPage />
             ) : (

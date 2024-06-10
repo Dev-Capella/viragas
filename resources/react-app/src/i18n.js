@@ -7,14 +7,12 @@ const resources = {
             /*Anasayfa*/
             HomePageProduct: "Ürünlerimiz",
             HomePageWhoWeAre: "Biz Kimiz?",
-            HomePageWhoWeAreText:
-                "Niksa Metal, Bursa merkezli operasyonu ve 30 yılı aşkın tecrübesiyle; kaynaklı imalat, yüzey işlem ve metal kaplama alanlarında projelerini ilerletmektedir.",
+
             HomePageMission: "Misyon",
             HomePageMissionText:
                 "Sektörde öncü konumunu sürdürerek, kaynaklı imalat, yüzey işlem ve metal kaplama alanlarında ileri teknoloji ve zanaatkarlığın birleşimini sunmayı hedefler.",
             HomePageVision: "Vizyon",
-            HomePageVisionText:
-                "Müşteri memnuniyetini odak noktası olarak belirleyen Niksa Metal, beklentileri karşılamak için titizlikle çalışır.",
+
             HomePageProductionFacility: "Üretim Tesisimiz",
             HomePageProductionFacilityText:
                 "Modern teknolojiye sahip üretim tesisimizde, kaliteli ürünlerimizi titizlikle üretiyoruz. Yüksek standartlara ve müşteri memnuniyetine odaklanarak, sektörde öncü bir konumda yer alıyoruz.",
@@ -28,14 +26,28 @@ const resources = {
             ReferanceBread: "Referanslar",
             ActivitiesBread: "Faaliyetler",
             /*Hakkımızda*/
-            AboutUsTitle: "Hakkımızda",
-            AboutUsFirstP:
-                "Niksa Metal, Bursa merkezli operasyonu ve 30 yılı aşkın tecrübesiyle; kaynaklı imalat, yüzey işlem ve metal kaplama alanlarında projelerini ilerletmektedir. Şirketimiz yenilenen dinamizm ve üst seviye geliştirilmiş çalışma prensipleriyle faaliyetlerine hızla devam etmektedir.",
-            AboutUsSecondP:
-                "Müşteri memnuniyetini misyonumuzun merkezine koyarak ilerlediğimiz bu yolda, beklentilerinizin kusursuz bir şekilde karşılanması için büyük bir disiplinle çalışıyoruz.",
-            AboutUsThirdP:
-                "Zamana karşı dayanıklı metal bileşenleri zanaatkarlığın ve ileri teknolojinin desteğiyle Niksa Metal’de keşfedin. İhtiyaçlarınıza yönelik kaliteli ve güçlü çözümler üretme yolculuğunda güvenilir ortağınız olmaktan gurur duyuyoruz.",
-            AboutUsCertificate: "Sertifikalarımız",
+            AboutUsViraGas: "VIRA GAS SPRINGS",
+            AboutUsViraGasTwo: "VIRA GAZLI YAY",
+            AboutUsFirstTitle: "FİRMA PROFİLİ",
+            AboutUsContentOne:
+                "sac şekillendirme sektöründe faaliyet gösteren ve 2002 yılında kalıp gazlı yayları üretmek amacıyla kurulmuş bir firmadır.",
+            AboutUsContentTwo1: "Kalıp Gazlı Yayları Türkiye’de ilk kez",
+            AboutUsContentTwo2:
+                "tarafından üretilmiştir. Türkiye’de ilk olmanın verdiği gurur ve heyecanla üretimine ürün çeşitlerini artırarak devam etmektedir.",
+            AboutUsContentThree:
+                "2005 yılında 97/23/EC Avrupa Birliği ‘’ Basınçlı Kaplar Direktifi‘’ne uygun olarak CE belgesi almış ve ürün yeterliliğini Avrupa normlarında kanıtlamıştır.",
+            AboutUsContentFour:
+                "2006 yılında ilk ihracatını Almanya’ya yaparak yurt dışı pazarlarda da kalitesinin geçerliliğini fiilen göstermiştir.",
+            AboutUsSecondTitle: "VİRA GAS Teknoloji",
+            AboutUsSecondContentOne:
+                "Analiz çalışmalarından itibaren, hammadde şartları ve ısıl işlem süreçleri, laboratuvar ortamında kontrol edilmekte ve en son yazılımlarla takip edilmektedir.",
+            AboutUsSecondContentTwo:
+                "Müşterilerimizin yüksek hassasiyetleri, hizmet standartlarını ve özel isteklerini karşılamak için gelişmiş üretim araçları ve uygulamaları kullanılmaktadır.",
+            AboutUsSecondContentThree:
+                "mühendisleri, gelişmiş güvenlik ve güvenilirlik standartlarına göre, 2D/3D teknik çizimleri geliştirme tasarımları yapmaktadır.",
+            AboutUsSecondContentFour:
+                "Mil yüzeyine uygulanan özel işlemlerle normal standartların üzerine çıkılmakta ve en zorlu şartlarda bile kusursuz çalışan gazlı yaylara yeni sınırlar belirlenmektedir.",
+
             /*İletişim */
             Contact: "İletişim",
             ContactWithUs: "Bizimle iletişime geçin",
@@ -52,6 +64,10 @@ const resources = {
             ProductAll: "TÜMÜ",
             ProductFilter1: "MASA AYAĞI",
             ProductFilter2: "SANDALYE AYAĞI",
+
+            /*HABERLER */
+            News: "HABERLER",
+            ReadContinue: "Devamını Oku",
             /*Header*/
             HeaderHome: "Anasayfa",
             HeaderAboutUs: "Hakkımızda",
@@ -62,14 +78,46 @@ const resources = {
             HeaderReferance: "Referanslar",
             HeaderActivities: "Faaliyetler",
             /*Footer*/
-            FooterHome: "Anasayfa",
-            FooterAboutUs: "Hakkımızda",
+            FooterInfo:
+                "VIRA GAS SPRINGS sac şekillendirme sektöründe faaliyet gösteren ve 2002 yılında kalıp gazlı yayları üretmek amacıyla kurulmuş bir firmadır",
+            FooterInstitutional: "Kurumsal",
+            FooterActivities: "Faaliyetler",
+            FooterReference: "Referanslar",
+            FooterContact: "İletişim",
             FooterProduct: "Ürünler",
             FooterCatalog: "Katalog",
-            FooterContact: "İletişim",
-            FooterContactİnfo: "İletişim Bilgilerimiz",
-            FooterReferance: "Referanslar",
-            FooterActivities: "Faaliyetler",
+            FooterOurDealers: "Bayilerimiz",
+            FooterDocuments: "Belgelerimiz",
+            FooterAdress: "Adres",
+            /*OUR DEALERS*/
+            Almanya: "Almanya",
+            Belcika: "Belçika",
+            Slovenya: "Slovenya",
+            Fransa: "Fransa",
+            Italya: "İtalya",
+            Portekiz: "Portekiz",
+            CekCumhuriyeti: "Çek Cumhuriyeti",
+            Avusturya: "Avusturya",
+            Danimarka: "Danimarka",
+            Slovakya: "Slovakya",
+            Macaristan: "Macaristan",
+            Norvec: "Norveç",
+            BirlesikKrallık: "Birleşik Krallık",
+            Romanya: "Romanya",
+
+            Arjantin: "Arjantin",
+            Çin: "Çin",
+            Hindistan: "Hindistan",
+            Japonya: "Japonya",
+            Singapur: "Singapur",
+            Türkiye: "Türkiye",
+            Tayvan: "Tayvan",
+            Brezilya: "Brezilya",
+            Amerika: "Amerika",
+            İran: "İran",
+            Meksika: "Meksika",
+            GüneyAfrika: "Güney Afrika",
+            Kore: "Kore",
         },
     },
     en: {
@@ -77,14 +125,12 @@ const resources = {
             /*Anasayfa*/
             HomePageProduct: "Our Products",
             HomePageWhoWeAre: "Who We Are?",
-            HomePageWhoWeAreText:
-                "Niksa Metal, with its Bursa-based operation and more than 30 years of experience; advances its projects in the fields of welded manufacturing, surface treatment and metal coating.",
+
             HomePageMission: "Mission",
             HomePageMissionText:
                 "Maintaining its leading position in the industry, it aims to offer a combination of advanced technology and craftsmanship in the fields of welded manufacturing, surface treatment and metal coating.",
             HomePageVision: "Vission",
-            HomePageVisionText:
-                "Focusing on customer satisfaction, Niksa Metal works meticulously to meet expectations.",
+
             HomePageProductionFacility: "Production Facility",
             HomePageProductionFacilityText:
                 "In our production facility with modern technology, we produce our quality products meticulously. By focusing on high standards and customer satisfaction, we are a pioneer in the sector.",
@@ -99,14 +145,29 @@ const resources = {
             ReferanceBread: "References",
             ActivitiesBread: "Activities",
             /*Hakkımızda*/
-            AboutUsTitle: "About Us",
-            AboutUsFirstP:
-                "Niksa Metal, with its Bursa-based operation and more than 30 years of experience; advances its projects in the fields of welded manufacturing, surface treatment and metal coating. Our company continues its activities rapidly with renewed dynamism and highly developed working principles.",
-            AboutUsSecondP:
-                "We are working with great discipline to ensure that your expectations are met perfectly on this path that we progress by putting customer satisfaction at the center of our mission.",
-            AboutUsThirdP:
-                "Discover metal components that stand the test of time with the support of craftsmanship and advanced technology at Niksa Metal. We are proud to be your trusted partner in the journey to produce quality and strong solutions for your needs.",
-            AboutUsCertificate: "Our Certificates",
+            AboutUsViraGas: " VIRA GAS SPRINGS ",
+            AboutUsViraGasTwo: "VIRA GAS SPRINGS",
+            AboutUsFirstTitle: "COMPANY PROFİLE",
+            AboutUsContentOne:
+                "is a company operating in the sheet metal forming sector and was established in 2002 to produce mold gas springs.",
+            AboutUsContentTwo1:
+                "Molded Gas Springs for the first time in Turkey",
+            AboutUsContentTwo2:
+                "produced by the company. It continues its production by increasing its product range with the pride and excitement of being the first in Turkey.",
+            AboutUsContentThree:
+                "In 2005, 97/23/EC European Union '' It has obtained CE certificate in accordance with the Pressure Vessels Directive and proved its product competence in European norms.",
+            AboutUsContentFour:
+                "In 2006, it made its first export to Germany and demonstrated the validity of its quality in foreign markets.",
+            AboutUsSecondTitle: "VIRA GAS Technology",
+            AboutUsSecondContentOne:
+                "Starting from the analysis studies, raw material conditions and heat treatment processes are controlled in the laboratory environment and monitored with the latest software.",
+            AboutUsSecondContentTwo:
+                "Advanced production tools and practices are used to meet the high precision, service standards and special requests of our customers.",
+            AboutUsSecondContentThree:
+                "engineers design and develop 2D/3D technical drawings according to advanced safety and reliability standards.",
+            AboutUsSecondContentFour:
+                "Special treatments applied to the shaft surface exceed normal standards and set new limits for gas springs that work flawlessly even under the harshest conditions.",
+
             /*İletişim */
             Contact: "Contact",
             ContactWithUs: "Contact with us",
@@ -123,6 +184,9 @@ const resources = {
             ProductAll: "ALL",
             ProductFilter1: "TABLE LEG",
             ProductFilter2: "CHAİR LEG",
+            /*HABERLER */
+            News: "NEWS",
+            ReadContinue: "Read More",
             /*Header*/
             HeaderHome: "Home",
             HeaderAboutUs: "About Us",
@@ -133,14 +197,46 @@ const resources = {
             HeaderReferance: "References",
             HeaderActivities: "Activities",
             /*Footer*/
-            FooterHome: "Home",
-            FooterAboutUs: "About us",
+            FooterInfo:
+                "VIRA GAS SPRINGS is a company operating in the sheet metal forming sector and was established in 2002 to produce molded gas springs.",
+            FooterInstitutional: "Institutional",
+            FooterActivities: "Activities",
+            FooterReference: "References",
+            FooterContact: "Contact",
             FooterProduct: "Products",
             FooterCatalog: "Catalog",
-            FooterContact: "Contact",
-            FooterContactİnfo: "Contact İnformations",
-            FooterReferance: "References",
-            FooterActivities: "Activities",
+            FooterOurDealers: "Dealers",
+            FooterDocuments: "Documents",
+            FooterAdress: "Address",
+            /* OUR DEALERS*/
+            Almanya: "Germany",
+            Belcika: "Belgium",
+            Slovenya: "Slovenia",
+            Fransa: "France",
+            İtalya: "Italy",
+            Portekiz: "Portugal",
+            CekCumhuriyeti: "Czech Republic",
+            Avusturya: "Austria",
+            Danimarka: "Denmark",
+            Slovakya: "Slovakia",
+            Macaristan: "Hungary",
+            Norvec: "Norway",
+            BirlesikKrallik: "United Kingdom",
+            Romanya: "Romania",
+
+            Arjantin: "Argentina",
+            Çin: "China",
+            Hindistan: "India",
+            Japonya: "Japan",
+            Singapur: "Singapore",
+            Türkiye: "Turkey",
+            Tayvan: "Taiwan",
+            Brezilya: "Brazil",
+            Amerika: "United States",
+            İran: "Iran",
+            Meksika: "Mexico",
+            GüneyAfrika: "South Africa",
+            Kore: "South Korea",
         },
     },
 };

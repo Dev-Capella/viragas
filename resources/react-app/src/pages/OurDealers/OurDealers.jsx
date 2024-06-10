@@ -1,7 +1,7 @@
 import React from "react";
 import OurDealersComponent from "../../components/OurDealers/OurDealersComponent";
 import BreadcrumbsNav from "../../components/BreadcrumbsNav/BreadcrumbsNav";
-import bayifotoornek from "../../assets/AboutUs/01.jpg";
+import bayifotoornek from "../../assets/OurDealers/banner1.jpg";
 const OurDealers = () => {
     return (
         <>

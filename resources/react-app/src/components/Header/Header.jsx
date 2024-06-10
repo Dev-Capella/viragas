@@ -9,6 +9,7 @@ import generalService from "../../services/generalService";
 import { useTranslation } from "react-i18next";
 import turkishflag from "../../assets/HeaderFlag/turkishflag.jpg";
 import englishflag from "../../assets/HeaderFlag/englishflag.jpg";
+import { CiInstagram } from "react-icons/ci";
 import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 const Header = ({ data }) => {
@@ -79,20 +80,33 @@ const Header = ({ data }) => {
                         <div className="w-full border-b border-[#ffffff1a]">
                             <div className="w-[85%] flex justify-between items-center text-white text-sm  mx-auto px-2  max-xl:mx-0 max-xl:px-0">
                                 <div className="border-r  border-[#ffffff1a] p-2 flex justify-start items-center">
-                                    <FaMapMarkerAlt className="text-orange-600 text-lg mr-2" />{" "}
+                                    <FaMapMarkerAlt className="text-orange-600 text-lg mr-2" />
                                     Çalı Sanayi Bölgesi Karaali Mah. 7. Sokak
                                     No:19 Çalı / Nilüfer 16370 BURSA /TÜRKİYE
                                 </div>
-                                <div className="border-r  border-[#ffffff1a] p-2 flex justify-start items-center">
-                                    <IoMdMail className="text-orange-600 text-lg mr-2" />{" "}
-                                    sales@viragas.com
+                                <div className="border-r  border-[#ffffff1a] p-2 flex justify-start items-center cursor-pointer">
+                                    <IoMdMail className="text-orange-600 text-lg mr-2" />
+                                    <a
+                                        href="mailto:sales@viragas.com"
+                                        target="blank"
+                                    >
+                                        sales@viragas.com
+                                    </a>
+                                </div>
+                                <div className="border-r border-[#ffffff1a] p-2 flex justify-start items-center cursor-pointer">
+                                    <FaPhoneAlt className="text-orange-600 text-lg mr-2" />
+                                    <a href="tel:+9022448244271">
+                                        0224 482 44 27
+                                    </a>
                                 </div>
                                 <div className="border-r border-[#ffffff1a] p-2 flex justify-start items-center">
-                                    <FaPhoneAlt className="text-orange-600 text-lg mr-2" />{" "}
-                                    0224 482 44 27
-                                </div>
-                                <div className="border-r border-[#ffffff1a] p-2 flex justify-start items-center">
-                                    insta
+                                    <CiInstagram className="text-orange-600 text-lg mr-2" />{" "}
+                                    <a
+                                        href="https://www.instagram.com/viragassprings/"
+                                        target="blank"
+                                    >
+                                        Vira Gas Springs
+                                    </a>
                                 </div>
                                 <div className="border-r border-[#ffffff1a] p-2 flex justify-start items-center">
                                     TR/EN

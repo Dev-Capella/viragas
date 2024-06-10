@@ -27,9 +27,9 @@ const ContactComponent = () => {
                             <div className="w-80 h-20 bg-white shadow-2xl flex justify-center items-center p-4">
                                 <a
                                     className="text-center"
-                                    href="tel:+9022448244271"
+                                    href="tel:+902244824427"
                                 >
-                                    0224 482 44 271
+                                    0224 482 44 27
                                 </a>
                             </div>
                         </div>
