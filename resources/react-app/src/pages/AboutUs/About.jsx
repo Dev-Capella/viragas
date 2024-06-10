@@ -5,6 +5,9 @@ import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import aboutusphoto from "../../assets/AboutUs/01.jpg";
 import aboutusphoto2 from "../../assets/AboutUs/vira-gas-spring.jpg";
+import aboutusbanner from "../../assets/AboutUs/aboutusbanner2.jpg";
+import { motion } from "framer-motion";
+
 const About = () => {
     const { t, i18n } = useTranslation();
     const clickHandle = async (lang) => {
@@ -43,8 +46,12 @@ const About = () => {
                 <link rel="canonical" href={`/hakkimizda`} />
                 <meta name="description" content="Vira Gas" />
             </Helmet>
-            <BreadcrumbsNav imageSrc={page?.image} text={page?.title} />
-            <div className="flex flex-col mt-20 mb-20">
+            <BreadcrumbsNav imageSrc={aboutusbanner} text={page?.title} />
+            <motion.div
+                initial={{ opacity: 0, translateY: "-10%" }}
+                animate={{ opacity: 1, translateY: 0 }}
+                className="flex flex-col mt-20 mb-20"
+            >
                 <div className="flex flex-row container mx-auto justify-center mb-52 max-md:mb-12 max-md:flex-col-reverse max-md:items-center max-lg:mb-8 ">
                     <div className="w-2/5 px-8 relative max-md:w-full max-md:pt-8 max-lg:w-2/4 max-lg:px-0">
                         <div>
@@ -138,7 +145,7 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </>
     );
 };

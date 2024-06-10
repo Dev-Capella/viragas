@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import BreadcrumbsNav from "../../components/BreadcrumbsNav/BreadcrumbsNav";
 import ReferancesComponent from "../../components/Referances/ReferancesComponent";
 import { useTranslation } from "react-i18next";
-import references from "../../assets/Referances/banner1.jpg";
+import references from "../../assets/Referances/references1aooo.png";
 import generalService from "../../services/generalService";
 import { Helmet } from "react-helmet";
 const Referances = () => {

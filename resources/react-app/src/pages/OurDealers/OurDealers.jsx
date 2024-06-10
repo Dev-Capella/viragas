@@ -1,13 +1,13 @@
 import React from "react";
 import OurDealersComponent from "../../components/OurDealers/OurDealersComponent";
 import BreadcrumbsNav from "../../components/BreadcrumbsNav/BreadcrumbsNav";
-import bayifotoornek from "../../assets/OurDealers/banner1.jpg";
+import ourdealers from "../../assets/OurDealers/ourdealers.jpg";
 const OurDealers = () => {
     return (
         <>
             <BreadcrumbsNav
                 /* hata vermesin diye bu foto koydum değişcek*/
-                imageSrc={bayifotoornek}
+                imageSrc={ourdealers}
                 text={"Bayilerimiz"}
             />
             <OurDealersComponent />

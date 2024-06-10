@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useState } from "react";
 import BreadcrumbsNav from "../../components/BreadcrumbsNav/BreadcrumbsNav";
-import productBanner from "../../assets/product/productbanner5.jpg";
+import productBanner from "../../assets/product/productbanneraa7.jpg";
 import generalService from "../../services/generalService";
 import { useParams } from "react-router-dom";
 import LoadingPage from "../../components/Loading/Loading.jsx";
