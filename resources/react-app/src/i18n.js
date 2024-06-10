@@ -221,7 +221,7 @@ const resources = {
             Slovakya: "Slovakia",
             Macaristan: "Hungary",
             Norvec: "Norway",
-            BirlesikKrallik: "United Kingdom",
+            BirlesikKrallık: "United Kingdom",
             Romanya: "Romania",
 
             Arjantin: "Argentina",

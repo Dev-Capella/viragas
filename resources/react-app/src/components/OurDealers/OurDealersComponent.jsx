@@ -18,7 +18,7 @@ const OurDealersComponent = () => {
         { code: "sk", name: t("Slovakya") },
         { code: "hu", name: t("Macaristan") },
         { code: "no", name: t("Norvec") },
-        { code: "gb", name: t("BirlesikKrallik") },
+        { code: "gb", name: t("BirlesikKrallık") },
         { code: "ro", name: t("Romanya") },
         // Diğer ülkeler buraya eklenebilir
     ];

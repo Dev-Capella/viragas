@@ -3,6 +3,7 @@ import ActivitiesComponent from "../../components/Activities/ActivitiesComponent
 import BreadcrumbsNav from "../../components/BreadcrumbsNav/BreadcrumbsNav";
 import { useTranslation } from "react-i18next";
 import generalService from "../../services/generalService";
+import activities from "../../assets/Activities/faaliyet5.jpg";
 import { Helmet } from "react-helmet";
 const Activities = () => {
     const { t, i18n } = useTranslation();
@@ -25,7 +26,7 @@ const Activities = () => {
                 <link rel="canonical" href={`/faaliyetler`} />
                 <meta name="description" content="Vira Gas" />
             </Helmet>
-            <BreadcrumbsNav imageSrc={page?.image} text={page?.title} />
+            <BreadcrumbsNav imageSrc={activities} text={"Faaliyetler"} />
             <ActivitiesComponent />
         </>
     );
