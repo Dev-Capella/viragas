@@ -48,7 +48,7 @@ const About = () => {
                 <div className="flex flex-row container mx-auto justify-center mb-52 max-md:mb-12 max-md:flex-col-reverse max-md:items-center max-lg:mb-8 ">
                     <div className="w-2/5 px-8 relative max-md:w-full max-md:pt-8 max-lg:w-2/4 max-lg:px-0">
                         <div>
-                            <span className="absolute top-12 right-2 text-9xl opacity-10 z-0 whitespace-nowrap text-[#979797] font-black max-md:hidden max-lg:text-7xl max-lg:top-20 max-lg:right-6 max-xl:text-7xl max-xl:top-20 max-xl:right-8 max-2xl:text-[7rem] max-2xl:-right-2 max-2xl:top-16">
+                            <span className="absolute -top-4 right-2 text-9xl opacity-10 z-0 whitespace-nowrap text-[#979797] font-black max-md:hidden max-lg:text-7xl  max-lg:right-6 max-xl:text-7xl  max-xl:right-8 max-2xl:text-[7rem] max-2xl:-right-2 ">
                                 VİRA GAS
                             </span>
                             <span className="text-[3.5rem] max-lg:text-3xl max-md:text-4xl flex justify-center font-extrabold text-[#303849] max-xl:text-4xl">
@@ -84,35 +84,35 @@ const About = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="w-1/3 relative group max-md:w-10/12 max-md:px-8 max-lg:px-0 max-lg:w-5/12">
+                    <div className="w-1/3 h-full relative group max-md:w-10/12 max-md:px-8 max-lg:px-0 max-lg:w-5/12">
                         <img
-                            className="w-full h-auto object-contain px-4 absolute -top-5 -right-24 z-0 opacity-50 max-md:-right-4 max-md:-top-1 max-md:px-0  max-lg:-right-4"
+                            className="w-full h-full object-contain px-4 absolute -top-5 -right-24 z-0 opacity-50 max-md:-right-4 max-md:-top-1 max-md:px-0  max-lg:-right-4"
                             src={aboutusphoto2}
                             alt="ViraGas"
                         ></img>
                         <img
-                            className="w-full h-auto object-contain px-4 relative z-10 max-md:px-0"
+                            className="w-full h-full object-contain px-4 relative z-10 max-md:px-0"
                             src={aboutusphoto2}
                             alt="ViraGas"
                         ></img>
                     </div>
                 </div>
                 <div className="flex flex-row container mx-auto justify-center max-md:flex-col max-md:items-center ">
-                    <div className="w-1/3 relative group max-md:w-10/12 max-md:px-8 max-lg:px-0 max-lg:w-5/12 ">
+                    <div className="w-1/3 h-full relative group max-md:w-10/12 max-md:px-8 max-lg:px-0 max-lg:w-5/12 ">
                         <img
-                            className="w-full h-auto object-contain px-4 absolute -top-5 right-24 max-md:-right-8 max-md:-top-1 max-md:px-0 z-0 opacity-50 max-lg:right-4"
+                            className="w-full h-full object-contain px-4 absolute -top-5 right-24 max-md:-right-8 max-md:-top-1 max-md:px-0 z-0 opacity-50 max-lg:right-4"
                             src={aboutusphoto}
                             alt="ViraGas"
                         ></img>
                         <img
-                            className="w-full h-auto object-contain px-4 relative z-10 max-md:px-0"
+                            className="w-full h-full object-contain px-4 relative z-10 max-md:px-0"
                             src={aboutusphoto}
                             alt="ViraGas"
                         ></img>
                     </div>
                     <div className="w-2/5 px-8  relative max-md:w-full max-md:pt-8 max-lg:w-2/4 max-lg:px-0">
                         <div>
-                            <span className="absolute top-16 right-2 text-9xl  opacity-10 z-0 whitespace-nowrap text-[#979797] font-black max-md:hidden max-lg:text-7xl max-lg:right-6 max-lg:top-20 max-xl:text-7xl max-xl:top-20 max-xl:right-8 max-2xl:text-[7rem] max-2xl:-right-2 max-2xl:top-16">
+                            <span className="absolute -top-4 right-2 text-9xl  opacity-10 z-0 whitespace-nowrap text-[#979797] font-black max-md:hidden max-lg:text-7xl max-lg:right-6  max-xl:text-[5rem]  max-xl:right-4 max-2xl:text-[7rem] max-2xl:-right-2">
                                 VİRA GAS
                             </span>
                             <span className="text-[3.4rem] flex justify-center font-extrabold text-[#303849] max-md:text-4xl max-lg:text-3xl max-xl:text-4xl max-2xl:text-[2.75rem]">

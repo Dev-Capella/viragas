@@ -60,27 +60,21 @@ const OurDealersComponent = () => {
 
     return (
         <motion.div
-            variants={container}
-            initial="hidden"
-            animate="visible"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             className="flex flex-col container mx-auto pt-12 w-full"
         >
             <span className="text-5xl pl-2 max-sm:text-4xl">Avrupada</span>
             <div className="flag-container flex flex-row flex-wrap mb-16 w-full max-sm:justify-center">
                 {europeCountry.map(({ code, name }) => (
-                    <motion.div
-                        variants={item}
-                        key={code}
-                        className="flex flex-col items-center m-2  transition-opacity duration-300"
-                    >
+                    <div key={code} className="flex flex-col items-center m-2">
                         <span
                             className={`fi fi-${code} w-44 h-32 object-contain cursor-pointer`}
                         ></span>
                         <span className="text-lg p-2"> {name} </span>
-                    </motion.div>
+                    </div>
                 ))}
             </div>
-
             <span className="text-5xl pl-2 ">Dünyada</span>
             <div className="flag-container flex flex-row flex-wrap">
                 {worldCountry.map(({ code, name }) => (
