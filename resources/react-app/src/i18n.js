@@ -206,7 +206,7 @@ const resources = {
             FooterProduct: "Products",
             FooterCatalog: "Catalog",
             FooterOurDealers: "Dealers",
-            FooterDocuments: "Documents",
+            FooterDocuments: "Certificates",
             FooterAdress: "Address",
             /* OUR DEALERS*/
             Almanya: "Germany",

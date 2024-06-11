@@ -133,7 +133,7 @@ const Footer = ({ data }) => {
                         </li>
                         <li className="text-[#878898] text-lg">
                             <Link
-                                to="/belgelerimiz"
+                                to="/"
                                 className="hover:text-[#334162] transition-colors duration-300"
                             >
                                 {t("FooterDocuments")}
