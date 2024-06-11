@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { BsSend } from "react-icons/bs";
 import { useTranslation } from "react-i18next";
 import * as Yup from "yup";
@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import generalService from "../../services/generalService";
 import { useFormik } from "formik";
+import { motion } from "framer-motion";
 import Worldİmage from "../../assets/contact/world-image.png";
 
 const validationSchema = Yup.object().shape({
@@ -23,6 +24,28 @@ const ContactForm = () => {
     const clickHandle = async (lang) => {
         await i18n.changeLanguage(lang);
     };
+    const [isVisible, setIsVisible] = useState(false);
+    const contactRef = useRef(null);
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                // Element görünür hale geldiğinde
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                }
+            },
+            { threshold: 0 } // Elementin yarıdan fazlası göründüğünde
+        );
+
+        if (contactRef.current) {
+            observer.observe(contactRef.current);
+        }
+
+        return () => {
+            // Komponent kaldırıldığında observer'ı temizle
+            observer.disconnect();
+        };
+    }, []);
 
     const formik = useFormik({
         initialValues: {
@@ -68,8 +91,19 @@ const ContactForm = () => {
         });
 
     return (
-        <div className="flex justify-between items-center container mx-auto px-2 max-sm:flex-col ">
-            <div className="flex justify-center w-2/4 max-sm:w-full max-lg:w-full">
+        <motion.div
+            initial={{ opacity: 0, y: -100 }}
+            animate={{
+                opacity: isVisible ? 1 : 0,
+                y: isVisible ? 0 : -100,
+            }}
+            transition={{ duration: 1 }}
+            className="flex justify-between items-center container mx-auto px-2 max-sm:flex-col "
+        >
+            <div
+                ref={contactRef}
+                className="flex justify-center w-2/4 max-sm:w-full max-lg:w-full"
+            >
                 <ToastContainer
                     className="toastContainer z-[9999999]"
                     position="top-right"
@@ -201,7 +235,7 @@ const ContactForm = () => {
                     alt="Vira Gas Spring"
                 />
             </div>
-        </div>
+        </motion.div>
     );
 };
 

@@ -83,7 +83,7 @@ const Header = ({ data }) => {
                                         <li className="items-center text-[0.8rem]">
                                             {i18n.language === "en" ? (
                                                 <img
-                                                    className="w-6 cursor-pointer"
+                                                    className="w-6 cursor-pointer hover:scale-110"
                                                     src={turkishflag}
                                                     alt="Vira Gas"
                                                     onClick={() =>
@@ -92,7 +92,7 @@ const Header = ({ data }) => {
                                                 />
                                             ) : (
                                                 <img
-                                                    className="w-6 cursor-pointer"
+                                                    className="w-6 cursor-pointer hover:scale-110"
                                                     src={englishflag}
                                                     alt="Vira Gas"
                                                     onClick={() =>
@@ -151,23 +151,23 @@ const Header = ({ data }) => {
                                                 href="https://www.instagram.com/viragassprings/"
                                                 target="blank"
                                             >
-                                                <AiFillInstagram className="text-orange-600 text-lg mr-2" />
+                                                <AiFillInstagram className="text-orange-600 text-lg mr-2 hover:scale-110" />
                                             </a>
                                             <a
                                                 href="https://www.facebook.com/viragassprings/"
                                                 target="blank"
                                             >
-                                                <FaFacebookF className="text-orange-600 text-lg mr-2" />
+                                                <FaFacebookF className="text-orange-600 text-lg mr-2 hover:scale-110" />
                                             </a>
                                             <a href="/" target="blank">
-                                                <BsTwitterX className="text-orange-600 text-lg mr-2" />
+                                                <BsTwitterX className="text-orange-600 text-lg mr-2 hover:scale-110" />
                                             </a>
                                         </div>
                                     </div>
                                     <div className="border-r border-[#ffffff1a] p-2 flex justify-start items-center">
                                         {i18n.language === "en" ? (
                                             <img
-                                                className="w-6 cursor-pointer"
+                                                className="w-6 cursor-pointer hover:scale-110"
                                                 src={turkishflag}
                                                 alt="Vira Gas"
                                                 onClick={() =>
@@ -176,7 +176,7 @@ const Header = ({ data }) => {
                                             />
                                         ) : (
                                             <img
-                                                className="w-6 cursor-pointer"
+                                                className="w-6 cursor-pointer hover:scale-110"
                                                 src={englishflag}
                                                 alt="Vira Gas"
                                                 onClick={() =>
@@ -364,7 +364,7 @@ const Header = ({ data }) => {
                                                           }`
                                                         : `text-base font-medium ${
                                                               navbar
-                                                                  ? "text-black"
+                                                                  ? "text-black text-with-underline2"
                                                                   : "text-with-underline"
                                                           }`
                                                 }
@@ -377,12 +377,12 @@ const Header = ({ data }) => {
                                                     navItem === "/faaliyetler"
                                                         ? `text-base font-semibold underline-offset-8 ${
                                                               navbar
-                                                                  ? "text-black underline"
+                                                                  ? "text-black underline text-with-underline2"
                                                                   : "underline"
                                                           }`
                                                         : `text-base font-medium ${
                                                               navbar
-                                                                  ? "text-black"
+                                                                  ? "text-black text-with-underline2"
                                                                   : "text-with-underline"
                                                           }`
                                                 }
@@ -400,7 +400,7 @@ const Header = ({ data }) => {
                                                           }`
                                                         : `text-base font-medium ${
                                                               navbar
-                                                                  ? "text-black"
+                                                                  ? "text-black text-with-underline2"
                                                                   : "text-with-underline"
                                                           }`
                                                 }
