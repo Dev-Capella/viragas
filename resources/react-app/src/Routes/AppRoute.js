@@ -19,7 +19,7 @@ function AppRoute() {
                 {/* Örnek tanımlama.*/}
                 <Route path="" element={<RootLayout />}>
                     <Route index path="/" element={<Home />} />
-                    <Route path="/hakkimizda" element={<About />} />
+                    <Route path="/kurumsal" element={<About />} />
                     <Route path="/urunler" element={<Products />} />
                     <Route path="/iletisim" element={<Contact />} />
                     <Route path="/referanslar" element={<Referances />} />
