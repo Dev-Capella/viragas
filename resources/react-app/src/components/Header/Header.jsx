@@ -1,11 +1,11 @@
 import React from "react";
 import { Disclosure } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import HeaderLogo from "../../assets/HeaderLogo/logo.png";
 import whitelogo from "../../assets/HeaderLogo/logo.png";
 import generalService from "../../services/generalService";
+import { AiFillInstagram } from "react-icons/ai";
 import { useTranslation } from "react-i18next";
 import turkishflag from "../../assets/HeaderFlag/turkishflag.jpg";
 import englishflag from "../../assets/HeaderFlag/englishflag.jpg";
@@ -13,6 +13,8 @@ import { CiInstagram, CiMail } from "react-icons/ci";
 import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { MdOutlinePhoneInTalk } from "react-icons/md";
+import { FaFacebookF } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
 const Header = ({ data }) => {
     const [navbar, setNavbar] = useState(false);
     const [navItem, setNavItem] = useState(" ");
@@ -79,10 +81,28 @@ const Header = ({ data }) => {
                                 <div className="flex flex-row w-full h-12 px-4 bg-[#cecdcc]">
                                     <ul className="flex flex-row w-full h-full justify-between items-center">
                                         <li className="items-center text-[0.8rem]">
-                                            TR | EN
+                                            {i18n.language === "en" ? (
+                                                <img
+                                                    className="w-6 cursor-pointer"
+                                                    src={turkishflag}
+                                                    alt="Vira Gas"
+                                                    onClick={() =>
+                                                        changeLanguagee("tr")
+                                                    }
+                                                />
+                                            ) : (
+                                                <img
+                                                    className="w-6 cursor-pointer"
+                                                    src={englishflag}
+                                                    alt="Vira Gas"
+                                                    onClick={() =>
+                                                        changeLanguagee("en")
+                                                    }
+                                                />
+                                            )}
                                         </li>
                                         <li className="flex flex-row items-center gap-2">
-                                            <MdOutlinePhoneInTalk className="hover:text-green-500 transition-colors duration-300" />
+                                            <FaPhoneAlt className="text-orange-600 text-lg" />
                                             <a
                                                 href="tel:+902244824427"
                                                 className="hover:text-[#334162] transition-colors duration-300 text-[0.8rem]"
@@ -91,7 +111,7 @@ const Header = ({ data }) => {
                                             </a>
                                         </li>
                                         <li className="flex flex-row items-center gap-2">
-                                            <CiMail className="hover:text-blue-500 transition-colors duration-300" />
+                                            <IoMdMail className="text-orange-600 text-lg" />
                                             <a
                                                 href="mailto:sales@viragas.com"
                                                 className="hover:text-[#334162] transition-colors duration-300 text-[0.8rem]"
@@ -126,16 +146,44 @@ const Header = ({ data }) => {
                                         </a>
                                     </div>
                                     <div className="border-r border-[#ffffff1a] p-2 flex justify-start items-center">
-                                        <CiInstagram className="text-orange-600 text-lg mr-2" />{" "}
-                                        <a
-                                            href="https://www.instagram.com/viragassprings/"
-                                            target="blank"
-                                        >
-                                            Vira Gas Springs
-                                        </a>
+                                        <div className="flex justify-center w-full">
+                                            <a
+                                                href="https://www.instagram.com/viragassprings/"
+                                                target="blank"
+                                            >
+                                                <AiFillInstagram className="text-orange-600 text-lg mr-2" />
+                                            </a>
+                                            <a
+                                                href="https://www.facebook.com/viragassprings/"
+                                                target="blank"
+                                            >
+                                                <FaFacebookF className="text-orange-600 text-lg mr-2" />
+                                            </a>
+                                            <a href="/" target="blank">
+                                                <BsTwitterX className="text-orange-600 text-lg mr-2" />
+                                            </a>
+                                        </div>
                                     </div>
                                     <div className="border-r border-[#ffffff1a] p-2 flex justify-start items-center">
-                                        TR/EN
+                                        {i18n.language === "en" ? (
+                                            <img
+                                                className="w-6 cursor-pointer"
+                                                src={turkishflag}
+                                                alt="Vira Gas"
+                                                onClick={() =>
+                                                    changeLanguagee("tr")
+                                                }
+                                            />
+                                        ) : (
+                                            <img
+                                                className="w-6 cursor-pointer"
+                                                src={englishflag}
+                                                alt="Vira Gas"
+                                                onClick={() =>
+                                                    changeLanguagee("en")
+                                                }
+                                            />
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -360,32 +408,6 @@ const Header = ({ data }) => {
                                             >
                                                 {t("HeaderContact")}
                                             </a>
-
-                                            <div>
-                                                {i18n.language === "en" ? (
-                                                    <img
-                                                        className="w-6 cursor-pointer"
-                                                        src={turkishflag}
-                                                        alt="Vira Gas"
-                                                        onClick={() =>
-                                                            changeLanguagee(
-                                                                "tr"
-                                                            )
-                                                        }
-                                                    />
-                                                ) : (
-                                                    <img
-                                                        className="w-6 cursor-pointer"
-                                                        src={englishflag}
-                                                        alt="Vira Gas"
-                                                        onClick={() =>
-                                                            changeLanguagee(
-                                                                "en"
-                                                            )
-                                                        }
-                                                    />
-                                                )}
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
