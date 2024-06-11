@@ -1,23 +1,54 @@
-import React, { useEffect, useState } from "react";
-import { FaFacebook } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { IoLogoYoutube } from "react-icons/io5";
+import React, { useEffect, useRef, useState } from "react";
 import ContactForm from "../../components/Contact/contactForm";
 import { IoMailUnreadOutline } from "react-icons/io5";
 import { BsTelephone } from "react-icons/bs";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 import generalService from "../../services/generalService";
 const ContactComponent = () => {
     const { t, i18n } = useTranslation();
     const clickHandle = async (lang) => {
         await i18n.changeLanguage(lang);
     };
+    const [isVisible, setIsVisible] = useState(false);
+    const contactRef = useRef(null);
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                // Element görünür hale geldiğinde
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                }
+            },
+            { threshold: 0 } // Elementin yarıdan fazlası göründüğünde
+        );
+
+        if (contactRef.current) {
+            observer.observe(contactRef.current);
+        }
+
+        return () => {
+            // Komponent kaldırıldığında observer'ı temizle
+            observer.disconnect();
+        };
+    }, []);
 
     return (
         <div className=" border-radius-6px box-shadow-double-large flex flex-col justify-center w-full items-center mt-10  relative z-10">
-            <div className="flex justify-between items-start w-full my-5 mt-10 flex-col">
-                <div className="w-full flex justify-center items-center relative">
+            <motion.div
+                initial={{ opacity: 0, y: -100 }}
+                animate={{
+                    opacity: isVisible ? 1 : 0,
+                    y: isVisible ? 0 : -100,
+                }}
+                transition={{ duration: 1 }}
+                className="flex justify-between items-start w-full my-5 mt-10 flex-col"
+            >
+                <div
+                    ref={contactRef}
+                    className="w-full flex justify-center items-center relative"
+                >
                     <div className="container mx-auto px-5 flex justify-between items-center max-md:flex-col">
                         <div className="flex flex-col justify-center items-center my-5 w-2/6 max-md:w-full">
                             <div className="w-24 h-24 bg-white shadow-2xl rounded-full flex justify-center items-center relative">
@@ -61,7 +92,7 @@ const ContactComponent = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
             <ContactForm />
             <div className="w-full">
                 <iframe
