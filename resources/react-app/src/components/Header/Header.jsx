@@ -9,9 +9,10 @@ import generalService from "../../services/generalService";
 import { useTranslation } from "react-i18next";
 import turkishflag from "../../assets/HeaderFlag/turkishflag.jpg";
 import englishflag from "../../assets/HeaderFlag/englishflag.jpg";
-import { CiInstagram } from "react-icons/ci";
+import { CiInstagram, CiMail } from "react-icons/ci";
 import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
+import { MdOutlinePhoneInTalk } from "react-icons/md";
 const Header = ({ data }) => {
     const [navbar, setNavbar] = useState(false);
     const [navItem, setNavItem] = useState(" ");
@@ -77,42 +78,72 @@ const Header = ({ data }) => {
             {({ open }) => (
                 <>
                     {!navbar && (
-                        <div className="w-full border-b border-[#ffffff1a]">
-                            <div className="w-[85%] flex justify-between items-center text-white text-sm  mx-auto px-2  max-xl:mx-0 max-xl:px-0">
-                                <div className="border-r  border-[#ffffff1a] p-2 flex justify-start items-center">
-                                    <FaMapMarkerAlt className="text-orange-600 text-lg mr-2" />
-                                    Çalı Sanayi Bölgesi Karaali Mah. 7. Sokak
-                                    No:19 Çalı / Nilüfer 16370 BURSA /TÜRKİYE
-                                </div>
-                                <div className="border-r  border-[#ffffff1a] p-2 flex justify-start items-center cursor-pointer">
-                                    <IoMdMail className="text-orange-600 text-lg mr-2" />
-                                    <a
-                                        href="mailto:sales@viragas.com"
-                                        target="blank"
-                                    >
-                                        sales@viragas.com
-                                    </a>
-                                </div>
-                                <div className="border-r border-[#ffffff1a] p-2 flex justify-start items-center cursor-pointer">
-                                    <FaPhoneAlt className="text-orange-600 text-lg mr-2" />
-                                    <a href="tel:+9022448244271">
-                                        0224 482 44 27
-                                    </a>
-                                </div>
-                                <div className="border-r border-[#ffffff1a] p-2 flex justify-start items-center">
-                                    <CiInstagram className="text-orange-600 text-lg mr-2" />{" "}
-                                    <a
-                                        href="https://www.instagram.com/viragassprings/"
-                                        target="blank"
-                                    >
-                                        Vira Gas Springs
-                                    </a>
-                                </div>
-                                <div className="border-r border-[#ffffff1a] p-2 flex justify-start items-center">
-                                    TR/EN
+                        <>
+                            <div className="hidden max-sm:block">
+                                <div className="flex flex-row w-full h-12 px-4 bg-[#cecdcc]">
+                                    <ul className="flex flex-row w-full h-full justify-between items-center">
+                                        <li className="items-center text-[0.8rem]">
+                                            TR | EN
+                                        </li>
+                                        <li className="flex flex-row items-center gap-2">
+                                            <MdOutlinePhoneInTalk className="hover:text-green-500 transition-colors duration-300" />
+                                            <a
+                                                href="tel:+902244824427"
+                                                className="hover:text-[#334162] transition-colors duration-300 text-[0.8rem]"
+                                            >
+                                                0224 482 44 27
+                                            </a>
+                                        </li>
+                                        <li className="flex flex-row items-center gap-2">
+                                            <CiMail className="hover:text-blue-500 transition-colors duration-300" />
+                                            <a
+                                                href="mailto:sales@viragas.com"
+                                                className="hover:text-[#334162] transition-colors duration-300 text-[0.8rem]"
+                                            >
+                                                sales@viragas.com
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
-                        </div>
+                            <div className="w-full border-b border-[#ffffff1a] max-sm:hidden">
+                                <div className="w-[85%] flex justify-between items-center text-white text-sm  mx-auto px-2  max-xl:mx-0 max-xl:px-0">
+                                    <div className="border-r  border-[#ffffff1a] p-2 flex justify-start items-center">
+                                        <FaMapMarkerAlt className="text-orange-600 text-lg mr-2" />
+                                        Çalı Sanayi Bölgesi Karaali Mah. 7.
+                                        Sokak No:19 Çalı / Nilüfer 16370 BURSA
+                                        /TÜRKİYE
+                                    </div>
+                                    <div className="border-r  border-[#ffffff1a] p-2 flex justify-start items-center cursor-pointer">
+                                        <IoMdMail className="text-orange-600 text-lg mr-2" />
+                                        <a
+                                            href="mailto:sales@viragas.com"
+                                            target="blank"
+                                        >
+                                            sales@viragas.com
+                                        </a>
+                                    </div>
+                                    <div className="border-r border-[#ffffff1a] p-2 flex justify-start items-center cursor-pointer">
+                                        <FaPhoneAlt className="text-orange-600 text-lg mr-2" />
+                                        <a href="tel:+9022448244271">
+                                            0224 482 44 27
+                                        </a>
+                                    </div>
+                                    <div className="border-r border-[#ffffff1a] p-2 flex justify-start items-center">
+                                        <CiInstagram className="text-orange-600 text-lg mr-2" />{" "}
+                                        <a
+                                            href="https://www.instagram.com/viragassprings/"
+                                            target="blank"
+                                        >
+                                            Vira Gas Springs
+                                        </a>
+                                    </div>
+                                    <div className="border-r border-[#ffffff1a] p-2 flex justify-start items-center">
+                                        TR/EN
+                                    </div>
+                                </div>
+                            </div>
+                        </>
                     )}
 
                     <div className="mx-auto px-2   max-xl:mx-0 max-xl:px-0 ">
@@ -145,7 +176,7 @@ const Header = ({ data }) => {
                             </div>
 
                             <div className="flex items-center justify-center sm:items-stretch sm:justify-around text-[#191919] font-semibold w-full ">
-                                <div className="hidden sm:ml-6 md:block w-[85%] max-xl:w-full">
+                                <div className="hidden md:block w-[85%] max-xl:w-full">
                                     <div
                                         className={`flex justify-between items-center max-xl:text-sm max-lg:px-0 ${
                                             navbar ? "" : "mt-8"
@@ -187,7 +218,7 @@ const Header = ({ data }) => {
                                             </div>
                                         )}
 
-                                        <div className="w-full flex justify-end items-center text-white gap-12 max-xl:gap-8 max-lg:gap-4">
+                                        <div className="w-full flex justify-end items-center text-white gap-12 max-xl:gap-8 max-lg:gap-2">
                                             <a
                                                 className={
                                                     navItem === "/"
