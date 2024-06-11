@@ -7,6 +7,7 @@ import aboutusphoto from "../../assets/AboutUs/01.jpg";
 import aboutusphoto2 from "../../assets/AboutUs/vira-gas-spring.jpg";
 import aboutusbanner from "../../assets/AboutUs/aboutusbanner2.jpg";
 import { motion } from "framer-motion";
+import CertificateComponent from "../../components/Certificates/CertificateComponent";
 
 const About = () => {
     const { t, i18n } = useTranslation();
@@ -50,7 +51,7 @@ const About = () => {
             <motion.div
                 initial={{ opacity: 0, translateY: "-10%" }}
                 animate={{ opacity: 1, translateY: 0 }}
-                className="flex flex-col mt-20 mb-20"
+                className="flex flex-col mt-20 mb-40 max-sm:mb-4 max-sm:mt-8"
             >
                 <div className="flex flex-row container mx-auto justify-center mb-52 max-md:mb-12 max-md:flex-col-reverse max-md:items-center max-lg:mb-8 ">
                     <div className="w-2/5 px-8 relative max-md:w-full max-md:pt-8 max-lg:w-2/4 max-lg:px-0">
@@ -146,6 +147,7 @@ const About = () => {
                     </div>
                 </div>
             </motion.div>
+            <CertificateComponent />
         </>
     );
 };
