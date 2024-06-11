@@ -68,9 +68,8 @@ const ContactForm = () => {
         });
 
     return (
-        <div className="flex justify-between items-center container mx-auto px-2">
-        
-            <div className="flex justify-center w-2/4">
+        <div className="flex justify-between items-center container mx-auto px-2 max-sm:flex-col ">
+            <div className="flex justify-center w-2/4 max-sm:w-full max-lg:w-full">
                 <ToastContainer
                     className="toastContainer z-[9999999]"
                     position="top-right"
@@ -84,9 +83,9 @@ const ContactForm = () => {
                     pauseOnHover
                     theme="light"
                 />
-                <div className="flex flex-col justify-center w-[61rem] max-lg:w-10/12 max-lg:p-12 p-20 max-sm:w-full max-sm:p-4 max-sm:pt-20 max-sm:pb-20 max-sm:ml-2 max-sm:mr-2">
+                <div className="flex flex-col justify-center w-[61rem] max-lg:w-10/12  p-20 max-sm:w-full max-sm:p-4 max-sm:pt-20 max-sm:pb-20 max-sm:ml-2 max-sm:mr-2 max-lg:py-12 max-lg:px-0">
                     <div className="flex flex-row justify-between items-center  pb-10">
-                        <p className="font-semibold text-gray-800  text-5xl max-lg:text-2xl max-sm:text-3xl">
+                        <p className="font-semibold text-gray-800  text-5xl max-lg:text-2xl max-sm:text-3xl max-xl:text-[1.7rem] max-2xl:text-[2.5rem]">
                             {t("ContactWithUs")}
                         </p>
                         <BsSend
@@ -121,7 +120,8 @@ const ContactForm = () => {
                                 />
                                 <input
                                     className={`pt-3 pb-3 pl-6 pr-6 w-full  border border-solid border-gray-300 rounded focus:outline-none focus:border-gray-400 focus:ring-0 ${
-                                        formik.touched.mail && formik.errors.mail
+                                        formik.touched.mail &&
+                                        formik.errors.mail
                                             ? "border-red-500"
                                             : ""
                                     }`}
@@ -136,7 +136,8 @@ const ContactForm = () => {
                             <div className="flex flex-row justify-between gap-4 pt-4">
                                 <input
                                     className={`pt-3 pb-3 pl-6 pr-6 w-full  border border-solid border-gray-300 rounded focus:outline-none focus:border-gray-400 focus:ring-0 ${
-                                        formik.touched.phone && formik.errors.phone
+                                        formik.touched.phone &&
+                                        formik.errors.phone
                                             ? "border-red-500"
                                             : ""
                                     }`}
@@ -193,8 +194,12 @@ const ContactForm = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-2/4">
-                <img className="w-full h-full object-cover" src={Worldİmage} alt="Vira Gas Spring" />
+            <div className="w-2/4 max-sm:w-full max-lg:w-full">
+                <img
+                    className="w-full h-full object-cover"
+                    src={Worldİmage}
+                    alt="Vira Gas Spring"
+                />
             </div>
         </div>
     );
