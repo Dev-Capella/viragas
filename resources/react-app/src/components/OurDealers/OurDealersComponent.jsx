@@ -64,25 +64,29 @@ const OurDealersComponent = () => {
             animate={{ opacity: 1 }}
             className="flex flex-col container mx-auto pt-12 w-full"
         >
-            <span className="text-5xl pl-2 max-sm:text-4xl">Avrupada</span>
+            <span className="text-5xl pl-2 mb-4 max-sm:flex max-sm:text-4xl max-sm:justify-center ">
+                Dünyada
+            </span>
+            <div className="flag-container flex flex-row flex-wrap w-full mb-12 max-sm:justify-center">
+                {worldCountry.map(({ code, name }) => (
+                    <div key={code} className="flex flex-col items-center m-2">
+                        <span
+                            className={`fi fi-${code} w-44 h-32 object-contain cursor-pointer max-md:w-44 max-xl:w-32 max-2xl:w-48`}
+                        ></span>
+                        <span className="text-lg p-2">{name}</span>
+                    </div>
+                ))}
+            </div>
+            <span className="text-5xl pl-2 mb-4 max-sm:text-4xl max-sm:flex max-sm:justify-center">
+                Avrupada
+            </span>
             <div className="flag-container flex flex-row flex-wrap mb-16 w-full max-sm:justify-center">
                 {europeCountry.map(({ code, name }) => (
                     <div key={code} className="flex flex-col items-center m-2">
                         <span
-                            className={`fi fi-${code} w-44 h-32 object-contain cursor-pointer`}
+                            className={`fi fi-${code} w-44 h-32 object-contain cursor-pointer max-md:w-44 max-xl:w-32 max-2xl:w-48`}
                         ></span>
                         <span className="text-lg p-2"> {name} </span>
-                    </div>
-                ))}
-            </div>
-            <span className="text-5xl pl-2 ">Dünyada</span>
-            <div className="flag-container flex flex-row flex-wrap">
-                {worldCountry.map(({ code, name }) => (
-                    <div key={code} className="flex flex-col items-center m-2">
-                        <span
-                            className={`fi fi-${code} w-44 h-32 object-contain cursor-pointer`}
-                        ></span>
-                        <span className="text-lg p-2">{name}</span>
                     </div>
                 ))}
             </div>
