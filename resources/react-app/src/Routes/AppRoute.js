@@ -29,6 +29,7 @@ function AppRoute() {
                     <Route path="/haberler/:slug" element={<NewsDetail />} />
                     <Route path="/katalog" element={<Catalog />} />
                     <Route path="/bayilerimiz" element={<OurDealers />} />
+                    <Route path="/loading" element={<Loading />} />
                 </Route>
             </Route>
             {/* Örnek tanımlama. 
