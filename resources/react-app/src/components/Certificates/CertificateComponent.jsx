@@ -14,7 +14,7 @@ const CertificateComponent = () => {
     ];
 
     return (
-        <div className="container mx-auto overflow-hidden relative">
+        <div className="container mx-auto overflow-hidden relative mt-10">
             <motion.div
                 animate={{
                     x: ["0%", "-50%"], // Move the slider by its half width to create a seamless loop

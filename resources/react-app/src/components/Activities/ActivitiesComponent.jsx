@@ -31,11 +31,13 @@ const ActivitiesComponent = () => {
                         }`}
                     >
                         <div className="w-1/4 max-md:w-full h-auto">
-                            <img
-                                className="w-full h-full object-cover"
-                                src={item.image}
-                                alt={item.image_alt}
-                            />
+                            {item.image && (
+                                <img
+                                    className="w-full h-full object-cover"
+                                    src={item.image}
+                                    alt={item.image_alt}
+                                />
+                            )}
                         </div>
                         <div className="w-3/4 max-md:w-full p-10 max-md:p-2">
                             <h1 className="text-xl pb-3">{item.title} </h1>

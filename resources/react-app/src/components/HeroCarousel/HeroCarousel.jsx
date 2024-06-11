@@ -58,22 +58,35 @@ const HeroCarousel = () => {
                                 key={i}
                                 className="text-center w-full h-screen max-lg:h-[500px] max-sm:h-[350px] relative "
                             >
-                                <img
-                                    className="w-screen h-full object-cover scale-up-center"
-                                    src={item.image}
-                                    alt="HomeSlider"
-                                />
+                                {item.video !== null ? (
+                                    <video
+                                        className="w-screen h-full object-cover"
+                                        autoPlay
+                                        loop
+                                        muted
+                                        src={item.video} // Accessing the first video's download link
+                                    >
+                                        Your browser does not support the video
+                                        tag.
+                                    </video>
+                                ) : (
+                                    <img
+                                        className="w-screen h-full object-cover scale-up-center"
+                                        src={item.image}
+                                        alt="HomeSlider"
+                                    />
+                                )}
+
                                 <div className="absolute inset-0 bg-black opacity-70"></div>
                                 <div class=" animate-fade-in absolute top-1/2 max-lg:top-[40%]  left-1/2 max-xl:left-0 transform -translate-x-1/2 -translate-y-1/2 max-xl:translate-x-0 max-xl:transltae-y-0 text-white w-full flex justify-center items-center">
                                     <p class=" w-full text-white text-[20rem]  max-2xl:text-[16rem] max-xl:text-[12rem] max-lg:text-[8rem] max-md:text-[4rem] font-bold opacity-10">
                                         VİRA GAS
                                     </p>
-                                    <p class=" absolute text-6xl font-extrabold max-xl:text-4xl text-white max-md:text-2xl">
-                                        Kalıp Gazlı Yaylar
+                                    <p class=" absolute text-6xl font-extrabold max-xl:text-4xl text-white max-md:text-2xl px-12 max-md:px-2">
+                                        {item?.title}
                                     </p>
                                     <p class=" absolute text-2xl max-xl:text-xl max-md:text-lg font-medium tracking-wider text-white bottom-0">
-                                        Kalıp Gazlı Yayları İlk Defa Türkiye’de
-                                        VİRA Tarafından üretilmiştir.
+                                        {item?.content}
                                     </p>
                                 </div>
                             </div>
