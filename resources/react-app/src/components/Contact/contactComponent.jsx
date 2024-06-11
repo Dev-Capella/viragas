@@ -24,7 +24,7 @@ const ContactComponent = () => {
                                 <BsTelephone className="text-3xl " />
                                 <div className="absolute right-0 top-0 circle pulse bg-orange-500"></div>
                             </div>
-                            <div className="w-80 h-20 bg-white shadow-2xl flex justify-center items-center p-4">
+                            <div className="w-80 h-20 bg-white shadow-2xl flex justify-center items-center p-4 rounded max-sm:w-full max-lg:w-56">
                                 <a
                                     className="text-center"
                                     href="tel:+902244824427"
@@ -38,7 +38,7 @@ const ContactComponent = () => {
                                 <IoMailUnreadOutline className="text-3xl" />
                                 <div className="absolute right-0 top-0 circle pulse bg-orange-500"></div>
                             </div>
-                            <div className="w-80 h-20 bg-white shadow-2xl flex justify-center items-center p-4">
+                            <div className="w-80 h-20 bg-white shadow-2xl flex justify-center items-center p-4 rounded max-sm:w-full max-lg:w-56">
                                 <a
                                     className="text-center"
                                     href="mailto:sales@viragas.com"
@@ -52,8 +52,8 @@ const ContactComponent = () => {
                                 <FaMapMarkerAlt className="text-3xl " />
                                 <div className="absolute right-0 top-0 circle pulse bg-orange-500"></div>
                             </div>
-                            <div className="w-80 h-20 bg-white shadow-2xl flex justify-center items-center p-4">
-                                <p className="text-center">
+                            <div className="w-80 h-20 bg-white shadow-2xl flex justify-center items-center p-4 rounded max-sm:w-full max-lg:w-56">
+                                <p className="text-center max-lg:text-[0.8rem]">
                                     Çalı Sanayi Bölgesi Karaali Mah. 7. Sokak
                                     No:19 Çalı / Nilüfer 16370 BURSA /TÜRKİYE
                                 </p>
