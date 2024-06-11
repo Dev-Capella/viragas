@@ -6,6 +6,7 @@ import ContactForm from "../../components/Contact/contactForm.jsx";
 import { Helmet } from "react-helmet";
 import generalService from "../../services/generalService.js";
 import { useTranslation } from "react-i18next";
+import CertificateComponent from "../../components/Certificates/CertificateComponent.jsx";
 
 function Home() {
     const { t, i18n } = useTranslation();
@@ -30,6 +31,7 @@ function Home() {
             <ProductCarousel />
             <SloganBanner />
             <ContactForm />
+            <CertificateComponent />
         </>
     );
 }

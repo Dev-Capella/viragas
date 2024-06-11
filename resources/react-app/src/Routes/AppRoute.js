@@ -10,6 +10,7 @@ import News from "../pages/News/News";
 import NewsDetail from "../pages/News/NewsDetail";
 import Catalog from "../pages/Catalog/Catalog";
 import OurDealers from "../pages/OurDealers/OurDealers";
+import Loading from "../components/Loading/Loading";
 
 function AppRoute() {
     return (
