@@ -51,7 +51,7 @@ const Header = ({ data }) => {
 
     const navigation = [
         { name: "Anasayfa", href: "/" },
-        { name: "Hakkımızda", href: "/hakkimizda" },
+        { name: "Kurumsal", href: "/kurumsal" },
         { name: "Ürünlerimiz", href: "/urunler" },
         { name: "Bayilerimiz", href: "/bayilerimiz" },
         {
@@ -283,7 +283,7 @@ const Header = ({ data }) => {
                                             </a>
                                             <a
                                                 className={
-                                                    navItem === "/hakkimizda"
+                                                    navItem === "/kurumsal"
                                                         ? `text-base font-semibold underline-offset-8 ${
                                                               navbar
                                                                   ? "text-black underline"
@@ -295,7 +295,7 @@ const Header = ({ data }) => {
                                                                   : "text-with-underline"
                                                           }`
                                                 }
-                                                href="/hakkimizda"
+                                                href="/kurumsal"
                                             >
                                                 {t("HeaderAboutUs")}
                                             </a>
