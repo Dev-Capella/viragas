@@ -24,6 +24,23 @@ class HomeController extends Controller
         $data = HomeSlider::withTranslations($languageCode)->orderBy('order', 'asc')->get();
         $data = $data->translate($languageCode);
         foreach ($data as $slider) {
+            if ($slider->video) {
+                
+                $slider->video = json_decode($slider->video, true); 
+                
+              
+                if (isset($slider->video[0])) {
+                 
+                    $slider->video  = url('storage/' . str_replace('\\', '/', $slider->video[0]['download_link']));
+                   
+                } else {
+                    $slider->video =null;
+                }
+            } else {
+                $slider->video = null;
+              
+            }
+
 
             if ($slider->image) {
                 $slider->image = url('storage/' . str_replace('\\', '/', $slider->image));

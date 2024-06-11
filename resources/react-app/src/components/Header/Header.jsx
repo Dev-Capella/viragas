@@ -54,11 +54,7 @@ const Header = ({ data }) => {
         { name: "Bayilerimiz", href: "/bayilerimiz" },
         {
             name: "Katalog",
-            href:
-                i18n.language === "tr"
-                    ? data?.catalog_url
-                    : data?.catalog_url_en,
-            target: "1",
+            href: "/katalog",
         },
         { name: "Referanslar", href: "/referanslar" },
         { name: "Faaliyetler", href: "/faaliyetler" },
@@ -305,12 +301,7 @@ const Header = ({ data }) => {
                                                                   : "text-with-underline"
                                                           }`
                                                 }
-                                                href={
-                                                    i18n.language === "tr"
-                                                        ? data?.catalog_url
-                                                        : data?.catalog_url_en
-                                                }
-                                                target="blank"
+                                                href="/katalog"
                                             >
                                                 {t("HeaderCatalog")}
                                             </a>

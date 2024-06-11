@@ -11,7 +11,7 @@ function FixedContact() {
     const { t, i18n } = useTranslation();
     return (
         <div className="max-md:hidden">
-            <div className="fixed z-40 right-4 top-[170px]">
+            {/* <div className="fixed z-40 right-4 top-[170px]">
                 <div
                     className="flex justify-center items-center mt-2"
                     onMouseEnter={() => setHover1(true)}
@@ -40,8 +40,8 @@ function FixedContact() {
                         </a>
                     </div>
                 </div>
-            </div>
-            <div className="fixed z-40 right-4 top-[220px]">
+            </div> */}
+            {/* <div className="fixed z-40 right-4 top-[220px]">
                 <div
                     className="flex justify-center items-center mt-2"
                     onMouseEnter={() => setHover3(true)}
@@ -67,7 +67,7 @@ function FixedContact() {
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }

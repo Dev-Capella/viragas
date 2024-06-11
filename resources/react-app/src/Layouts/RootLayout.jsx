@@ -5,7 +5,7 @@ import Footer from "../components/Footer/Footer.jsx";
 import { Outlet } from "react-router-dom";
 import LoadingPage from "../components/Loading/Loading.jsx";
 import generalService from "../services/generalService.js";
-import FixedContact from "../components/FixedContact/FixedContact.jsx";
+
 import { useTranslation } from "react-i18next";
 
 const RootLayout = () => {
@@ -35,7 +35,7 @@ const RootLayout = () => {
             ) : (
                 <>
                     <Header data={data} />
-                    <FixedContact />
+
                     <div>
                         <Outlet />
                     </div>
