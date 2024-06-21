@@ -9,10 +9,12 @@ import aboutusbanner from "../../assets/AboutUs/aboutusbanner2.jpg";
 
 import { motion, useAnimation } from "framer-motion";
 import CertificateComponent from "../../components/Certificates/CertificateComponent";
+import Loading from "../../components/Loading/Loading";
 
 const About = () => {
     const { t, i18n } = useTranslation();
     const controls = useAnimation();
+    const [loading, setLoading] = useState(true);
     const clickHandle = async (lang) => {
         await i18n.changeLanguage(lang);
     };
@@ -21,7 +23,10 @@ const About = () => {
 
     const getAboutus = async () => {
         const result = await generalService.getAboutUs(i18n.language);
-        setData(result);
+        if (result) {
+            setData(result);
+            setLoading(false);
+        }
     };
     const getCertificate = async () => {
         const result = await generalService.getCertificate(i18n.language);
@@ -77,6 +82,7 @@ const About = () => {
                 <link rel="canonical" href={`/hakkimizda`} />
                 <meta name="description" content="Vira Gas" />
             </Helmet>
+            {loading ? <Loading /> : ""}
             <BreadcrumbsNav imageSrc={aboutusbanner} text={page?.title} />
             <div className="flex flex-col mt-20 mb-40 max-sm:mb-4 max-sm:mt-8">
                 <motion.div

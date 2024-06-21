@@ -5,7 +5,7 @@ const ReferancesComponent = () => {
 
     const getData = async () => {
         const result = await generalService.getReferance();
-        console.log(result);
+
         setData(result);
     };
 

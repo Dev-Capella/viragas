@@ -10,7 +10,6 @@ const ActivitiesComponent = () => {
 
     const getData = async () => {
         const result = await generalService.getActivities(i18n.language);
-        console.log(result);
         setData(result);
         setLoading(true);
     };

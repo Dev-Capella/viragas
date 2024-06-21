@@ -9,7 +9,6 @@ function CatalogComponent() {
     const getData = async () => {
         const result = await generalService.getCatalog(i18n.language);
         setData(result);
-        console.log(result);
     };
     useEffect(() => {
         getData();

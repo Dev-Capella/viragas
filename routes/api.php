@@ -31,6 +31,10 @@ Route::get('/get-products/{value}', [
     ProductController::class,
     'getProducts',
 ]);
+Route::get('/get-products-categories', [
+    ProductController::class,
+    'getProductsCategories',
+]);
 
 //Slider
 Route::get('/get-slider', [

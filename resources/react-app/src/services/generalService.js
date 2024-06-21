@@ -4,7 +4,10 @@ const getProducts = async (value) => {
     const result = await axiosInstance.get(`get-products/${value}`);
     return result.data;
 };
-
+const getProductCategories = async () => {
+    const result = await axiosInstance.get(`get-products-categories`);
+    return result.data;
+};
 const getPage = async (lang, slug) => {
     const result = await axiosInstance.get(`get-page/${slug}`, {
         headers: {
@@ -117,6 +120,7 @@ const getNewData = async (lang, slug) => {
     return result.data;
 };
 const exportFunction = {
+    getProductCategories,
     getNewData,
     getNewsData,
     getProducts,

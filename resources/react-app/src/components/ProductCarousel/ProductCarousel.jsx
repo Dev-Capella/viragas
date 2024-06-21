@@ -48,7 +48,7 @@ const ProductCarousel = () => {
     useEffect(() => {
         const fetchData = async () => {
             const data = await generalService.getHomeProductSlider();
-            console.log(data);
+
             setProducts(data);
         };
         fetchData();

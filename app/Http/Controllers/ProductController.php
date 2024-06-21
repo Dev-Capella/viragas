@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\ProductCategory;
+
 
 class ProductController extends Controller
 {
@@ -44,5 +46,16 @@ class ProductController extends Controller
             'total' => $totalProducts
         ]);
     }
-
+    public function getProductsCategories()
+    {
+        $data = ProductCategory::get();
+        foreach ($data as $productCat) {
+            if ($productCat->image) {
+                $productCat->image = url('storage/' . str_replace('\\', '/', $productCat->image));
+            } else {
+                $productCat->image = null;
+            }
+        }
+        return response()->json($data);
+    }
 }
