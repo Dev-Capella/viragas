@@ -11,17 +11,30 @@ import { BsTelephone } from "react-icons/bs";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoMailUnreadOutline } from "react-icons/io5";
 import SloganBanner from "../../components/SloganBanner/SloganBanner";
+import Loading from "../../components/Loading/Loading";
 
 function Home() {
     const { t, i18n } = useTranslation();
+    const [loading, setLoading] = useState(true);
     const [page, setPage] = useState(null);
-    const getPage = async () => {
+    const [products, setProducts] = useState(null);
+
+    const getPageInfo = async () => {
         const result = await generalService.getPage(i18n.language, "anasayfa");
         setPage(result);
     };
+    const fetchData = async () => {
+        const data = await generalService.getHomeSlider(i18n.language);
+
+        if (data.length > 0) {
+            setProducts(data);
+            setLoading(false);
+        }
+    };
 
     useEffect(() => {
-        getPage();
+        fetchData();
+        getPageInfo();
     }, [i18n.language]);
     return (
         <>
@@ -31,8 +44,8 @@ function Home() {
                 <link rel="canonical" href={`/`} />
                 <meta name="description" content="Vira Gas" />
             </Helmet>
-            <HeroCarousel />
-            {/* <ProductCarousel /> */}
+            {loading ? <Loading /> : ""}
+            <HeroCarousel products={products} />
             <NewsHome />
             <SloganBanner />
             <ContactForm />

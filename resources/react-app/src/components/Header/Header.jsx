@@ -34,7 +34,6 @@ const Header = ({ data }) => {
     const changeLanguagee = (lang) => {
         i18n.changeLanguage(lang);
         localStorage.setItem("lang", lang);
-        console.log(i18n.language);
     };
     const slug = window.location.pathname;
     useEffect(() => {
@@ -53,6 +52,7 @@ const Header = ({ data }) => {
         { name: "Anasayfa", href: "/" },
         { name: "Kurumsal", href: "/kurumsal" },
         { name: "Ürünlerimiz", href: "/urunler" },
+        { name: "Haberler", href: "/haberler" },
         { name: "Bayilerimiz", href: "/bayilerimiz" },
         {
             name: "Katalog",
@@ -316,6 +316,24 @@ const Header = ({ data }) => {
                                                 href="/urunler"
                                             >
                                                 {t("HeaderProduct")}
+                                            </a>
+                                            <a
+                                                className={
+                                                    navItem === "/haberler"
+                                                        ? `text-base font-semibold underline-offset-8 ${
+                                                              navbar
+                                                                  ? "text-black underline"
+                                                                  : "underline"
+                                                          }`
+                                                        : `text-base font-medium ${
+                                                              navbar
+                                                                  ? "text-black text-with-underline2"
+                                                                  : "text-with-underline"
+                                                          }`
+                                                }
+                                                href="/haberler"
+                                            >
+                                                {t("News")}
                                             </a>
                                             <a
                                                 className={

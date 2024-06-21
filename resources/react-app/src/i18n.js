@@ -66,7 +66,7 @@ const resources = {
             ProductFilter2: "SANDALYE AYAĞI",
 
             /*HABERLER */
-            News: "HABERLER",
+            News: "Haberler",
             ReadContinue: "Devamını Oku",
             /*Header*/
             HeaderHome: "Anasayfa",
@@ -185,7 +185,7 @@ const resources = {
             ProductFilter1: "TABLE LEG",
             ProductFilter2: "CHAİR LEG",
             /*HABERLER */
-            News: "NEWS",
+            News: "News",
             ReadContinue: "Read More",
             /*Header*/
             HeaderHome: "Home",
