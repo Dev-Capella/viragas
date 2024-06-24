@@ -1,9 +1,11 @@
 import React from "react";
 import whitelogo from "../../assets/HeaderLogo/logo.png";
+import FooterLogo from "../../assets/Footer/downloa.png";
 import { FaFacebookF } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
-import { CiInstagram } from "react-icons/ci";
+import { FaInstagram } from "react-icons/fa";
 import { MdOutlinePhoneInTalk } from "react-icons/md";
+import { CiLocationOn } from "react-icons/ci";
 import { MdOutlineFax } from "react-icons/md";
 import { CiMail } from "react-icons/ci";
 import { useTranslation } from "react-i18next";
@@ -12,179 +14,177 @@ const Footer = ({ data }) => {
     const { t, i18n } = useTranslation();
 
     return (
-        <div className="w-full h-full flex flex-row  border-t">
-            <div className="px-40 pt-24 pb-32 flex flex-row w-full max-sm:px-0 max-sm:py-8 max-sm:flex-col max-lg:px-0 max-lg:pb-12 max-xl:px-8 ">
-                <div className="flex flex-col w-1/3 px-4 max-sm:w-full">
-                    <div className="w-24">
-                        <img
-                            src={whitelogo}
-                            alt="Vira Gas"
-                            className="w-full h-full"
-                        ></img>
+        <div className="w-full h-full flex flex-col  border-t bg-[#363384]">
+            <div className="pt-24 pb-32 flex flex-col w-full max-sm:px-0 max-sm:py-8 max-sm:flex-col max-lg:px-0 max-lg:pb-12 max-xl:px-8">
+                <div className="flex flex-row w-full container mx-auto gap-40 max-md:flex-col max-md:gap-8 max-xl:gap-0">
+                    <div className="flex flex-col w-1/3 px-4 max-sm:w-full max-md:items-center">
+                        <div className="w-72 object-contain">
+                            <img
+                                src={FooterLogo}
+                                alt="Vira Gas"
+                                className="w-full h-full object-contain"
+                            ></img>
+                        </div>
                     </div>
-                    <p className="mt-4 text-[#878898] w-[82%] leading-7">
-                        {t("FooterInfo")}
-                    </p>
-                    <div className="flex flex-row mt-4">
-                        <ul className="flex flex-row gap-4 items-center justify-center">
-                            <li>
-                                <Link
-                                    to={
-                                        "https://www.facebook.com/viragassprings"
-                                    }
-                                    target="blank"
-                                >
-                                    <FaFacebookF
-                                        size={18}
-                                        className="hover:text-blue-500 cursor-pointer transition-colors duration-300"
-                                    />
-                                </Link>
-                            </li>
-                            <li>
-                                <BsTwitterX
-                                    size={18}
-                                    className="hover:text-gray-400 cursor-pointer transition-colors duration-300"
-                                />
-                            </li>
-                            <li>
-                                <Link
-                                    to={
-                                        "https://www.instagram.com/viragassprings/"
-                                    }
-                                    target="blank"
-                                >
-                                    <CiInstagram
-                                        size={22}
-                                        className="hover:text-orange-700 cursor-pointer transition-colors duration-300"
-                                    />
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                    <div className="flex flex-row w-full gap-40 max-md:flex-col max-md:gap-0 max-xl:gap-0 max-xl:flex-col">
+                        <div className="flex flex-col px-4 w-full max-sm:w-full max-sm:py-8 justify-center items-center gap-4">
+                            <ul className="list-none flex flex-row gap-10 text-white font-semibold max-md:flex-wrap max-md:gap-3">
+                                <li className=" text-lg max-md:text-[1rem]">
+                                    <Link
+                                        to="/kurumsal"
+                                        className="text-with-underline"
+                                    >
+                                        Anasayfa
+                                    </Link>
+                                </li>
+                                <li className=" text-lg max-md:text-[1rem]">
+                                    <Link
+                                        to="/kurumsal"
+                                        className="text-with-underline "
+                                    >
+                                        Kurumsal
+                                    </Link>
+                                </li>
+                                <li className=" text-lg max-md:text-[1rem]">
+                                    <Link
+                                        to="/kurumsal"
+                                        className="text-with-underline "
+                                    >
+                                        Ürünler
+                                    </Link>
+                                </li>
+                                <li className=" text-lg max-md:text-[1rem]">
+                                    <Link
+                                        to="/kurumsal"
+                                        className="text-with-underline "
+                                    >
+                                        Haberler
+                                    </Link>
+                                </li>
+                                <li className=" text-lg max-md:text-[1rem]">
+                                    <Link
+                                        to="/kurumsal"
+                                        className="text-with-underline "
+                                    >
+                                        Bayilerimiz
+                                    </Link>
+                                </li>
+                            </ul>
+                            <ul className="list-none flex flex-row text-white gap-10 font-semibold max-md:flex-wrap max-md:gap-4">
+                                <li className=" text-lg max-md:text-[1rem]">
+                                    <Link
+                                        to="/kurumsal"
+                                        className="text-with-underline "
+                                    >
+                                        Katalog
+                                    </Link>
+                                </li>
+                                <li className=" text-lg max-md:text-[1rem]">
+                                    <Link
+                                        to="/kurumsal"
+                                        className="text-with-underline "
+                                    >
+                                        Referanslar
+                                    </Link>
+                                </li>
+                                <li className=" text-lg max-md:text-[1rem]">
+                                    <Link
+                                        to="/kurumsal"
+                                        className="text-with-underline "
+                                    >
+                                        Faaliyetler
+                                    </Link>
+                                </li>
+                                <li className=" text-lg max-md:text-[1rem]">
+                                    <Link
+                                        to="/kurumsal"
+                                        className="text-with-underline "
+                                    >
+                                        İletişim
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="flex flex-col px-4 w-full max-sm:pb-8  justify-center items-center">
+                            <ul className="list-none text-white flex flex-col gap-4">
+                                <li className=" text-lg flex flex-row items-center gap-2 max-md:text-center ">
+                                    <p className="max-md:text-[1rem]">
+                                        Çalı Sanayi Bölgesi Karaali Mah. 7.
+                                        Sokak No:19 Çalı /Nilüfer /Bursa
+                                        /Türkiye
+                                    </p>
+                                </li>
 
-                <div className="flex flex-col px-4 w-1/5 max-sm:w-full max-sm:py-8">
-                    <ul className="list-none">
-                        <p className="font-semibold text-[#242e45] mb-2 text-xl">
-                            Vira Gas
-                        </p>
-                        <li className="text-[#878898] text-lg">
-                            <Link
-                                to="/kurumsal"
-                                className="hover:text-[#334162] transition-colors duration-300"
-                            >
-                                {t("FooterInstitutional")}
-                            </Link>
-                        </li>
-                        <li className="text-[#878898] text-lg">
-                            <Link
-                                to="/faaliyetler"
-                                className="hover:text-[#334162] transition-colors duration-300"
-                            >
-                                {t("FooterActivities")}
-                            </Link>
-                        </li>
-                        <li className="text-[#878898] text-lg">
-                            <Link
-                                to="/referanslar"
-                                className="hover:text-[#334162] transition-colors duration-300"
-                            >
-                                {t("FooterReference")}
-                            </Link>
-                        </li>
-                        <li className="text-[#878898] text-lg">
-                            <Link
-                                to="/iletisim"
-                                className="hover:text-[#334162] transition-colors duration-300"
-                            >
-                                {t("FooterContact")}
-                            </Link>
-                        </li>
-                    </ul>
+                                <li className=" text-lg flex flex-row items-center gap-2 max-md:justify-center ">
+                                    <MdOutlinePhoneInTalk size={24} />
+                                    <a
+                                        href="tel:+902244824427"
+                                        className="max-md:text-[1rem]"
+                                    >
+                                        (+90) 224 482 44 27
+                                    </a>
+                                </li>
+                                <li className=" text-lg flex flex-row items-center gap-2 max-md:justify-center">
+                                    <MdOutlineFax size={24} />
+                                    <a
+                                        href="fax:+902244824427"
+                                        className="max-md:text-[1rem]"
+                                    >
+                                        (+90)224 482 44 27
+                                    </a>
+                                </li>
+                                <li className=" text-lg flex flex-row items-center gap-2 max-md:justify-center ">
+                                    <CiMail size={24} />
+                                    <a
+                                        href="mailto:sales@viragas.com"
+                                        className="max-md:text-[1rem]"
+                                    >
+                                        sales@viragas.com
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div className="flex flex-col px-4 w-1/5 max-sm:w-full max-sm:pb-8">
-                    <ul className="list-none">
-                        <p className="font-semibold text-[#242e45] mb-2 text-xl">
-                            Vira Gas
-                        </p>
-                        <li className="text-[#878898] text-lg">
-                            <Link
-                                to="/urunler"
-                                className="hover:text-[#334162] transition-colors duration-300"
-                            >
-                                {t("FooterProduct")}
-                            </Link>
-                        </li>
-                        <li className="text-[#878898] text-lg">
-                            <Link
-                                to="/katalog"
-                                className="hover:text-[#334162] transition-colors duration-300"
-                            >
-                                {t("FooterCatalog")}
-                            </Link>
-                        </li>
-                        <li className="text-[#878898] text-lg">
-                            <Link
-                                to="/bayilerimiz"
-                                className="hover:text-[#334162] transition-colors duration-300"
-                            >
-                                {t("FooterOurDealers")}
-                            </Link>
-                        </li>
-                        <li className="text-[#878898] text-lg">
-                            <Link
-                                to="/"
-                                className="hover:text-[#334162] transition-colors duration-300"
-                            >
-                                {t("FooterDocuments")}
-                            </Link>
-                        </li>
-                    </ul>
+            </div>
+            <div className="border-t flex flex-row justify-between container mx-auto pt-4 pb-4 ">
+                <div>
+                    <p className="text-white font-light max-md:text-[0.9rem] max-md:px-4">
+                        © 2024 VİRA Gas Springs, tüm hakları saklıdır.
+                    </p>
                 </div>
-                <div className="flex flex-col px-4 w-1/5 max-sm:w-full max-sm:pb-8 max-lg:w-[22%]">
-                    <ul className="list-none">
-                        <p className="font-semibold text-[#242e45] mb-2 text-xl">
-                            {t("FooterContact")}
-                        </p>
-                        <li className="text-[#878898] text-lg flex flex-row items-center gap-2 ">
-                            <MdOutlinePhoneInTalk className="hover:text-green-500 transition-colors duration-300" />
-                            <a
-                                href="tel:+902244824427"
-                                className="hover:text-[#334162] transition-colors duration-300"
+                <div className="flex flex-row">
+                    <ul className="flex flex-row gap-4 items-center justify-center">
+                        <li>
+                            <Link
+                                to={"https://www.facebook.com/viragassprings"}
+                                target="blank"
                             >
-                                0224 482 44 27
-                            </a>
+                                <FaFacebookF
+                                    size={18}
+                                    color="white"
+                                    className="hover:text-blue-500 cursor-pointer transition-colors duration-300"
+                                />
+                            </Link>
                         </li>
-                        <li className="text-[#878898] text-lg flex flex-row items-center gap-2">
-                            <MdOutlineFax className="hover:text-orange-400 transition-colors duration-300" />
-                            <a
-                                href="fax:+902244824427"
-                                className="hover:text-[#334162] transition-colors duration-300"
+                        <li>
+                            <BsTwitterX
+                                size={18}
+                                color="white"
+                                className="hover:text-gray-400 cursor-pointer transition-colors duration-300"
+                            />
+                        </li>
+                        <li>
+                            <Link
+                                to={"https://www.instagram.com/viragassprings/"}
+                                target="blank"
                             >
-                                0224 482 44 27
-                            </a>
-                        </li>
-                        <li className="text-[#878898] text-lg flex flex-row items-center gap-2 ">
-                            <CiMail className="hover:text-blue-500 transition-colors duration-300" />
-                            <a
-                                href="mailto:sales@viragas.com"
-                                className="hover:text-[#334162] transition-colors duration-300"
-                            >
-                                sales@viragas.com
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div className="flex flex-col px-4 w-1/5 max-sm:w-full">
-                    <ul className="list-none">
-                        <p className="font-semibold text-[#242e45] mb-2 text-xl">
-                            {t("FooterAdress")}
-                        </p>
-                        <li className="text-[#878898] text-base">
-                            Çalı Sanayi Bölgesi Karaali Mah. 7. Sokak No:19 Çalı
-                        </li>
-                        <li className="text-[#878898] text-base">
-                            Nilüfer 16370 BURSA
+                                <FaInstagram
+                                    size={18}
+                                    color="white"
+                                    className="hover:text-orange-700 cursor-pointer transition-colors duration-300"
+                                />
+                            </Link>
                         </li>
                     </ul>
                 </div>
