@@ -10,7 +10,6 @@ const CertificateComponent = () => {
         { src: CertificaOne, alt: "iso9001" },
         { src: CertificaTwo, alt: "ped9723ec" },
         { src: CertificaThree, alt: "ce" },
-        { src: CertificaFour, alt: "bureauveritas" },
     ];
 
     return (
@@ -28,7 +27,10 @@ const CertificateComponent = () => {
                 style={{ width: "200%" }} // Ensures all images fit for smooth scrolling
             >
                 {images.concat(images).map((image, index) => (
-                    <div key={index} className="w-1/6 h-48 px-4 py-2">
+                    <div
+                        key={index}
+                        className="w-1/6 h-48 px-4 py-2 border rounded-3xl mx-4 my-4"
+                    >
                         <img
                             src={image.src}
                             alt={image.alt}
