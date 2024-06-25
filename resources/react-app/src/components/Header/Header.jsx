@@ -9,10 +9,8 @@ import { AiFillInstagram } from "react-icons/ai";
 import { useTranslation } from "react-i18next";
 import turkishflag from "../../assets/HeaderFlag/turkishflag.jpg";
 import englishflag from "../../assets/HeaderFlag/englishflag.jpg";
-import { CiInstagram, CiMail } from "react-icons/ci";
-import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import { FaInstagram, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
-import { MdOutlinePhoneInTalk } from "react-icons/md";
 import { FaFacebookF } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import { motion } from "framer-motion";
@@ -130,20 +128,22 @@ const Header = ({ data }) => {
                                 </div>
                             </div>
                             <div className="w-full border-b border-[#ffffff1a] max-sm:hidden">
-                                <div className="w-[85%] flex justify-between items-center text-white text-sm  mx-auto px-2  max-xl:mx-0 max-xl:px-0">
-                                    <div className="border-r  border-[#ffffff1a] p-2 flex justify-start items-center">
+                                <div className="w-[85%] flex justify-between items-center text-white text-sm  mx-auto px-2  max-xl:mx-0 max-xl:px-2 max-xl:w-full">
+                                    <div className="border-r  border-[#ffffff1a]  flex justify-start items-center w-full">
                                         <FaMapMarkerAlt
                                             color="white"
                                             className="text-lg mr-2"
                                         />
-                                        Çalı Sanayi Bölgesi Karaali Mah. 7.
-                                        Sokak No:19 Çalı / Nilüfer 16370 BURSA
-                                        /TÜRKİYE
+                                        <p>
+                                            Çalı Sanayi Bölgesi Karaali Mah. 7.
+                                            Sokak No:19 Çalı / Nilüfer 16370
+                                            BURSA /TÜRKİYE
+                                        </p>
                                     </div>
-                                    <div className="border-r  border-[#ffffff1a] p-2 flex justify-start items-center cursor-pointer">
+                                    <div className="border-r  border-[#ffffff1a]  flex justify-center items-center cursor-pointer w-full">
                                         <IoMdMail
                                             color="white"
-                                            className="text-lg mr-2"
+                                            className="text-lg mr-2 "
                                         />
                                         <a
                                             href="mailto:sales@viragas.com"
@@ -152,7 +152,7 @@ const Header = ({ data }) => {
                                             sales@viragas.com
                                         </a>
                                     </div>
-                                    <div className="border-r border-[#ffffff1a] p-2 flex justify-start items-center cursor-pointer">
+                                    <div className="border-r border-[#ffffff1a]  flex justify-center items-center cursor-pointer w-full max-xl:w-2/3">
                                         <FaPhoneAlt
                                             color="white"
                                             className="text-lg mr-2"
@@ -161,35 +161,43 @@ const Header = ({ data }) => {
                                             0224 482 44 27
                                         </a>
                                     </div>
-                                    <div className="border-r border-[#ffffff1a] p-2 flex justify-start items-center">
+                                    <div className="border-r border-[#ffffff1a]  flex justify-center items-center w-full max-xl:w-1/3">
                                         <div className="flex justify-center w-full">
+                                            <a
+                                                href="https://www.facebook.com/viragassprings/"
+                                                target="blank"
+                                                className="pr-4"
+                                            >
+                                                <FaFacebookF
+                                                    size={18}
+                                                    color="white"
+                                                    className="hover:scale-110 cursor-pointer"
+                                                />
+                                            </a>
+                                            <a
+                                                href="/"
+                                                target="blank"
+                                                className="pr-4"
+                                            >
+                                                <BsTwitterX
+                                                    size={18}
+                                                    color="white"
+                                                    className="hover:scale-110 cursor-pointer"
+                                                />
+                                            </a>
                                             <a
                                                 href="https://www.instagram.com/viragassprings/"
                                                 target="blank"
                                             >
-                                                <AiFillInstagram
+                                                <FaInstagram
+                                                    size={18}
                                                     color="white"
-                                                    className="text-lg mr-2 hover:scale-110"
-                                                />
-                                            </a>
-                                            <a
-                                                href="https://www.facebook.com/viragassprings/"
-                                                target="blank"
-                                            >
-                                                <FaFacebookF
-                                                    color="white"
-                                                    className="text-lg mr-2 hover:scale-110"
-                                                />
-                                            </a>
-                                            <a href="/" target="blank">
-                                                <BsTwitterX
-                                                    color="white"
-                                                    className="text-lg mr-2 hover:scale-110"
+                                                    className="hover:scale-110 cursor-pointer"
                                                 />
                                             </a>
                                         </div>
                                     </div>
-                                    <div className="border-r border-[#ffffff1a] p-2 flex justify-start items-center">
+                                    <div className="border-r border-[#ffffff1a]  flex justify-center items-center w-1/6">
                                         {i18n.language === "en" ? (
                                             <img
                                                 className="w-6 cursor-pointer hover:scale-110"
