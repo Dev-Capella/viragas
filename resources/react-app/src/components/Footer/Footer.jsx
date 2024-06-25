@@ -12,7 +12,7 @@ const Footer = ({ data }) => {
     const { t, i18n } = useTranslation();
 
     return (
-        <div className="w-full h-full flex flex-col  border-t bg-[#363384]">
+        <div className="w-full h-full flex flex-col bg-[#363384]">
             <div className="pt-24 pb-32 flex flex-col w-full max-sm:px-0 max-sm:py-8 max-sm:flex-col max-lg:px-0 max-lg:pb-12 max-xl:px-8">
                 <div className="flex flex-row w-full container mx-auto gap-40 max-md:flex-col max-md:gap-8 max-md:items-center max-xl:gap-0 max-2xl:gap-20">
                     <div className="flex flex-col w-1/3 px-4 max-sm:w-full max-md:items-center max-2xl:justify-center">
@@ -25,7 +25,7 @@ const Footer = ({ data }) => {
                         </div>
                     </div>
                     <div className="flex flex-row w-full gap-40 max-md:flex-col max-md:gap-0 max-xl:flex-col max-xl:gap-12 max-2xl:gap-12">
-                        <div className="flex flex-col px-4 w-full justify-center items-center gap-4  max-sm:w-full max-sm:py-8">
+                        <div className="flex flex-col px-4 w-full justify-center items-center gap-4 max-sm:w-full max-md:py-8">
                             <ul className="list-none flex flex-row gap-10 text-white font-semibold max-md:flex-wrap max-md:justify-center max-md:gap-3 ">
                                 <li className=" text-lg max-md:text-[1rem]">
                                     <Link

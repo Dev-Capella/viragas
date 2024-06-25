@@ -29,7 +29,7 @@ const CertificateComponent = () => {
                 {images.concat(images).map((image, index) => (
                     <div
                         key={index}
-                        className="w-1/6 h-48 px-4 py-2 border rounded-3xl mx-4 my-4"
+                        className="w-1/6 h-48 border max-sm:border-0 rounded-3xl mx-2 my-2"
                     >
                         <img
                             src={image.src}

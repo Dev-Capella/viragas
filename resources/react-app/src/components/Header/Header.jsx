@@ -132,13 +132,19 @@ const Header = ({ data }) => {
                             <div className="w-full border-b border-[#ffffff1a] max-sm:hidden">
                                 <div className="w-[85%] flex justify-between items-center text-white text-sm  mx-auto px-2  max-xl:mx-0 max-xl:px-0">
                                     <div className="border-r  border-[#ffffff1a] p-2 flex justify-start items-center">
-                                        <FaMapMarkerAlt className="text-orange-600 text-lg mr-2" />
+                                        <FaMapMarkerAlt
+                                            color="white"
+                                            className="text-lg mr-2"
+                                        />
                                         Çalı Sanayi Bölgesi Karaali Mah. 7.
                                         Sokak No:19 Çalı / Nilüfer 16370 BURSA
                                         /TÜRKİYE
                                     </div>
                                     <div className="border-r  border-[#ffffff1a] p-2 flex justify-start items-center cursor-pointer">
-                                        <IoMdMail className="text-orange-600 text-lg mr-2" />
+                                        <IoMdMail
+                                            color="white"
+                                            className="text-lg mr-2"
+                                        />
                                         <a
                                             href="mailto:sales@viragas.com"
                                             target="blank"
@@ -147,7 +153,10 @@ const Header = ({ data }) => {
                                         </a>
                                     </div>
                                     <div className="border-r border-[#ffffff1a] p-2 flex justify-start items-center cursor-pointer">
-                                        <FaPhoneAlt className="text-orange-600 text-lg mr-2" />
+                                        <FaPhoneAlt
+                                            color="white"
+                                            className="text-lg mr-2"
+                                        />
                                         <a href="tel:+9022448244271">
                                             0224 482 44 27
                                         </a>
@@ -158,16 +167,25 @@ const Header = ({ data }) => {
                                                 href="https://www.instagram.com/viragassprings/"
                                                 target="blank"
                                             >
-                                                <AiFillInstagram className="text-orange-600 text-lg mr-2 hover:scale-110" />
+                                                <AiFillInstagram
+                                                    color="white"
+                                                    className="text-lg mr-2 hover:scale-110"
+                                                />
                                             </a>
                                             <a
                                                 href="https://www.facebook.com/viragassprings/"
                                                 target="blank"
                                             >
-                                                <FaFacebookF className="text-orange-600 text-lg mr-2 hover:scale-110" />
+                                                <FaFacebookF
+                                                    color="white"
+                                                    className="text-lg mr-2 hover:scale-110"
+                                                />
                                             </a>
                                             <a href="/" target="blank">
-                                                <BsTwitterX className="text-orange-600 text-lg mr-2 hover:scale-110" />
+                                                <BsTwitterX
+                                                    color="white"
+                                                    className="text-lg mr-2 hover:scale-110"
+                                                />
                                             </a>
                                         </div>
                                     </div>
