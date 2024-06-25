@@ -15,6 +15,7 @@ import { IoMdMail } from "react-icons/io";
 import { MdOutlinePhoneInTalk } from "react-icons/md";
 import { FaFacebookF } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
+import { motion } from "framer-motion";
 const Header = ({ data }) => {
     const [navbar, setNavbar] = useState(false);
     const [navItem, setNavItem] = useState(" ");
@@ -438,12 +439,17 @@ const Header = ({ data }) => {
                             </div>
                         </div>
                     </div>
+
                     <Disclosure.Panel
                         className={`md:hidden  opacity-0 duration-200 delay-200 ${
                             open ? "opacity-95" : "opacity-0"
                         }`}
                     >
-                        <div className="space-y-1 px-2 pt-2 pb-3 navbar-open-close">
+                        <motion.div
+                            initial={{ y: 100, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            className="space-y-1 px-2 pt-2 pb-3 navbar-open-close"
+                        >
                             {navigation.map((item) => (
                                 <Disclosure.Button
                                     key={item.name}
@@ -478,7 +484,7 @@ const Header = ({ data }) => {
                                     TR
                                 </p>
                             </div> */}
-                        </div>
+                        </motion.div>
                     </Disclosure.Panel>
                 </>
             )}
