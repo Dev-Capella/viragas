@@ -1,11 +1,9 @@
 import React from "react";
-import whitelogo from "../../assets/HeaderLogo/logo.png";
 import FooterLogo from "../../assets/Footer/downloa.png";
 import { FaFacebookF } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import { FaInstagram } from "react-icons/fa";
 import { MdOutlinePhoneInTalk } from "react-icons/md";
-import { CiLocationOn } from "react-icons/ci";
 import { MdOutlineFax } from "react-icons/md";
 import { CiMail } from "react-icons/ci";
 import { useTranslation } from "react-i18next";
@@ -110,8 +108,7 @@ const Footer = ({ data }) => {
                                 <li className=" text-lg flex flex-row items-center gap-2 max-md:text-center max-xl:text-center">
                                     <p className="max-md:text-[1rem]">
                                         Çalı Sanayi Bölgesi Karaali Mah. 7.
-                                        Sokak No:19 Çalı /Nilüfer /Bursa
-                                        /Türkiye
+                                        Sokak No:19 Çalı Nilüfer /Bursa /Türkiye
                                     </p>
                                 </li>
 

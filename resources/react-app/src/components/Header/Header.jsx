@@ -78,8 +78,8 @@ const Header = ({ data }) => {
                     {!navbar && (
                         <>
                             <div className="hidden max-sm:block">
-                                <div className="flex flex-row w-full h-12 px-4 bg-[#cecdcc]">
-                                    <ul className="flex flex-row w-full h-full justify-between items-center">
+                                <div className="flex flex-row w-full h-12 px-4 bg-[#363384]">
+                                    <ul className="flex flex-row w-full h-full justify-between items-center text-white">
                                         <li className="items-center text-[0.8rem]">
                                             {i18n.language === "en" ? (
                                                 <img
@@ -102,19 +102,25 @@ const Header = ({ data }) => {
                                             )}
                                         </li>
                                         <li className="flex flex-row items-center gap-2">
-                                            <FaPhoneAlt className="text-orange-600 text-lg" />
+                                            <FaPhoneAlt
+                                                color="white"
+                                                className=" text-lg"
+                                            />
                                             <a
                                                 href="tel:+902244824427"
-                                                className="hover:text-[#334162] transition-colors duration-300 text-[0.8rem]"
+                                                className="text-[0.8rem]"
                                             >
-                                                0224 482 44 27
+                                                (+90) 224 482 44 27
                                             </a>
                                         </li>
                                         <li className="flex flex-row items-center gap-2">
-                                            <IoMdMail className="text-orange-600 text-lg" />
+                                            <IoMdMail
+                                                color="white"
+                                                className=" text-lg"
+                                            />
                                             <a
                                                 href="mailto:sales@viragas.com"
-                                                className="hover:text-[#334162] transition-colors duration-300 text-[0.8rem]"
+                                                className="text-[0.8rem]"
                                             >
                                                 sales@viragas.com
                                             </a>
