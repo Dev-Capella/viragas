@@ -80,6 +80,8 @@ const resources = {
             /*Footer*/
             FooterInfo:
                 "VIRA GAS SPRINGS sac şekillendirme sektöründe faaliyet gösteren ve 2002 yılında kalıp gazlı yayları üretmek amacıyla kurulmuş bir firmadır",
+            FooterHome: "Anasayfa",
+            FooterNews: "Haberler",
             FooterInstitutional: "Kurumsal",
             FooterActivities: "Faaliyetler",
             FooterReference: "Referanslar",
@@ -189,6 +191,7 @@ const resources = {
             ReadContinue: "Read More",
             /*Header*/
             HeaderHome: "Home",
+            FooterNews: "News",
             HeaderAboutUs: "Institutional",
             HeaderProduct: "Products",
             HeaderOurDealers: "Our Dealers",
@@ -199,6 +202,7 @@ const resources = {
             /*Footer*/
             FooterInfo:
                 "VIRA GAS SPRINGS is a company operating in the sheet metal forming sector and was established in 2002 to produce molded gas springs.",
+            FooterHome: "Home",
             FooterInstitutional: "Institutional",
             FooterActivities: "Activities",
             FooterReference: "References",

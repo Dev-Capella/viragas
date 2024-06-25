@@ -31,10 +31,10 @@ const Footer = ({ data }) => {
                             <ul className="list-none flex flex-row gap-10 text-white font-semibold max-md:flex-wrap max-md:justify-center max-md:gap-3 ">
                                 <li className=" text-lg max-md:text-[1rem]">
                                     <Link
-                                        to="/kurumsal"
+                                        to="/"
                                         className="text-with-underline"
                                     >
-                                        Anasayfa
+                                        {t("FooterHome")}
                                     </Link>
                                 </li>
                                 <li className=" text-lg max-md:text-[1rem]">
@@ -42,65 +42,65 @@ const Footer = ({ data }) => {
                                         to="/kurumsal"
                                         className="text-with-underline "
                                     >
-                                        Kurumsal
+                                        {t("FooterInstitutional")}
                                     </Link>
                                 </li>
                                 <li className=" text-lg max-md:text-[1rem]">
                                     <Link
-                                        to="/kurumsal"
+                                        to="/urunler"
                                         className="text-with-underline "
                                     >
-                                        Ürünler
+                                        {t("FooterProduct")}
                                     </Link>
                                 </li>
                                 <li className=" text-lg max-md:text-[1rem]">
                                     <Link
-                                        to="/kurumsal"
+                                        to="/haberler"
                                         className="text-with-underline "
                                     >
-                                        Haberler
+                                        {t("FooterNews")}
                                     </Link>
                                 </li>
                                 <li className=" text-lg max-md:text-[1rem]">
                                     <Link
-                                        to="/kurumsal"
+                                        to="/bayilerimiz"
                                         className="text-with-underline "
                                     >
-                                        Bayilerimiz
+                                        {t("FooterOurDealers")}
                                     </Link>
                                 </li>
                             </ul>
                             <ul className="list-none flex flex-row text-white gap-10 font-semibold max-md:flex-wrap max-md:justify-center max-md:gap-4">
                                 <li className=" text-lg max-md:text-[1rem]">
                                     <Link
-                                        to="/kurumsal"
+                                        to="/katalog"
                                         className="text-with-underline "
                                     >
-                                        Katalog
+                                        {t("FooterCatalog")}
                                     </Link>
                                 </li>
                                 <li className=" text-lg max-md:text-[1rem]">
                                     <Link
-                                        to="/kurumsal"
+                                        to="/referanslar"
                                         className="text-with-underline "
                                     >
-                                        Referanslar
+                                        {t("FooterReference")}
                                     </Link>
                                 </li>
                                 <li className=" text-lg max-md:text-[1rem]">
                                     <Link
-                                        to="/kurumsal"
+                                        to="/faaliyetler"
                                         className="text-with-underline "
                                     >
-                                        Faaliyetler
+                                        {t("FooterActivities")}
                                     </Link>
                                 </li>
                                 <li className=" text-lg max-md:text-[1rem]">
                                     <Link
-                                        to="/kurumsal"
+                                        to="/iletisim"
                                         className="text-with-underline "
                                     >
-                                        İletişim
+                                        {t("FooterContact")}
                                     </Link>
                                 </li>
                             </ul>
