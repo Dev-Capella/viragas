@@ -13,7 +13,13 @@ const CertificateComponent = () => {
     ];
 
     return (
-        <div className="container mx-auto overflow-hidden relative mt-10">
+        <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 2 }}
+            viewport={{ once: true }}
+            className="container mx-auto overflow-hidden relative mt-10"
+        >
             <motion.div
                 animate={{
                     x: ["0%", "-50%"], // Move the slider by its half width to create a seamless loop
@@ -43,7 +49,7 @@ const CertificateComponent = () => {
             <div className="absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-white to-transparent pointer-events-none"></div>
             {/* Right gradient overlay */}
             <div className="absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
-        </div>
+        </motion.div>
     );
 };
 

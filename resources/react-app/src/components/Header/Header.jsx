@@ -76,30 +76,9 @@ const Header = ({ data }) => {
                 <>
                     {!navbar && (
                         <>
-                            <div className="hidden max-sm:block">
+                            <div className="hidden max-md:block">
                                 <div className="flex flex-row w-full h-12 px-4 bg-[#363384]">
                                     <ul className="flex flex-row w-full h-full justify-between items-center text-white">
-                                        <li className="items-center text-[0.8rem]">
-                                            {i18n.language === "en" ? (
-                                                <img
-                                                    className="w-6 cursor-pointer hover:scale-110"
-                                                    src={turkishflag}
-                                                    alt="Vira Gas"
-                                                    onClick={() =>
-                                                        changeLanguagee("tr")
-                                                    }
-                                                />
-                                            ) : (
-                                                <img
-                                                    className="w-6 cursor-pointer hover:scale-110"
-                                                    src={englishflag}
-                                                    alt="Vira Gas"
-                                                    onClick={() =>
-                                                        changeLanguagee("en")
-                                                    }
-                                                />
-                                            )}
-                                        </li>
                                         <li className="flex flex-row items-center gap-2">
                                             <FaPhoneAlt
                                                 color="white"
@@ -124,11 +103,32 @@ const Header = ({ data }) => {
                                                 sales@viragas.com
                                             </a>
                                         </li>
+                                        <li className="items-center text-[0.8rem]">
+                                            {i18n.language === "en" ? (
+                                                <img
+                                                    className="w-6 cursor-pointer hover:scale-110"
+                                                    src={turkishflag}
+                                                    alt="Vira Gas"
+                                                    onClick={() =>
+                                                        changeLanguagee("tr")
+                                                    }
+                                                />
+                                            ) : (
+                                                <img
+                                                    className="w-6 cursor-pointer hover:scale-110"
+                                                    src={englishflag}
+                                                    alt="Vira Gas"
+                                                    onClick={() =>
+                                                        changeLanguagee("en")
+                                                    }
+                                                />
+                                            )}
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
-                            <div className="w-full border-b border-[#ffffff1a] max-sm:hidden">
-                                <div className="w-[85%] flex justify-between items-center text-white text-sm  mx-auto px-2  max-xl:mx-0 max-xl:px-2 max-xl:w-full">
+                            <div className="w-full border-b border-[#ffffff1a] max-md:hidden">
+                                <div className="w-[85%] flex justify-between items-center text-white text-sm  mx-auto px-2  max-xl:mx-0 max-xl:px-8 max-xl:w-full">
                                     <div className="border-r  border-[#ffffff1a]  flex justify-start items-center w-full">
                                         <FaMapMarkerAlt
                                             color="white"
@@ -255,7 +255,7 @@ const Header = ({ data }) => {
                             <div className="flex items-center justify-center sm:items-stretch sm:justify-around text-[#191919] font-semibold w-full ">
                                 <div className="hidden md:block w-[85%] max-xl:w-full">
                                     <div
-                                        className={`flex justify-between items-center max-xl:text-sm max-lg:px-0 ${
+                                        className={`flex justify-between items-center max-xl:text-sm max-lg:px-4 py-4 ${
                                             navbar ? "" : "mt-8"
                                         } max-xl:px-10`}
                                     >
@@ -295,16 +295,16 @@ const Header = ({ data }) => {
                                             </div>
                                         )}
 
-                                        <div className="w-full flex justify-end items-center text-white gap-12 max-xl:gap-8 max-lg:gap-2">
+                                        <div className="w-full flex justify-end items-center text-white gap-12 max-xl:gap-4 max-lg:gap-2">
                                             <a
                                                 className={
                                                     navItem === "/"
-                                                        ? `text-base font-semibold underline-offset-8 ${
+                                                        ? `text-base font-semibold underline-offset-8 max-lg:text-[0.8rem] ${
                                                               navbar
                                                                   ? "text-black underline"
                                                                   : "underline"
                                                           }`
-                                                        : `text-base font-medium ${
+                                                        : `text-base font-medium max-lg:text-[0.8rem] ${
                                                               navbar
                                                                   ? "text-black text-with-underline2"
                                                                   : "text-with-underline"
@@ -317,12 +317,12 @@ const Header = ({ data }) => {
                                             <a
                                                 className={
                                                     navItem === "/kurumsal"
-                                                        ? `text-base font-semibold underline-offset-8 ${
+                                                        ? `text-base font-semibold underline-offset-8 max-lg:text-[0.8rem] ${
                                                               navbar
                                                                   ? "text-black underline"
                                                                   : "underline"
                                                           }`
-                                                        : `text-base font-medium ${
+                                                        : `text-base font-medium max-lg:text-[0.8rem] ${
                                                               navbar
                                                                   ? "text-black text-with-underline2"
                                                                   : "text-with-underline"
@@ -335,12 +335,12 @@ const Header = ({ data }) => {
                                             <a
                                                 className={
                                                     navItem === "/urunler"
-                                                        ? `text-base font-semibold underline-offset-8 ${
+                                                        ? `text-base font-semibold underline-offset-8 max-lg:text-[0.8rem] ${
                                                               navbar
                                                                   ? "text-black underline"
                                                                   : "underline"
                                                           }`
-                                                        : `text-base font-medium ${
+                                                        : `text-base font-medium  max-lg:text-[0.8rem] ${
                                                               navbar
                                                                   ? "text-black text-with-underline2"
                                                                   : "text-with-underline"
@@ -353,12 +353,12 @@ const Header = ({ data }) => {
                                             <a
                                                 className={
                                                     navItem === "/haberler"
-                                                        ? `text-base font-semibold underline-offset-8 ${
+                                                        ? `text-base font-semibold underline-offset-8 max-lg:text-[0.8rem] ${
                                                               navbar
                                                                   ? "text-black underline"
                                                                   : "underline"
                                                           }`
-                                                        : `text-base font-medium ${
+                                                        : `text-base font-medium max-lg:text-[0.8rem] ${
                                                               navbar
                                                                   ? "text-black text-with-underline2"
                                                                   : "text-with-underline"
@@ -371,12 +371,12 @@ const Header = ({ data }) => {
                                             <a
                                                 className={
                                                     navItem === "/bayilerimiz"
-                                                        ? `text-base font-semibold underline-offset-8 ${
+                                                        ? `text-base font-semibold underline-offset-8 max-lg:text-[0.8rem] ${
                                                               navbar
                                                                   ? "text-black underline"
                                                                   : "underline"
                                                           }`
-                                                        : `text-base font-medium ${
+                                                        : `text-base font-medium  max-lg:text-[0.8rem] ${
                                                               navbar
                                                                   ? "text-black text-with-underline2"
                                                                   : "text-with-underline"
@@ -389,12 +389,12 @@ const Header = ({ data }) => {
                                             <a
                                                 className={
                                                     navItem === "katalog"
-                                                        ? `text-base font-semibold underline-offset-8 ${
+                                                        ? `text-base font-semibold underline-offset-8 max-lg:text-[0.8rem] ${
                                                               navbar
                                                                   ? "text-black underline"
                                                                   : "underline"
                                                           }`
-                                                        : `text-base font-medium ${
+                                                        : `text-base font-medium max-lg:text-[0.8rem] ${
                                                               navbar
                                                                   ? "text-black text-with-underline2"
                                                                   : "text-with-underline"
@@ -408,12 +408,12 @@ const Header = ({ data }) => {
                                             <a
                                                 className={
                                                     navItem === "/referanslar"
-                                                        ? `text-base font-semibold underline-offset-8 ${
+                                                        ? `text-base font-semibold underline-offset-8 max-lg:text-[0.8rem] ${
                                                               navbar
                                                                   ? "text-black underline"
                                                                   : "underline"
                                                           }`
-                                                        : `text-base font-medium ${
+                                                        : `text-base font-medium max-lg:text-[0.8rem] ${
                                                               navbar
                                                                   ? "text-black text-with-underline2"
                                                                   : "text-with-underline"
@@ -426,12 +426,12 @@ const Header = ({ data }) => {
                                             <a
                                                 className={
                                                     navItem === "/faaliyetler"
-                                                        ? `text-base font-semibold underline-offset-8 ${
+                                                        ? `text-base font-semibold underline-offset-8 max-lg:text-[0.8rem] ${
                                                               navbar
                                                                   ? "text-black underline text-with-underline2"
                                                                   : "underline"
                                                           }`
-                                                        : `text-base font-medium ${
+                                                        : `text-base font-medium max-lg:text-[0.8rem] ${
                                                               navbar
                                                                   ? "text-black text-with-underline2"
                                                                   : "text-with-underline"
@@ -444,12 +444,12 @@ const Header = ({ data }) => {
                                             <a
                                                 className={
                                                     navItem === "/iletisim"
-                                                        ? `text-base font-semibold underline-offset-8 ${
+                                                        ? `text-base font-semibold underline-offset-8   max-lg:text-[0.8rem]  ${
                                                               navbar
                                                                   ? "text-black underline"
                                                                   : "underline"
                                                           }`
-                                                        : `text-base font-medium ${
+                                                        : `text-base font-medium max-lg:text-[0.8rem] ${
                                                               navbar
                                                                   ? "text-black text-with-underline2"
                                                                   : "text-with-underline"
