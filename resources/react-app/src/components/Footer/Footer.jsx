@@ -105,7 +105,7 @@ const Footer = ({ data }) => {
                         </div>
                         <div className="flex flex-col px-4 w-full max-sm:pb-8  justify-center items-center">
                             <ul className="list-none text-white flex flex-col gap-4">
-                                <li className=" text-lg flex flex-row items-center gap-2 max-md:text-center max-xl:text-center">
+                                <li className=" text-lg flex flex-row items-center gap-2 max-md:text-center max-xl:text-center font-light">
                                     <p className="max-md:text-[1rem]">
                                         Çalı Sanayi Bölgesi Karaali Mah. 7.
                                         Sokak No:19 Çalı Nilüfer /Bursa /Türkiye
@@ -146,7 +146,7 @@ const Footer = ({ data }) => {
             </div>
             <div className="border-t flex flex-row justify-between container mx-auto py-4 max-xl:px-4">
                 <div>
-                    <p className="text-white font-light max-md:text-[0.9rem]">
+                    <p className="text-white max-md:text-[0.9rem] font-extralight">
                         © 2024 VİRA Gas Springs, tüm hakları saklıdır.
                     </p>
                 </div>

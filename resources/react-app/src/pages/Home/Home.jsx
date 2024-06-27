@@ -67,7 +67,7 @@ function Home() {
                             </div>
                             <div className="w-80 h-20 bg-white shadow-2xl flex justify-center items-center p-4 rounded max-sm:w-full max-lg:w-56">
                                 <a
-                                    className="text-center"
+                                    className="text-center font-medium"
                                     href="tel:+902244824427"
                                 >
                                     0224 482 44 27
@@ -81,7 +81,7 @@ function Home() {
                             </div>
                             <div className="w-80 h-20 bg-white shadow-2xl flex justify-center items-center p-4 rounded max-sm:w-full max-lg:w-56">
                                 <a
-                                    className="text-center"
+                                    className="text-center font-medium"
                                     href="mailto:sales@viragas.com"
                                 >
                                     sales@viragas.com
@@ -94,7 +94,7 @@ function Home() {
                                 <div className="absolute right-0 top-0 circle pulse bg-orange-500"></div>
                             </div>
                             <div className="w-80 h-20 bg-white shadow-2xl flex justify-center items-center p-4 rounded max-sm:w-full max-lg:w-56">
-                                <p className="text-center max-lg:text-[0.8rem]">
+                                <p className="text-center max-lg:text-[0.8rem] font-medium">
                                     Çalı Sanayi Bölgesi Karaali Mah. 7. Sokak
                                     No:19 Çalı / Nilüfer 16370 BURSA /TÜRKİYE
                                 </p>

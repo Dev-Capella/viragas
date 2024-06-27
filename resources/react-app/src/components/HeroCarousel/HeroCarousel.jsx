@@ -68,7 +68,7 @@ const HeroCarousel = ({ products }) => {
 
                                 <div className="absolute inset-0 bg-black opacity-70"></div>
                                 <div className=" animate-fade-in absolute top-1/2 max-lg:top-[40%]  left-1/2 max-xl:left-0 transform -translate-x-1/2 -translate-y-1/2 max-xl:translate-x-0 max-xl:transltae-y-0 text-white w-full flex justify-center items-center">
-                                    <p className=" w-full text-white text-[20rem]  max-2xl:text-[16rem] max-xl:text-[12rem] max-lg:text-[8rem] max-md:text-[4rem] font-bold opacity-10">
+                                    <p className=" w-full text-white text-[20rem]  max-2xl:text-[16rem] max-xl:text-[12rem] max-lg:text-[8rem] max-md:text-[4rem] opacity-10 font-bold">
                                         VİRA GAS
                                     </p>
                                     <p className=" absolute text-6xl font-extrabold max-xl:text-4xl text-white max-md:text-2xl px-12 max-md:px-2">

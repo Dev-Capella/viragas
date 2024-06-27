@@ -134,7 +134,7 @@ const Header = ({ data }) => {
                                             color="white"
                                             className="text-lg mr-2"
                                         />
-                                        <p>
+                                        <p className="max-lg:text-[0.8rem]">
                                             Çalı Sanayi Bölgesi Karaali Mah. 7.
                                             Sokak No:19 Çalı / Nilüfer 16370
                                             BURSA /TÜRKİYE
