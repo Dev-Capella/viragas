@@ -26,10 +26,8 @@ function Home() {
     const fetchData = async () => {
         const data = await generalService.getHomeSlider(i18n.language);
 
-        if (data.length > 0) {
-            setProducts(data);
-            setLoading(false);
-        }
+        setProducts(data);
+        setLoading(false);
     };
 
     useEffect(() => {

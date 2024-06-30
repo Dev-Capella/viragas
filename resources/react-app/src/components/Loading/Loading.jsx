@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 const Loading = () => {
     return (
-        <div className="fixed top-0 left-0 bg-white h-screen w-full flex items-center opacity-70 justify-center z-[99999999]">
+        <div className="fixed top-0 left-0 bg-white h-screen w-full flex items-center justify-center z-[99999999]">
             <div className="flex flex-col w-full h-auto justify-center items-center gap-8">
                 <svg
                     version="1.1"
