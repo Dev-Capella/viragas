@@ -465,7 +465,6 @@ const Header = ({ data }) => {
                             </div>
                         </div>
                     </div>
-
                     <Disclosure.Panel
                         className={`md:hidden  opacity-0 duration-200 delay-200 ${
                             open ? "opacity-95" : "opacity-0"
@@ -474,12 +473,9 @@ const Header = ({ data }) => {
                         <motion.div
                             initial={{ y: 100, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
-                            className="space-y-1 px-2 pt-2 pb-3 navbar-open-close"
                         >
                             {navigation.map((item) => (
                                 <Disclosure.Button
-                                    key={item.name}
-                                    as="a"
                                     href={item.href}
                                     target={item.target ? "_blank" : ""}
                                     className="block px-3 py-2 rounded-md  font-medium"

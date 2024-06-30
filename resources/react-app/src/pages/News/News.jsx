@@ -17,10 +17,11 @@ function News() {
     };
     const getData = async () => {
         const result = await generalService.getNewsData(i18n.language);
-        if (result.length > 0) {
-            setData(result);
+
+        setData(result);
+        setTimeout(() => {
             setLoading(false);
-        }
+        }, 700);
     };
     useEffect(() => {
         getData();

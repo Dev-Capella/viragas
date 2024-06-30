@@ -31,6 +31,8 @@ function Home() {
             setProducts(data);
             setLoading(false);
         }
+        setProducts(data);
+        setLoading(false);
     };
 
     useEffect(() => {

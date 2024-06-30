@@ -10,12 +10,6 @@ import { useTranslation } from "react-i18next";
 const RootLayout = () => {
     const { t, i18n } = useTranslation();
 
-    useEffect(() => {
-        // İletişim sayfası yüklenirken 2 saniye boyunca loading durumunu göster
-
-        return () => clearTimeout(timeout);
-    }, []);
-
     const [data, setData] = useState(null);
 
     const getCatalog = async () => {

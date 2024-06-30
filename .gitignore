@@ -18,7 +18,7 @@ yarn-error.log
 # Laravel Public Dizininde Oluşturulan Dosyalar
 public/js/app.js
 public/mix-manifest.json
-
+*.zip
 # React İçin
 build/
 dist/
@@ -56,3 +56,4 @@ Icon?
 .DS_Store?
 .Spotlight-V100?
 .Trashes?
+*.zip

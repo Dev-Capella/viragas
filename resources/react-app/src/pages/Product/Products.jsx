@@ -1,13 +1,10 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import BreadcrumbsNav from "../../components/BreadcrumbsNav/BreadcrumbsNav";
-import productBanner from "../../assets/product/productbanneraa7.jpg";
 import generalService from "../../services/generalService";
-import { useParams } from "react-router-dom";
-import LoadingPage from "../../components/Loading/Loading.jsx";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import { Image } from "antd";
 import Loading from "../../components/Loading/Loading.jsx";
+import { useNavigate } from "react-router-dom/dist";
 function Products() {
     const { t, i18n } = useTranslation();
 
@@ -16,16 +13,20 @@ function Products() {
     const [page, setPage] = useState();
     const getProductsCategories = async () => {
         const result = await generalService.getProductCategories();
-        if (result.length > 0) {
-            setLoading(false);
-            setProductsCategories(result);
-        }
+        setProductsCategories(result);
     };
 
     const getPage = async () => {
-        const result = await generalService.getPage(i18n.language, "ürünler");
+        const result = await generalService.getPage(i18n.language, "urunler");
         setPage(result);
     };
+    useEffect(() => {
+        if (productsCategories !== null) {
+            setTimeout(() => {
+                setLoading(false);
+            }, 500);
+        }
+    }, [productsCategories]);
 
     useLayoutEffect(() => {
         getProductsCategories();
@@ -45,6 +46,7 @@ function Products() {
             }
         }, 15); // 15 milisaniyede bir kaydırma
     }
+    const navigate = useNavigate();
     return (
         <div>
             <Helmet>
@@ -55,15 +57,52 @@ function Products() {
             </Helmet>
             {loading ? <Loading /> : ""}
 
-            <BreadcrumbsNav imageSrc={productBanner} text={page?.title} />
-            <div className="container mx-auto px-5">
-                {productsCategories &&
-                    productsCategories.map((item, i) => (
-                        <div>
-                            {item.title}
-                            <img src={item.image} />
-                        </div>
-                    ))}
+            <BreadcrumbsNav imageSrc={page?.image} text={page?.title} />
+            <div className="container mx-auto px-5 my-10">
+                {productsCategories && (
+                    <div className="grid grid-cols-4 max-xl:grid-cols-2 gap-8">
+                        {productsCategories.map((item, i) => (
+                            <div
+                                key={i}
+                                className="bg-white p-6 rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105 cursor-pointer"
+                                onClick={() => navigate(item.slug)}
+                            >
+                                <div className="flex flex-col items-center">
+                                    <h2 className="text-xl my-2 anton-regular text-justify text-gray-700 hover:text-yellow-500 duration-300  delay-100 cursor-pointer">
+                                        {item.title}
+                                    </h2>
+                                    <img
+                                        src={item.image}
+                                        alt={item.title}
+                                        className="w-full h-full object-cover rounded-lg mb-4"
+                                    />
+
+                                    <div className="text-orange-500 flex items-center cursor-pointer transition-all duration-300 hover:text-orange-700 hover:underline">
+                                        <span
+                                            onClick={() => navigate(item.slug)}
+                                        >
+                                            Detayları İncele
+                                        </span>
+                                        <svg
+                                            className="w-5 h-5 ml-2 transform transition-transform duration-300 group-hover:translate-x-1"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth="2"
+                                                d="M9 5l7 7-7 7"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                )}
             </div>
         </div>
     );
