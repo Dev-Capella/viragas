@@ -23,11 +23,11 @@ function AppRoute() {
                     <Route path="/iletisim" element={<Contact />} />
                     <Route path="/referanslar" element={<Referances />} />
                     <Route path="/faaliyetler" element={<Activities />} />
-                    <Route path="/urunler/:slug" element={<ProductList />} />
-                    <Route
+                    {/* <Route path="/urunler/:slug" element={<ProductList />} /> */}
+                    {/* <Route
                         path="/urunler/:slug/:slug"
                         element={<ProductDetail />}
-                    />
+                    /> */}
                     <Route path="/haberler" element={<News />} />
                     <Route path="/haberler/:slug" element={<NewsDetail />} />
                     <Route path="/katalog" element={<Catalog />} />
