@@ -5,27 +5,50 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use TCG\Voyager\Models\User;
 use App\Product;
+use App\ProductCategory;
 use App\InfoProduct;
 
 class CustomAdminController extends Controller
 {
-   
+    public function createSlug($title) {
+        // Tüm karakterleri küçük harfe çevir
+        $slug = strtolower($title);
+        
+        // Türkçe karakterleri İngilizce karşılıklarıyla değiştir
+        $slug = str_replace(
+            ['ı', 'ğ', 'ü', 'ş', 'ö', 'ç', 'İ', 'Ğ', 'Ü', 'Ş', 'Ö', 'Ç'],
+            ['i', 'g', 'u', 's', 'o', 'c', 'i', 'g', 'u', 's', 'o', 'c'],
+            $slug
+        );
+        
+        // Özel karakterleri kaldır
+        $slug = preg_replace('/[^a-z0-9-]/', ' ', $slug);
+        
+        // Boşlukları tire ile değiştir
+        $slug = preg_replace('/\s+/', '-', $slug);
+        
+        // Başlangıç ve bitişteki tireleri kaldır
+        $slug = trim($slug, '-');
+        
+        return $slug;
+    }
     public function index()
     {
         $products = Product::all();
+        $productCategories = ProductCategory::get();
         return view('admin.custom-page', compact('products'));
     }
 
     public function create()
-    {
-        return view('admin.create-product');
+    {      $productCategories = ProductCategory::get();
+        return view('admin.create-product',compact('productCategories'));
     }
    
     public function edit($id)
     {
         $product = Product::with('details')->findOrFail($id);
-        
-        return view('admin.edit-product', compact('product'));
+        $productCategories = ProductCategory::get();
+        return view('admin.edit-product', compact('product','productCategories'));
     }
 
    
@@ -42,7 +65,20 @@ class CustomAdminController extends Controller
         $product->order = $request->input('order');
         $product->meta_title = $request->input('meta_title');
         $product->meta_tag = $request->input('meta_tag');
-    
+        $product->category = $request->input('category');
+        
+        $product->slug = $this->createSlug($request->input('name'));
+        //Ana resim kaydet 
+
+        if ($request->hasFile('image')) {
+            $images = [];
+            foreach ($request->file('image') as $file) {
+                $path = $file->store('public/images');
+                $images[] = basename($path);
+            }
+            $product->image = json_encode($images[0]);
+        }
+
         // 3. Resim galerisi işlemleri
         if ($request->hasFile('image_gallery')) {
             $images = [];
@@ -158,7 +194,18 @@ class CustomAdminController extends Controller
         $product->order = $request->input('order');
         $product->meta_title = $request->input('meta_title');
         $product->meta_tag = $request->input('meta_tag');
-        
+        $product->category = $request->input('category');
+        $product->slug = $this->createSlug($request->input('name'));
+        //Ana Resim
+        if ($request->hasFile('image')) {
+            $images = [];
+            foreach ($request->file('image') as $file) {
+                $path = $file->store('public/images');
+                $images[] = basename($path);
+            }
+            $product->image = json_encode($images[0]);
+        }
+
         // Ana ürün resim galerisi
         if ($request->hasFile('image_gallery')) {
             $images = [];
@@ -168,6 +215,7 @@ class CustomAdminController extends Controller
             }
             $product->image_gallery = json_encode($images);
         }
+
         $product->save();
         $newProductId = $product->id;
         // Ürün detayları
@@ -238,4 +286,5 @@ class CustomAdminController extends Controller
         return redirect()->route('custom.page')->with('success', 'Ürün başarıyla silindi.');
     }
 
+   
 }

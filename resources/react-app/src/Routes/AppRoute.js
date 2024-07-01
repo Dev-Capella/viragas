@@ -10,7 +10,8 @@ import News from "../pages/News/News";
 import NewsDetail from "../pages/News/NewsDetail";
 import Catalog from "../pages/Catalog/Catalog";
 import OurDealers from "../pages/OurDealers/OurDealers";
-import Loading from "../components/Loading/Loading";
+import ProductDetail from "../pages/ProductDetail/ProductDetail";
+import ProductList from "../pages/ProductList/ProductList";
 
 function AppRoute() {
     return (
@@ -23,11 +24,11 @@ function AppRoute() {
                     <Route path="/iletisim" element={<Contact />} />
                     <Route path="/referanslar" element={<Referances />} />
                     <Route path="/faaliyetler" element={<Activities />} />
-                    {/* <Route path="/urunler/:slug" element={<ProductList />} /> */}
-                    {/* <Route
+                    <Route path="/urunler/:slug" element={<ProductList />} />
+                    <Route
                         path="/urunler/:slug/:slug"
                         element={<ProductDetail />}
-                    /> */}
+                    />
                     <Route path="/haberler" element={<News />} />
                     <Route path="/haberler/:slug" element={<NewsDetail />} />
                     <Route path="/katalog" element={<Catalog />} />
