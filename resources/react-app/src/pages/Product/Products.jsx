@@ -60,15 +60,15 @@ function Products() {
             <BreadcrumbsNav imageSrc={page?.image} text={page?.title} />
             <div className="container mx-auto px-5 my-10">
                 {productsCategories && (
-                    <div className="grid grid-cols-4 max-xl:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-4 max-xl:grid-cols-2 gap-8 max-sm:gap-2">
                         {productsCategories.map((item, i) => (
                             <div
                                 key={i}
-                                className="bg-white p-6 rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105 cursor-pointer"
+                                className="bg-white p-3 rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105 cursor-pointer"
                                 onClick={() => navigate(item.slug)}
                             >
                                 <div className="flex flex-col items-center">
-                                    <h2 className="text-xl my-2 anton-regular text-justify text-gray-700 hover:text-yellow-500 duration-300  delay-100 cursor-pointer">
+                                    <h2 className="text-xl my-2 anton-regular text-justify max-sm:text-center max-sm:text-base text-gray-700 hover:text-yellow-500 duration-300  delay-100 cursor-pointer">
                                         {item.title}
                                     </h2>
                                     <img

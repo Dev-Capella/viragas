@@ -7,11 +7,11 @@ function NewsDetailComp({ data }) {
                 <div className="w-full flex flex-col md:flex-row">
                     <div className="w-full">
                         <div className="w-1/2 h-auto float-left pr-6 pb-4 max-md:float-none max-md:w-full max-md:p-0 relative">
-                            <div className="absolute w-[90%] h-[90%] bg-orange-500 opacity-40 -top-4 -left-4 z-30 " />
+                            <div className="absolute w-[90%] h-[90%] bg-orange-500 opacity-40 -top-4 -left-4 z-20" />
                             <img
                                 src={data?.image}
                                 alt={data?.title}
-                                className="w-full h-full object-cover float-left max-md:float-none relative z-50 cursor-pointer 
+                                className="w-full h-full object-cover float-left max-md:float-none relative z-40 cursor-pointer 
                                 hover:-translate-y-4 hover:-translate-x-4 duration-300 delay-150 transition-transform"
                             />
                         </div>
