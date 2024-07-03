@@ -95,9 +95,70 @@ class ProductController extends Controller
             } else {
                 $product->image_gallery = null;
             }
-        
-        
+
+
+            
+            $newArray = $this->splitByImage($product->details);
+
+            if (!empty($newArray)) {
+                foreach ($newArray as $key => $array) {
+                    foreach ($array as $detail) {
+                        if($detail->silindir_cap)
+                        {
+                            $detail->silindir_cap = url('storage/info_products/' . str_replace('\\', '/', $detail->silindir_cap));
+                        }else
+                        {
+                            $detail->silindir_cap=null;
+                        }
+    
+                        if($detail->seri_baglama)
+                        {
+                            $detail->seri_baglama = url('storage/info_products/' . str_replace('\\', '/', $detail->seri_baglama));
+                        }else
+                        {
+                            $detail->seri_baglama=null;
+                        }
+                    }
+                }
+              
+            }
+            
+            $product->newArray = $newArray;
+            unset($product->details);
 
         return response()->json($product);
     }
+    
+    public function splitByImage($details) {
+        $result = [];
+        $tempArray = [];
+        $foundFirstImage = false;
+    
+        foreach ($details as $item) {
+            if ($item['silindir_cap'] != null) {
+                if ($foundFirstImage) {
+                    $result[] = $tempArray;
+                    $tempArray = [];
+                } else {
+                    $foundFirstImage = true;
+                }
+            }
+            $tempArray[] = $item;
+        }
+    
+        // Eğer son grup boş değilse ekle
+        if (!empty($tempArray)) {
+            $result[] = $tempArray;
+        }
+    
+        return $result;
+    }
+    
+   
+    
+    
 }
+
+
+
+  

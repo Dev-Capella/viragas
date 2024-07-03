@@ -139,8 +139,12 @@
                                         <input type="text" name="details[{{ $index }}][dmmm]" class="form-control" value="{{ $detail->dmmm }}" >
                                     </div>
                                     <div class="form-group">
-                                        <label for="details[{{ $index }}][dan]">DAN</label>
+                                        <label for="details[{{ $index }}][dan]">daN</label>
                                         <input type="text" name="details[{{ $index }}][dan]" class="form-control" value="{{ $detail->dan }}" >
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="details[{{ $index }}][dann]">daN</label>
+                                        <input type="text" name="details[{{ $index }}][dann]" class="form-control" value="{{ $detail->dann }}" >
                                     </div>
                                     <div class="form-group">
                                         @if($detail->silindir_cap)
@@ -215,6 +219,10 @@
                     <div class="form-group">
                         <label for="details[${detailCount}][dan]">DAN</label>
                         <input type="text" name="details[${detailCount}][dan]" class="form-control" >
+                    </div>
+                    <div class="form-group">
+                        <label for="details[${detailCount}][dann]">daN</label>
+                        <input type="text" name="details[${detailCount}][dann]" class="form-control" >
                     </div>
                     <div class="form-group">
                         <label for="details[${detailCount}][silindir_cap]">Silindir Cap</label>

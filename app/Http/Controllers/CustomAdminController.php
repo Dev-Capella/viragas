@@ -111,6 +111,7 @@ class CustomAdminController extends Controller
                 $productDetail->dmm = $detail['dmm'];
                 $productDetail->dmmm = $detail['dmmm'];
                 $productDetail->dan = $detail['dan'];
+                $productDetail->dann = $detail['dann'];
 
                 if(isset($detail['silindir_cap_delete'])){
                     $productDetail->silindir_cap = null;
@@ -144,6 +145,7 @@ class CustomAdminController extends Controller
                 $dmm = $detail['dmm'];
                 $dmmm = $detail['dmmm'];
                 $dan = $detail['dan'];
+                $dann = $detail['dann'];
             
 
                 // Yeni ProductDetail oluştur
@@ -156,6 +158,7 @@ class CustomAdminController extends Controller
                 $productDetail->dmm = $dmm;
                 $productDetail->dmmm = $dmmm;
                 $productDetail->dan = $dan;
+                $productDetail->dann = $dann;
                 $productDetail->product_id = $product->id;
 
                 // Silindir Cap dosyasını işleyelim
@@ -229,7 +232,7 @@ class CustomAdminController extends Controller
             $dmm = $detail['dmm'];
             $dmmm = $detail['dmmm'];
             $dan = $detail['dan'];
-           
+            $dann = $detail['dann'];
 
             // Yeni ProductDetail oluştur
             $productDetail = new InfoProduct();
@@ -241,6 +244,7 @@ class CustomAdminController extends Controller
             $productDetail->dmm = $dmm;
             $productDetail->dmmm = $dmmm;
             $productDetail->dan = $dan;
+            $productDetail->dann = $dann;
             $productDetail->product_id = $newProductId;
 
             // Silindir Cap dosyasını işleyelim

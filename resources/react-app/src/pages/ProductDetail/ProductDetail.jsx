@@ -13,20 +13,6 @@ function ProductDetail() {
     const [imageGallery, setImageGallery] = useState(null);
     const [loading, setLoading] = useState(true);
     const [page, setPage] = useState();
-    const images = [
-        {
-            original: "https://picsum.photos/id/1018/1000/600/",
-            thumbnail: "https://picsum.photos/id/1018/250/150/",
-        },
-        {
-            original: "https://picsum.photos/id/1015/1000/600/",
-            thumbnail: "https://picsum.photos/id/1015/250/150/",
-        },
-        {
-            original: "https://picsum.photos/id/1019/1000/600/",
-            thumbnail: "https://picsum.photos/id/1019/250/150/",
-        },
-    ];
 
     //Ürünleri getir.
     const getProductList = async () => {
@@ -130,55 +116,140 @@ function ProductDetail() {
                         </p>
                     </div>
                     <div>
-                        <table className="w-full detail-table relative">
-                            <tr className="bg-[#ffa500] w-full">
-                                <th className="text-start p-6">MODEL</th>
-                                <th className="text-start p-6">Kurs mm</th>
-                                <th className="text-start p-6">L mm</th>
-                                <th className="text-start p-6">L min. mm</th>
-                                <th className="text-start p-6">D mm</th>
-                                <th className="text-start p-6">d mm</th>
-                                <th className="text-start p-6">daN</th>
-                                <th className="text-start p-6">daN</th>
-                            </tr>
-                            {productsDetail?.details.map((item, i) => (
-                                <tr key={i}>
-                                    <td>{item.mode}</td>
-                                    <td>{item.kursmm}</td>
-                                    <td>{item.lmm}</td>
-                                    <td>{item.lminmm}</td>
-
-                                    {item.dmm !== null ? (
-                                        <td className="absolute top-[50%] right-[37%]">
-                                            {item.dmm}
-                                        </td>
-                                    ) : (
-                                        ""
-                                    )}
-                                    {item.dmmm !== null ? (
-                                        <td className="absolute top-[50%] right-[26%]">
-                                            {item.dmmm}
-                                        </td>
-                                    ) : (
-                                        ""
-                                    )}
-                                    {item.dan !== null ? (
-                                        <td className="absolute top-[50%] right-[15%]">
-                                            {item.dan}
-                                        </td>
-                                    ) : (
-                                        ""
-                                    )}
-                                    {item.dann !== null ? (
-                                        <td className="absolute top-[50%] right-[5%]">
-                                            {item.dann}
-                                        </td>
-                                    ) : (
-                                        ""
-                                    )}
-                                </tr>
-                            ))}
-                        </table>
+                        <div className="table-container">
+                            <div className="w-full detail-table relative ">
+                                <div className="bg-[#ffa500] w-full flex justify-between">
+                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center">
+                                        MODEL
+                                    </p>
+                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center">
+                                        Kurs mm
+                                    </p>
+                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center">
+                                        L mm
+                                    </p>
+                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center">
+                                        L min. mm
+                                    </p>
+                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center">
+                                        D mm
+                                    </p>
+                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center">
+                                        d mm
+                                    </p>
+                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center">
+                                        daN
+                                    </p>
+                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center">
+                                        daN
+                                    </p>
+                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center">
+                                        Silindirlerin Tabanı
+                                    </p>
+                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center">
+                                        Seri Bağlama
+                                    </p>
+                                </div>
+                                {productsDetail?.newArray.map((element, i) => (
+                                    <div
+                                        className="flex justify-between w-full mb-8 border-[1px] border-solid border-[#ebebeb]"
+                                        key={i}
+                                    >
+                                        <div className="flex justify-between  w-[40%] flex-col">
+                                            {element?.map((item, i) => (
+                                                <>
+                                                    <div
+                                                        key={i}
+                                                        className="w-full flex justify-between py-2"
+                                                    >
+                                                        <p className="w-[25%] px-6">
+                                                            {item.mode}
+                                                        </p>
+                                                        <p className="w-[25%] px-6">
+                                                            {item.kursmm}
+                                                        </p>
+                                                        <p className="w-[25%] px-6">
+                                                            {item.lmm}
+                                                        </p>
+                                                        <p className="w-[25%] px-6">
+                                                            {item.lminmm}
+                                                        </p>
+                                                    </div>
+                                                </>
+                                            ))}
+                                        </div>
+                                        {element?.map(
+                                            (item, i) =>
+                                                item.silindir_cap !== null && (
+                                                    <div
+                                                        className="w-[60%] flex justify-center items-center"
+                                                        key={i}
+                                                    >
+                                                        {item.dmm !== null ? (
+                                                            <p className="w-[20%] px-6 ">
+                                                                <p>
+                                                                    {item.dmm}
+                                                                </p>
+                                                            </p>
+                                                        ) : (
+                                                            <p className="w-[20%] px-6  "></p>
+                                                        )}
+                                                        {item.dmmm !== null ? (
+                                                            <p className=" w-[20%] px-6 ">
+                                                                <p>
+                                                                    {item.dmmm}
+                                                                </p>
+                                                            </p>
+                                                        ) : (
+                                                            <p className=" w-[20%] px-6 "></p>
+                                                        )}
+                                                        {item.dan !== null ? (
+                                                            <p className="  w-[20%] px-6 ">
+                                                                {item.dan}
+                                                            </p>
+                                                        ) : (
+                                                            <p className=" w-[20%] px-6 "></p>
+                                                        )}
+                                                        {item.dann !== null ? (
+                                                            <p className="  w-[20%] px-6">
+                                                                {item.dann}
+                                                            </p>
+                                                        ) : (
+                                                            <p className=" w-[20%] px-6 "></p>
+                                                        )}
+                                                        {item.silindir_cap !==
+                                                        null ? (
+                                                            <p className="  w-[20%] px-6 ">
+                                                                <img
+                                                                    src={
+                                                                        item.silindir_cap
+                                                                    }
+                                                                />
+                                                            </p>
+                                                        ) : (
+                                                            <p className=" w-[20%] px-6 "></p>
+                                                        )}
+                                                        {item.seri_baglama !==
+                                                        null ? (
+                                                            <p className=" w-[20%] px-6 ">
+                                                                <img
+                                                                    src={
+                                                                        item.seri_baglama
+                                                                    }
+                                                                />
+                                                            </p>
+                                                        ) : (
+                                                            <p className=" w-[20%] px-6">
+                                                                -----------
+                                                            </p>
+                                                        )}
+                                                    </div>
+                                                )
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

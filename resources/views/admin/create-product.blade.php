@@ -108,6 +108,10 @@
                 <input type="text" name="details[0][dan]" class="form-control" >
             </div>
             <div class="form-group">
+                                        <label for="details[0][dann]">daN</label>
+                                        <input type="text" name="details[0][dann]" class="form-control" value="{{ $detail->dann }}" >
+                                    </div>
+            <div class="form-group">
                 <label for="details[0][silindir_cap]">Silindir Cap</label>
                 <input type="file" name="details[0][silindir_cap]" class="form-control" id="silindir_cap">
             </div>
