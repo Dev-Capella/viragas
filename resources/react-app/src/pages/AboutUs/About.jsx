@@ -168,10 +168,10 @@ const About = () => {
                     </motion.div>
                     <div className="w-2/5 px-8  relative max-md:w-full max-md:pt-8 max-lg:w-2/4 max-lg:px-0">
                         <div>
-                            <span className="absolute -top-4 right-2 text-9xl  opacity-10 z-0 whitespace-nowrap text-[#979797] font-black max-md:hidden max-lg:text-7xl max-lg:right-6  max-xl:text-[5rem]  max-xl:right-4 max-2xl:text-[7rem] max-2xl:-right-2">
+                            <span className="absolute -top-4 -right-8 text-9xl  opacity-10 z-0 whitespace-nowrap text-[#979797] font-black max-md:hidden max-lg:text-7xl max-lg:right-6  max-xl:text-[5rem]  max-xl:right-4 max-2xl:text-[7rem] max-2xl:-right-12">
                                 VİRA GAS
                             </span>
-                            <span className="text-[3.4rem] flex justify-center font-extrabold text-[#303849] max-md:text-4xl max-lg:text-3xl max-xl:text-4xl max-2xl:text-[2.75rem]">
+                            <span className="text-[3.4rem] flex justify-center font-extrabold text-[#303849] max-md:text-4xl max-lg:text-3xl max-xl:text-[2rem] max-2xl:text-[2.75rem]">
                                 {t("AboutUsSecondTitle")}
                             </span>
                         </div>
@@ -195,7 +195,9 @@ const About = () => {
                     </div>
                 </motion.div>
             </div>
-            <CertificateComponent />
+            <div className="mb-24">
+                <CertificateComponent />
+            </div>
         </>
     );
 };

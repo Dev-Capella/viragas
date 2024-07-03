@@ -18,10 +18,10 @@ const ReferancesComponent = () => {
                 {data?.map((item, i) => (
                     <div
                         key={i}
-                        className="w-1/4 h-96 max-sm:h-44 max-lg:w-2/4  p-4 flex flex-col justify-center items-center "
+                        className="w-1/4 h-96 max-sm:h-44 max-lg:w-2/4 p-4 flex flex-col justify-center items-center "
                     >
                         <img
-                            className="cursor-pointer w-full h-full"
+                            className="cursor-pointer w-full h-full object-contain"
                             alt={item.image_alt}
                             src={item.image}
                             width={288}
