@@ -45,6 +45,10 @@
         <textarea name="description" id="description" class="form-control" ></textarea>
     </div>
     <div class="form-group">
+        <label for="image">Ana Resim</label>
+        <input type="file" name="image[]" id="image" class="form-control" multiple>
+    </div>
+    <div class="form-group">
         <label for="image_gallery">Image Gallery</label>
         <input type="file" name="image_gallery[]" id="image_gallery" class="form-control" multiple>
     </div>
@@ -64,7 +68,14 @@
         <label for="meta_tag">Meta Tag</label>
         <input type="text" name="meta_tag" id="meta_tag" class="form-control" >
     </div>
-
+    <div class="form-group">
+                            <label for="meta_tag">Ürün Kategorisi</label>
+                            <select name="category" id="category" class="form-control" style="height: 4rem;">
+                                @foreach ($productCategories as $index => $category)
+                                    <option value="{{$category->slug}}">{{$category->title}}</option>
+                                @endforeach
+                            </select>
+                        </div>
     <h3 style="margin-bottom:3rem; margin-top:3rem;">Ürün İçerik Detayı</h3>
     <div id="product-details">
         <div class="detail" style="display:flex;">
@@ -74,28 +85,32 @@
             </div>
             <div class="form-group">
                 <label for="details[0][kursmm]">Kurs (mm)</label>
-                <input type="number" name="details[0][kursmm]" class="form-control" >
+                <input type="text" name="details[0][kursmm]" class="form-control" >
             </div>
             <div class="form-group">
                 <label for="details[0][lmm]">L (mm)</label>
-                <input type="number" name="details[0][lmm]" class="form-control" >
+                <input type="text" name="details[0][lmm]" class="form-control" >
             </div>
             <div class="form-group">
                 <label for="details[0][lminmm]">L min (mm)</label>
-                <input type="number" name="details[0][lminmm]" class="form-control" >
+                <input type="text" name="details[0][lminmm]" class="form-control" >
             </div>
             <div class="form-group">
                 <label for="details[0][dmm]">D (mm)</label>
-                <input type="number" name="details[0][dmm]" class="form-control" >
+                <input type="text" name="details[0][dmm]" class="form-control" >
             </div>
             <div class="form-group">
                 <label for="details[0][dmmm]">D min (mm)</label>
-                <input type="number" name="details[0][dmmm]" class="form-control" >
+                <input type="text" name="details[0][dmmm]" class="form-control" >
             </div>
             <div class="form-group">
                 <label for="details[0][dan]">DAN</label>
-                <input type="number" name="details[0][dan]" class="form-control" >
+                <input type="text" name="details[0][dan]" class="form-control" >
             </div>
+            <div class="form-group">
+                                        <label for="details[0][dann]">daN</label>
+                                        <input type="text" name="details[0][dann]" class="form-control" value="{{ $detail->dann }}" >
+                                    </div>
             <div class="form-group">
                 <label for="details[0][silindir_cap]">Silindir Cap</label>
                 <input type="file" name="details[0][silindir_cap]" class="form-control" id="silindir_cap">
@@ -131,31 +146,31 @@
                     </div>
                     <div class="form-group">
                         <label for="details[${detailCount}][kursmm]">Kurs (mm)</label>
-                        <input type="number" name="details[${detailCount}][kursmm]" class="form-control" >
+                        <input type="text" name="details[${detailCount}][kursmm]" class="form-control" >
                     </div>
                     <div class="form-group">
                         <label for="details[${detailCount}][lmm]">L (mm)</label>
-                        <input type="number" name="details[${detailCount}][lmm]" class="form-control" >
+                        <input type="text" name="details[${detailCount}][lmm]" class="form-control" >
                     </div>
                     <div class="form-group">
                         <label for="details[${detailCount}][lminmm]">L min (mm)</label>
-                        <input type="number" name="details[${detailCount}][lminmm]" class="form-control" >
+                        <input type="text" name="details[${detailCount}][lminmm]" class="form-control" >
                     </div>
                     <div class="form-group">
                         <label for="details[${detailCount}][dmm]">D (mm)</label>
-                        <input type="number" name="details[${detailCount}][dmm]" class="form-control" >
+                        <input type="text" name="details[${detailCount}][dmm]" class="form-control" >
                     </div>
                     <div class="form-group">
                         <label for="details[${detailCount}][dmmm]">D min (mm)</label>
-                        <input type="number" name="details[${detailCount}][dmmm]" class="form-control" >
+                        <input type="text" name="details[${detailCount}][dmmm]" class="form-control" >
                     </div>
                     <div class="form-group">
                         <label for="details[${detailCount}][dan]">DAN</label>
-                        <input type="number" name="details[${detailCount}][dan]" class="form-control" >
+                        <input type="text" name="details[${detailCount}][dan]" class="form-control" >
                     </div>
                     <div class="form-group">
                         <label for="details[${detailCount}][dann]">DANN</label>
-                        <input type="number" name="details[${detailCount}][dann]" class="form-control" >
+                        <input type="text" name="details[${detailCount}][dann]" class="form-control" >
                     </div>
                     <div class="form-group">
                         <label for="details[${detailCount}][silindir_cap]">Silindir Cap</label>
