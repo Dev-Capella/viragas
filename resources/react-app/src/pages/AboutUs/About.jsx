@@ -104,13 +104,13 @@ const About = () => {
                             </span>
                         </div>
                         <motion.div ref={aboutRef} className="px-4">
-                            <p className="tracking-widest mt-4 leading-7  text-justify">
+                            <p className=" mt-4 leading-7  text-justify">
                                 <span className="font-extrabold">
                                     {t("AboutUsViraGas")}
                                 </span>{" "}
                                 {t("AboutUsContentOne")}
                             </p>
-                            <p className="tracking-widest mt-4 leading-7 text-justify">
+                            <p className=" mt-4 leading-7 text-justify">
                                 {t("AboutUsContentTwo1")}{" "}
                                 <span className="font-extrabold">
                                     {" "}
@@ -118,13 +118,13 @@ const About = () => {
                                 </span>{" "}
                                 {t("AboutUsContentTwo2")}
                             </p>
-                            <p className="tracking-widest mt-4 leading-7 text-justify">
+                            <p className=" mt-4 leading-7 text-justify">
                                 <span className="font-extrabold">
                                     {t("AboutUsViraGas")}
                                 </span>{" "}
                                 {t("AboutUsContentThree")}
                             </p>
-                            <p className="tracking-widest mt-4 leading-7 text-justify">
+                            <p className=" mt-4 leading-7 text-justify">
                                 <span className="font-extrabold">
                                     {t("AboutUsViraGas")}
                                 </span>{" "}
@@ -166,7 +166,7 @@ const About = () => {
                             alt="ViraGas"
                         ></img>
                     </motion.div>
-                    <div className="w-2/5 px-8  relative max-md:w-full max-md:pt-8 max-lg:w-2/4 max-lg:px-0">
+                    <div className="w-2/5 px-8 relative max-md:w-full max-md:pt-8 max-lg:w-2/4 max-lg:px-0">
                         <div>
                             <span className="absolute -top-4 -right-8 text-9xl  opacity-10 z-0 whitespace-nowrap text-[#979797] font-black max-md:hidden max-lg:text-7xl max-lg:right-6  max-xl:text-[5rem]  max-xl:right-4 max-2xl:text-[7rem] max-2xl:-right-12">
                                 VİRA GAS
@@ -176,18 +176,18 @@ const About = () => {
                             </span>
                         </div>
                         <div className="px-4">
-                            <p className="tracking-widest mt-4 leading-7  text-justify">
+                            <p className=" mt-4 leading-7  text-justify">
                                 {t("AboutUsSecondContentOne")}
-                                <p className="tracking-widest mt-4 leading-7 text-justify">
+                                <p className=" mt-4 leading-7  text-justify">
                                     {t("AboutUsSecondContentTwo")}
                                 </p>
-                                <p className="tracking-widest mt-4 leading-7 text-justify">
+                                <p className=" mt-4 leading-7  text-justify">
                                     <span className="font-extrabold">
                                         {t("AboutUsViraGasTwo")}
                                     </span>{" "}
                                     {t("AboutUsSecondContentThree")}
                                 </p>
-                                <p className="tracking-widest mt-4 leading-7 text-justify">
+                                <p className=" mt-4 leading-7  text-justify">
                                     {t("AboutUsSecondContentFour")}
                                 </p>
                             </p>

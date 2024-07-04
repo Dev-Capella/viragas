@@ -4,6 +4,7 @@ import ContactComponent from "../../components/Contact/contactComponent.jsx";
 import { useTranslation } from "react-i18next";
 import generalService from "../../services/generalService.js";
 import { Helmet } from "react-helmet";
+
 const Contact = () => {
     const { t, i18n } = useTranslation();
     const clickHandle = async (lang) => {
