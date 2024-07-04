@@ -119,8 +119,30 @@ const getNewData = async (lang, slug) => {
     });
     return result.data;
 };
+
+//Ürünler
+const getProductList = async (slug) => {
+    const result = await axiosInstance.get(`get-product-list/${slug}`, {
+        headers: {
+            "Content-Type": "application/json",
+            "Accept-Language": "tr",
+        },
+    });
+    return result.data;
+};
+const getProductDetail = async (slug) => {
+    const result = await axiosInstance.get(`get-product-detail/${slug}`, {
+        headers: {
+            "Content-Type": "application/json",
+            "Accept-Language": "tr",
+        },
+    });
+    return result.data;
+};
 const exportFunction = {
     getProductCategories,
+    getProductList,
+    getProductDetail,
     getNewData,
     getNewsData,
     getProducts,

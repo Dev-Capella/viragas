@@ -48,14 +48,36 @@
                         @csrf
                         @method('PUT')
                         <div class="form-group">
-                            <label for="name">Name</label>
+                            <label for="name">Ürün Adı</label>
                             <input type="text" name="name" id="name" class="form-control" value="{{ $product->name }}" >
                         </div>
                         <div class="form-group">
-                            <label for="description">Description</label>
+                            <label for="description">Ürün Açıklaması</label>
                             <textarea name="description" id="description" class="form-control" >{{ $product->description }}</textarea>
                         </div>
                         <div class="form-group">
+                            <label for="image">Ana Resim</label>
+                            @php
+                                // $product->image değerini temizle
+                                $cleanedImage = trim($product->image, '"');
+                            @endphp
+                            @if($product->image)
+                                <div>
+                                    <img style="width:100px" src="{{ url('storage/images/' . $cleanedImage) }}" />
+                                  
+                                </div>
+                            @endif
+                            <input type="file" name="image[]" id="image" class="form-control" multiple>
+                        </div>
+                        <div class="form-group">
+                           
+                            @if($product->image_gallery)
+                                <div>
+                                    @foreach (json_decode($product->image_gallery) as $index => $image)
+                                        <img style="width:100px" src="{{ url('storage/images/' . $image) }}" />
+                                    @endforeach
+                                </div>
+                            @endif
                             <label for="image_gallery">Image Gallery</label>
                             <input type="file" name="image_gallery[]" id="image_gallery" class="form-control" multiple>
                         </div>
@@ -75,7 +97,18 @@
                             <label for="meta_tag">Meta Tag</label>
                             <input type="text" name="meta_tag" id="meta_tag" class="form-control" value="{{ $product->meta_tag }}" >
                         </div>
-
+                        <div class="form-group">
+                            <label for="meta_tag">Ürün Kategorisi</label>
+                            <select name="category" id="category" class="form-control" style="height: 4rem;">
+                            <option value="null">Kategori Seçiniz</option>
+                                @foreach ($productCategories as $index => $category)
+                                <option value="{{$category->slug}}" {{ $product->category == $category->slug ? 'selected' : '' }} >
+                                    {{$category->title}}
+                                </option>
+                                @endforeach
+                            </select>
+                        </div>
+                      
                         <h3 style="margin-bottom:3rem; margin-top:3rem;">Ürün İçerik Detayı</h3>
                         <div id="product-details">
                             @foreach ($product->details as $index => $detail)
@@ -106,8 +139,12 @@
                                         <input type="text" name="details[{{ $index }}][dmmm]" class="form-control" value="{{ $detail->dmmm }}" >
                                     </div>
                                     <div class="form-group">
-                                        <label for="details[{{ $index }}][dan]">DAN</label>
+                                        <label for="details[{{ $index }}][dan]">daN</label>
                                         <input type="text" name="details[{{ $index }}][dan]" class="form-control" value="{{ $detail->dan }}" >
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="details[{{ $index }}][dann]">daN</label>
+                                        <input type="text" name="details[{{ $index }}][dann]" class="form-control" value="{{ $detail->dann }}" >
                                     </div>
                                     <div class="form-group">
                                         @if($detail->silindir_cap)
@@ -182,6 +219,10 @@
                     <div class="form-group">
                         <label for="details[${detailCount}][dan]">DAN</label>
                         <input type="text" name="details[${detailCount}][dan]" class="form-control" >
+                    </div>
+                    <div class="form-group">
+                        <label for="details[${detailCount}][dann]">daN</label>
+                        <input type="text" name="details[${detailCount}][dann]" class="form-control" >
                     </div>
                     <div class="form-group">
                         <label for="details[${detailCount}][silindir_cap]">Silindir Cap</label>

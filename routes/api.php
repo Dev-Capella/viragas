@@ -98,3 +98,13 @@ Route::get('/get-new/{slug}', [
     NewsController::class,
     'getNew',
 ]);
+
+//Ürünler
+Route::get('/get-product-list/{slug}', [
+    ProductController::class,
+    'getProductList',
+]);
+Route::get('/get-product-detail/{slug}', [
+    ProductController::class,
+    'getProductDetail',
+]);
