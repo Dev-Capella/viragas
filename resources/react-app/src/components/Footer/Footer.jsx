@@ -1,5 +1,5 @@
 import React from "react";
-import FooterLogo from "../../assets/Footer/downloa.png";
+import FooterLogo from "../../assets/Footer/VİRA-LOG-white.png";
 import { FaFacebookF } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import { FaInstagram } from "react-icons/fa";

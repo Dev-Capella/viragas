@@ -1,11 +1,9 @@
 import React from "react";
 import { Disclosure } from "@headlessui/react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import HeaderLogo from "../../assets/HeaderLogo/logo.png";
-import whitelogo from "../../assets/HeaderLogo/logo.png";
-import generalService from "../../services/generalService";
-import { AiFillInstagram } from "react-icons/ai";
+import HeaderLogo from "../../assets/Footer/VİRA-LOGO.png";
+import whitelogo from "../../assets/Footer/VİRA-LOGO.png";
 import { useTranslation } from "react-i18next";
 import turkishflag from "../../assets/HeaderFlag/turkishflag.jpg";
 import englishflag from "../../assets/HeaderFlag/englishflag.jpg";
