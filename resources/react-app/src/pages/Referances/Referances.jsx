@@ -9,6 +9,7 @@ const Referances = () => {
     const { t, i18n } = useTranslation();
 
     const [page, setPage] = useState(null);
+
     const getPage = async () => {
         const result = await generalService.getPage(
             i18n.language,
@@ -30,6 +31,7 @@ const Referances = () => {
                     <meta name="description" content="Vira Gas" />
                 </Helmet>
                 <BreadcrumbsNav imageSrc={references} text={page?.title} />
+
                 <ReferancesComponent />
             </>
         </div>

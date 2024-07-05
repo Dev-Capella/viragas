@@ -25,7 +25,9 @@ const About = () => {
         const result = await generalService.getAboutUs(i18n.language);
         if (result) {
             setData(result);
-            setLoading(false);
+            setTimeout(() => {
+                setLoading(false);
+            }, 700);
         }
     };
     const getCertificate = async () => {

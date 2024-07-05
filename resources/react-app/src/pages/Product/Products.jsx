@@ -24,7 +24,7 @@ function Products() {
         if (productsCategories !== null) {
             setTimeout(() => {
                 setLoading(false);
-            }, 500);
+            }, 700);
         }
     }, [productsCategories]);
 
