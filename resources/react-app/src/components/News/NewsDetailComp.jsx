@@ -7,7 +7,7 @@ function NewsDetailComp({ data }) {
                 <div className="w-full flex flex-col md:flex-row">
                     <div className="w-full">
                         <div className="w-1/2 h-auto float-left pr-6 pb-4 max-md:float-none max-md:w-full max-md:p-0 relative">
-                            <div className="absolute w-[90%] h-[90%] bg-orange-500 opacity-40 -top-4 -left-4 z-20" />
+                            <div className="absolute w-[90%] h-[90%] bg-[#343280] opacity-40 -top-4 -left-4 z-20" />
                             <img
                                 src={data?.image}
                                 alt={data?.title}
@@ -16,7 +16,7 @@ function NewsDetailComp({ data }) {
                             />
                         </div>
 
-                        <p className="my-2 text-5xl max-md:text-2xl text-gray-500 text-start pb-4 font-bold">
+                        <p className="my-2 text-5xl max-md:text-2xl text-gray-700 text-start pb-4 font-bold">
                             {data?.title}
                         </p>
                         <div

@@ -7,7 +7,7 @@ import Loading from "../../components/Loading/Loading.jsx";
 import { useNavigate } from "react-router-dom/dist";
 function Products() {
     const { t, i18n } = useTranslation();
-
+    const [loadingFade, setLoadingFade] = useState(false);
     const [productsCategories, setProductsCategories] = useState(null);
     const [loading, setLoading] = useState(true);
     const [page, setPage] = useState();
@@ -34,28 +34,31 @@ function Products() {
         getPage();
     }, [i18n.language]);
 
-    function scrollToTop() {
-        const scrollStep = -window.scrollY / (500 / 15); // Her adımda kaydırma miktarı
-        const scrollInterval = setInterval(function () {
-            if (window.scrollY !== 0) {
-                // Sayfayı yavaşça yukarı doğru kaydır
-                window.scrollBy(0, scrollStep);
-            } else {
-                // Sayfa en başa geldiğinde zamanlayıcıyı temizle
-                clearInterval(scrollInterval);
-            }
-        }, 15); // 15 milisaniyede bir kaydırma
-    }
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    };
     const navigate = useNavigate();
+    useEffect(() => {
+        scrollToTop();
+
+        setTimeout(() => {
+            scrollToTop();
+            setLoadingFade(true);
+            setTimeout(() => {
+                setLoading(false);
+            }, 600);
+        }, 1500);
+    }, []);
+
     return (
         <div>
+            {loading && <Loading loadingFade={loadingFade} />}
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>{page?.meta_title}</title>
                 <link rel="canonical" href={`/urunler`} />
                 <meta name="description" content="Vira Gas" />
             </Helmet>
-            {loading ? <Loading /> : ""}
 
             <BreadcrumbsNav imageSrc={page?.image} text={page?.title} />
             <div className="container mx-auto px-5 my-10">

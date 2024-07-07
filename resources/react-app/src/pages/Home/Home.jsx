@@ -13,13 +13,19 @@ import { IoMailUnreadOutline } from "react-icons/io5";
 import SloganBanner from "../../components/SloganBanner/SloganBanner";
 import Loading from "../../components/Loading/Loading";
 import { motion } from "framer-motion";
+import HomeReference from "../../components/HomeReference/HomeReference";
 
 function Home() {
-    const { t, i18n } = useTranslation();
     const [loading, setLoading] = useState(true);
+    const [loadingFade, setLoadingFade] = useState(false);
+    const { t, i18n } = useTranslation();
     const [page, setPage] = useState(null);
     const [products, setProducts] = useState(null);
-
+    const [reference, setReference] = useState(null);
+    const getReference = async () => {
+        const result = await generalService.getReferance();
+        setReference(result);
+    };
     const getPageInfo = async () => {
         const result = await generalService.getPage(i18n.language, "anasayfa");
         setPage(result);
@@ -29,16 +35,27 @@ function Home() {
 
         if (data.length > 0) {
             setProducts(data);
-            setLoading(false);
         }
         setProducts(data);
-        setLoading(false);
     };
 
     useEffect(() => {
         fetchData();
+        getReference();
         getPageInfo();
     }, [i18n.language]);
+    useEffect(() => {
+        setTimeout(() => {
+            scrollToTop();
+            setLoadingFade(true);
+            setTimeout(() => {
+                setLoading(false);
+            }, 750);
+        }, 1500);
+    }, []);
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    };
     return (
         <>
             <Helmet>
@@ -47,12 +64,13 @@ function Home() {
                 <link rel="canonical" href={`/`} />
                 <meta name="description" content="Vira Gas" />
             </Helmet>
-            {loading ? <Loading /> : ""}
+            {loading && <Loading loadingFade={loadingFade} />}
             <HeroCarousel products={products} />
             <NewsHome />
             <SloganBanner />
             <ContactForm />
             <CertificateComponent />
+
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -65,7 +83,7 @@ function Home() {
                         <div className="flex flex-col justify-center items-center my-5 w-2/6 max-md:w-full">
                             <div className="w-24 h-24 bg-white shadow-2xl rounded-full flex justify-center items-center relative">
                                 <BsTelephone className="text-3xl " />
-                                <div className="absolute right-0 top-0 circle pulse bg-orange-500"></div>
+                                <div className="absolute right-0 top-0 circle pulse bg-[#343280]"></div>
                             </div>
                             <div className="w-80 h-20 bg-white shadow-2xl flex justify-center items-center p-4 rounded max-sm:w-full max-lg:w-56">
                                 <a
@@ -79,7 +97,7 @@ function Home() {
                         <div className="flex flex-col justify-center items-center my-5 w-2/6 max-md:w-full">
                             <div className="w-24 h-24 bg-white shadow-2xl rounded-full flex justify-center items-center relative">
                                 <IoMailUnreadOutline className="text-3xl" />
-                                <div className="absolute right-0 top-0 circle pulse bg-orange-500"></div>
+                                <div className="absolute right-0 top-0 circle pulse bg-[#343280]"></div>
                             </div>
                             <div className="w-80 h-20 bg-white shadow-2xl flex justify-center items-center p-4 rounded max-sm:w-full max-lg:w-56">
                                 <a
@@ -93,7 +111,7 @@ function Home() {
                         <div className="flex flex-col justify-center items-center my-5 w-2/6 max-md:w-full">
                             <div className="w-24 h-24 bg-white shadow-2xl rounded-full flex justify-center items-center relative">
                                 <FaMapMarkerAlt className="text-3xl " />
-                                <div className="absolute right-0 top-0 circle pulse bg-orange-500"></div>
+                                <div className="absolute right-0 top-0 circle pulse bg-[#343280]"></div>
                             </div>
                             <div className="w-80 h-20 bg-white shadow-2xl flex justify-center items-center p-4 rounded max-sm:w-full max-lg:w-56">
                                 <p className="text-center max-lg:text-[0.8rem] font-medium">
@@ -105,7 +123,7 @@ function Home() {
                     </div>
                 </div>
             </motion.div>
-
+            <HomeReference reference={reference} />
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}

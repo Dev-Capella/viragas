@@ -45,7 +45,7 @@ const NewsHome = () => {
                     data.map((item, i) => (
                         <div key={i} className="bg-white">
                             <div className="w-full h-auto relative">
-                                <div className="absolute w-full h-full top-0 left-0 hover:bg-yellow-500 opacity-30 duration-300  delay-100 cursor-pointer" />
+                                <div className="absolute w-full h-full top-0 left-0 hover:bg-[#343100] opacity-30 duration-300  delay-100 cursor-pointer" />
                                 <img
                                     className="w-full h-full object-cover"
                                     src={item.image}
@@ -53,17 +53,17 @@ const NewsHome = () => {
                                 />
                             </div>
                             <div className="flex justify-start gap-4 items-center font-medium my-2">
-                                <IoTimeOutline className="text-orange-500 text-2xl" />{" "}
+                                <IoTimeOutline className="text-[#343280] text-2xl" />{" "}
                                 <p>{DateFormatter(item.created_at)}</p>
                             </div>
-                            <h2 className="text-xl my-2 anton-regular text-justify text-gray-700 hover:text-yellow-500 duration-300  delay-100 cursor-pointer">
+                            <h2 className="text-xl my-2  text-justify text-gray-700  duration-300  delay-100 cursor-pointer">
                                 {item.title}
                             </h2>
                             <button
                                 onClick={() =>
                                     navigate(`/haberler/${item.slug}`)
                                 }
-                                className="mt-3 bg-yellow-500 hover:bg-gray-700 duration-300 delay-100 py-4 px-6 text-black anton-regular  hover:text-white"
+                                className="mt-3 bg-[#343280] hover:bg-gray-700 duration-300 delay-100 py-4 px-6 text-white   hover:text-white"
                             >
                                 {t("ReadContinue")}
                             </button>

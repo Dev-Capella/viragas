@@ -12,9 +12,11 @@ class PageController extends Controller
         $acceptLanguage = $request->header('Accept-Language');
         $languageCode = explode(',', $acceptLanguage)[0];
         $languageCode = explode('-', $languageCode)[0];
+     
         $data = InfoPage::withTranslations($languageCode)->where('slug', $slug)->first();
+ 
         $data = $data->translate($languageCode);
-
+       
         if ($data->image) {
             $data->image = url('storage/' . str_replace('\\', '/', $data->image));
         } else {

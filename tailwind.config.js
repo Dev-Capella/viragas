@@ -9,22 +9,16 @@ module.exports = {
     theme: {
         extend: {
             keyframes: {
-                "fade-in": {
-                    "0%": { opacity: "0" },
-                    "100%": { opacity: "1" },
+                fadeInLeftToRight: {
+                    "0%": { left: "-100%" },
+                    "50%": { left: "100%" },
+                    "100%": { left: "-100%" },
                 },
             },
+
             animation: {
                 "fade-in": "fade-in 4s ease-in-out forwards",
-            },
-            keyframes: {
-                "fade-in": {
-                    "0%": { opacity: "0" },
-                    "100%": { opacity: "1" },
-                },
-            },
-            animation: {
-                "fade-in": "fade-in 4s ease-in-out forwards",
+                "fade-in-left-to-right": "fadeInLeftToRight 4s linear infinite",
             },
         },
     },

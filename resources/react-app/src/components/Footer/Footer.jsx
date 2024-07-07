@@ -8,17 +8,18 @@ import { MdOutlineFax } from "react-icons/md";
 import { CiMail } from "react-icons/ci";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import WhiteLogo from "../../assets/Footer/yeni-logo.png";
 const Footer = ({ data }) => {
     const { t, i18n } = useTranslation();
 
     return (
-        <div className="w-full h-full flex flex-col bg-[#363384]">
+        <div className="w-full h-full flex flex-col bg-[#343280]">
             <div className="pt-24 pb-32 flex flex-col w-full max-sm:px-0 max-sm:py-8 max-sm:flex-col max-lg:px-0 max-lg:pb-12 max-xl:px-8">
                 <div className="flex flex-row w-full container mx-auto gap-40 max-md:flex-col max-md:gap-8 max-md:items-center max-xl:gap-0 max-2xl:gap-20">
                     <div className="flex flex-col w-1/3 px-4 max-sm:w-full max-md:items-center max-2xl:justify-center">
                         <div className="w-72 object-contain max-xl:w-full ">
                             <img
-                                src={FooterLogo}
+                                src={WhiteLogo}
                                 alt="Vira Gas"
                                 className="w-full h-full object-contain"
                             ></img>

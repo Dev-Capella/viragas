@@ -6,11 +6,12 @@ import { Helmet } from "react-helmet";
 import Loading from "../../components/Loading/Loading.jsx";
 import { useNavigate, useParams } from "react-router-dom/dist";
 function ProductList() {
+    const [loading, setLoading] = useState(true);
+    const [loadingFade, setLoadingFade] = useState(false);
     const { t, i18n } = useTranslation();
     const slug = useParams();
 
     const [productsList, setProductList] = useState(null);
-    const [loading, setLoading] = useState(true);
     const [page, setPage] = useState();
 
     //Ürünleri getir.
@@ -23,13 +24,6 @@ function ProductList() {
         const result = await generalService.getPage(i18n.language, "urunler");
         setPage(result);
     };
-    useEffect(() => {
-        if (productsList !== null) {
-            setTimeout(() => {
-                setLoading(false);
-            }, 500);
-        }
-    }, [productsList]);
 
     useLayoutEffect(() => {
         if (slug) {
@@ -39,19 +33,34 @@ function ProductList() {
         getPage();
     }, [i18n.language]);
 
-    function scrollToTop() {
-        const scrollStep = -window.scrollY / (500 / 15); // Her adımda kaydırma miktarı
-        const scrollInterval = setInterval(function () {
-            if (window.scrollY !== 0) {
-                // Sayfayı yavaşça yukarı doğru kaydır
-                window.scrollBy(0, scrollStep);
-            } else {
-                // Sayfa en başa geldiğinde zamanlayıcıyı temizle
-                clearInterval(scrollInterval);
-            }
-        }, 15); // 15 milisaniyede bir kaydırma
-    }
+    // function scrollToTop() {
+    //     const scrollStep = -window.scrollY / (500 / 15); // Her adımda kaydırma miktarı
+    //     const scrollInterval = setInterval(function () {
+    //         if (window.scrollY !== 0) {
+    //             // Sayfayı yavaşça yukarı doğru kaydır
+    //             window.scrollBy(0, scrollStep);
+    //         } else {
+    //             // Sayfa en başa geldiğinde zamanlayıcıyı temizle
+    //             clearInterval(scrollInterval);
+    //         }
+    //     }, 15); // 15 milisaniyede bir kaydırma
+    // }
+
     const navigate = useNavigate();
+    useEffect(() => {
+        scrollToTop();
+
+        setTimeout(() => {
+            scrollToTop();
+            setLoadingFade(true);
+            setTimeout(() => {
+                setLoading(false);
+            }, 600);
+        }, 1500);
+    }, []);
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    };
     return (
         <div>
             <Helmet>
@@ -60,7 +69,7 @@ function ProductList() {
                 <link rel="canonical" href={`/urunler`} />
                 <meta name="description" content="Vira Gas" />
             </Helmet>
-            {loading ? <Loading /> : ""}
+            {loading && <Loading loadingFade={loadingFade} />}
 
             <BreadcrumbsNav imageSrc={page?.image} text={page?.title} />
             <div className="container mx-auto px-5 my-10">
@@ -73,7 +82,7 @@ function ProductList() {
                                 onClick={() => navigate(item.slug)}
                             >
                                 <div className="flex flex-col items-center">
-                                    <h2 className="text-xl my-2 anton-regular text-justify text-gray-700 hover:text-yellow-500 duration-300  delay-100 cursor-pointer">
+                                    <h2 className="text-xl my-2  text-justify text-gray-700 hover:text-yellow-500 duration-300  delay-100 cursor-pointer">
                                         {item.name}
                                     </h2>
                                     <img

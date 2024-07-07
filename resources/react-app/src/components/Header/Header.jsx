@@ -14,6 +14,7 @@ import { IoMdMail } from "react-icons/io";
 import { FaFacebookF } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import { motion } from "framer-motion";
+import WhiteLogoo from "../../assets/Footer/yeni-logo.png";
 const Header = ({ data }) => {
     const [navbar, setNavbar] = useState(false);
     const [navItem, setNavItem] = useState(" ");
@@ -271,7 +272,11 @@ const Header = ({ data }) => {
                                                 <a href="/">
                                                     <img
                                                         className="hidden w-auto lg:block"
-                                                        src={HeaderLogo}
+                                                        src={
+                                                            navbar
+                                                                ? HeaderLogo
+                                                                : WhiteLogoo
+                                                        }
                                                         alt="Vira Gas"
                                                     />
                                                 </a>
@@ -288,7 +293,11 @@ const Header = ({ data }) => {
                                                 <a href="/">
                                                     <img
                                                         className="hidden w-auto lg:block"
-                                                        src={whitelogo}
+                                                        src={
+                                                            navbar
+                                                                ? HeaderLogo
+                                                                : WhiteLogoo
+                                                        }
                                                         alt="Vira Gas"
                                                     />
                                                 </a>

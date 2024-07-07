@@ -5,12 +5,35 @@ import "slick-carousel/slick/slick-theme.css";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import generalService from "../../services/generalService";
 import { useTranslation } from "react-i18next";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+        <FiChevronRight
+            className={className}
+            style={{ ...style, display: "block" }}
+            onClick={onClick}
+        />
+    );
+}
 
+function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+        <FiChevronLeft
+            className={className}
+            style={{ ...style, display: "block" }}
+            onClick={onClick}
+        />
+    );
+}
 const HeroCarousel = ({ products }) => {
     const { t, i18n } = useTranslation();
     const settings = {
-        dots: true,
+        dots: false,
         fade: true,
+        nextArrow: <SampleNextArrow className="slick-arrow slick-next" />,
+        prevArrow: <SamplePrevArrow className="slick-arrow slick-prev" />,
         infinite: true,
         speed: 1000,
         autoplay: false,
@@ -71,7 +94,7 @@ const HeroCarousel = ({ products }) => {
                                     <p className=" w-full text-white text-[20rem]  max-2xl:text-[16rem] max-xl:text-[12rem] max-lg:text-[8rem] max-md:text-[4rem] opacity-10 font-bold">
                                         VİRA GAS
                                     </p>
-                                    <p className=" absolute text-6xl font-extrabold max-xl:text-4xl text-white max-md:text-2xl px-12 max-md:px-2">
+                                    <p className="w-[80%] absolute text-6xl font-extrabold max-xl:text-4xl text-white max-md:text-2xl px-12 max-md:px-2">
                                         {item?.title}
                                     </p>
                                     <p className=" absolute text-2xl max-xl:text-xl max-md:text-lg font-medium tracking-wider text-white bottom-0">

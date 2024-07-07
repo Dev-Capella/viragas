@@ -12,9 +12,10 @@ import CertificateComponent from "../../components/Certificates/CertificateCompo
 import Loading from "../../components/Loading/Loading";
 
 const About = () => {
+    const [loading, setLoading] = useState(true);
+    const [loadingFade, setLoadingFade] = useState(false);
     const { t, i18n } = useTranslation();
     const controls = useAnimation();
-    const [loading, setLoading] = useState(true);
     const clickHandle = async (lang) => {
         await i18n.changeLanguage(lang);
     };
@@ -25,7 +26,6 @@ const About = () => {
         const result = await generalService.getAboutUs(i18n.language);
         if (result) {
             setData(result);
-            setLoading(false);
         }
     };
     const getCertificate = async () => {
@@ -73,7 +73,18 @@ const About = () => {
             observer.disconnect();
         };
     }, []);
-
+    useEffect(() => {
+        setTimeout(() => {
+            scrollToTop();
+            setLoadingFade(true);
+            setTimeout(() => {
+                setLoading(false);
+            }, 600);
+        }, 1500);
+    }, []);
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    };
     return (
         <>
             <Helmet>
@@ -82,8 +93,8 @@ const About = () => {
                 <link rel="canonical" href={`/hakkimizda`} />
                 <meta name="description" content="Vira Gas" />
             </Helmet>
-            {loading ? <Loading /> : ""}
-            <BreadcrumbsNav imageSrc={aboutusbanner} text={page?.title} />
+            {loading && <Loading loadingFade={loadingFade} />}
+            <BreadcrumbsNav imageSrc={page?.image} text={page?.title} />
             <div className="flex flex-col mt-20 mb-40 max-sm:mb-4 max-sm:mt-8">
                 <motion.div
                     initial={{ opacity: 0, x: -100 }}
@@ -91,26 +102,23 @@ const About = () => {
                         opacity: isVisible ? 1 : 0,
                         x: isVisible ? 0 : -100,
                     }}
-                    transition={{ duration: 1 }}
+                    transition={{ duration: 1, delay: 2 }}
                     className="flex flex-row container mx-auto justify-center mb-52 max-md:mb-12 max-md:flex-col-reverse max-md:items-center max-lg:mb-8 "
                 >
                     <div className="w-2/5 px-8 relative max-md:w-full max-md:pt-8 max-lg:w-2/4 max-lg:px-0">
                         <div>
-                            <span className="absolute -top-4 right-2 text-9xl opacity-10 z-0 whitespace-nowrap text-[#979797] font-black max-md:hidden max-lg:text-7xl  max-lg:right-6 max-xl:text-7xl  max-xl:right-8 max-2xl:text-[7rem] max-2xl:-right-2 ">
-                                VİRA GAS
-                            </span>
                             <span className="text-[3.5rem] max-lg:text-3xl max-md:text-4xl flex justify-center font-extrabold text-[#303849] max-xl:text-4xl">
                                 {t("AboutUsFirstTitle")}
                             </span>
                         </div>
-                        <motion.div ref={aboutRef} className="px-4">
-                            <p className="tracking-widest mt-4 leading-7  text-justify">
+                        <motion.div ref={aboutRef} className="px-4 mb-5">
+                            <p className=" mt-4 text-justify ">
                                 <span className="font-extrabold">
                                     {t("AboutUsViraGas")}
                                 </span>{" "}
                                 {t("AboutUsContentOne")}
                             </p>
-                            <p className="tracking-widest mt-4 leading-7 text-justify">
+                            <p className=" mt-4 text-justify  ">
                                 {t("AboutUsContentTwo1")}{" "}
                                 <span className="font-extrabold">
                                     {" "}
@@ -118,13 +126,13 @@ const About = () => {
                                 </span>{" "}
                                 {t("AboutUsContentTwo2")}
                             </p>
-                            <p className="tracking-widest mt-4 leading-7 text-justify">
+                            <p className=" mt-4 text-justify ">
                                 <span className="font-extrabold">
                                     {t("AboutUsViraGas")}
                                 </span>{" "}
                                 {t("AboutUsContentThree")}
                             </p>
-                            <p className="tracking-widest mt-4 leading-7 text-justify">
+                            <p className=" mt-4 text-justify ">
                                 <span className="font-extrabold">
                                     {t("AboutUsViraGas")}
                                 </span>{" "}
@@ -151,7 +159,7 @@ const About = () => {
                         opacity: isVisible ? 1 : 0,
                         x: isVisible ? 0 : -100,
                     }}
-                    transition={{ duration: 1 }}
+                    transition={{ duration: 1, delay: 2 }}
                     className="flex flex-row container mx-auto justify-center max-md:flex-col max-md:items-center "
                 >
                     <motion.div className="w-1/3 h-full relative group max-md:w-10/12 max-md:px-8 max-lg:px-0 max-lg:w-5/12 ">
@@ -168,26 +176,23 @@ const About = () => {
                     </motion.div>
                     <div className="w-2/5 px-8  relative max-md:w-full max-md:pt-8 max-lg:w-2/4 max-lg:px-0">
                         <div>
-                            <span className="absolute -top-4 -right-8 text-9xl  opacity-10 z-0 whitespace-nowrap text-[#979797] font-black max-md:hidden max-lg:text-7xl max-lg:right-6  max-xl:text-[5rem]  max-xl:right-4 max-2xl:text-[7rem] max-2xl:-right-12">
-                                VİRA GAS
-                            </span>
-                            <span className="text-[3.4rem] flex justify-center font-extrabold text-[#303849] max-md:text-4xl max-lg:text-3xl max-xl:text-[2rem] max-2xl:text-[2.75rem]">
+                            <span className="text-[3rem] flex justify-center font-extrabold text-[#303849] max-md:text-4xl max-lg:text-3xl max-xl:text-[2rem] max-2xl:text-[2.75rem]">
                                 {t("AboutUsSecondTitle")}
                             </span>
                         </div>
                         <div className="px-4">
-                            <p className="tracking-widest mt-4 leading-7  text-justify">
+                            <p className="mt-4 text-justify ">
                                 {t("AboutUsSecondContentOne")}
-                                <p className="tracking-widest mt-4 leading-7 text-justify">
+                                <p className=" mt-4 text-justify ">
                                     {t("AboutUsSecondContentTwo")}
                                 </p>
-                                <p className="tracking-widest mt-4 leading-7 text-justify">
+                                <p className=" mt-4 text-justify ">
                                     <span className="font-extrabold">
                                         {t("AboutUsViraGasTwo")}
                                     </span>{" "}
                                     {t("AboutUsSecondContentThree")}
                                 </p>
-                                <p className="tracking-widest mt-4 leading-7 text-justify">
+                                <p className=" mt-4 text-justify ">
                                     {t("AboutUsSecondContentFour")}
                                 </p>
                             </p>

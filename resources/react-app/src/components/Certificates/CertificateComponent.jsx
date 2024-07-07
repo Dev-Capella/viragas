@@ -2,8 +2,8 @@ import React from "react";
 import CertificaOne from "../../assets/Certificates/iso9001.jpg";
 import CertificaTwo from "../../assets/Certificates/ped9723ec.jpg";
 import CertificaThree from "../../assets/Certificates/ce.png";
-import CertificaFour from "../../assets/Certificates/bureauveritas.png";
-import { motion } from "framer-motion";
+
+import Slider from "react-slick";
 
 const CertificateComponent = () => {
     const images = [
@@ -11,27 +11,20 @@ const CertificateComponent = () => {
         { src: CertificaTwo, alt: "ped9723ec" },
         { src: CertificaThree, alt: "ce" },
     ];
-
+    var settings = {
+        dots: false,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 1000,
+        speed: 500,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        pauseOnHover: false,
+        arrows: false,
+    };
     return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 2 }}
-            viewport={{ once: true }}
-            className="container mx-auto overflow-hidden relative mt-10"
-        >
-            <motion.div
-                animate={{
-                    x: ["0%", "-50%"], // Move the slider by its half width to create a seamless loop
-                    transition: {
-                        ease: "linear",
-                        duration: 15,
-                        repeat: Infinity,
-                    },
-                }}
-                className="flex flex-row flex-nowrap"
-                style={{ width: "200%" }} // Ensures all images fit for smooth scrolling
-            >
+        <div className="container mx-auto my-5">
+            <Slider {...settings}>
                 {images.concat(images).map((image, index) => (
                     <div
                         key={index}
@@ -44,12 +37,8 @@ const CertificateComponent = () => {
                         />
                     </div>
                 ))}
-            </motion.div>
-            {/* Left gradient overlay */}
-            <div className="absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-white to-transparent pointer-events-none"></div>
-            {/* Right gradient overlay */}
-            <div className="absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
-        </motion.div>
+            </Slider>{" "}
+        </div>
     );
 };
 

@@ -1,13 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
-@import "~react-image-gallery/styles/css/image-gallery.css";
-.anton-regular {
-    font-family: "Anton", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+body {
+    font-family: "Century Gothic Paneuropean", sans-serif !important;
 }
+@import url("https://fonts.cdnfonts.com/css/century-gothic-paneuropean");
+/* @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"); */
+@import "~react-image-gallery/styles/css/image-gallery.css";
+/* React Slick */
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
 .slick-initialized .slick-slide {
     display: flex;
     justify-content: center;
@@ -32,10 +35,6 @@
 
 .product-carousel .slick-center {
     transform: scale(1.1);
-}
-
-body {
-    font-family: "Jost", sans-serif !important;
 }
 
 .text-with-underline {
@@ -131,69 +130,6 @@ body {
 
 /* Font */
 
-.jost-100 {
-    font-family: "Jost", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 100;
-    font-style: normal;
-}
-
-.jost-200 {
-    font-family: "Jost", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 200;
-    font-style: normal;
-}
-
-.jost-300 {
-    font-family: "Jost", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-}
-
-.jost-400 {
-    font-family: "Jost", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.jost-500 {
-    font-family: "Jost", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-}
-
-.jost-600 {
-    font-family: "Jost", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-}
-
-.jost-700 {
-    font-family: "Jost", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-}
-
-.jost-800 {
-    font-family: "Jost", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
-}
-
-.jost-900 {
-    font-family: "Jost", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
-}
-
 /* sLİDER ZOOM */
 .scale-up-center {
     -webkit-animation: scale-up-center 50s cubic-bezier(0.39, 0.575, 0.565, 1)
@@ -235,7 +171,7 @@ body {
 
 .slick-dots li.slick-active button:before {
     opacity: 1;
-    background-color: orange !important;
+    background-color: #343280 !important;
     border-radius: 50px;
 }
 
@@ -262,54 +198,59 @@ body {
 /* Danger Html yazıları */
 .danger-html-write {
     /* Ortak yazı formatı özellikleri buraya eklenir */
-    font-size: 16px; /* Örnek yazı boyutu */
-    font-weight: normal; /* Örnek yazı kalınlığı */
-    font-family: Arial, sans-serif; /* Örnek yazı tipi */
-    color: #333; /* Örnek yazı rengi */
-    line-height: 1.5; /* Örnek satır yüksekliği */
-    margin: 0; /* Örnek kenar boşluğu */
-    padding: 0; /* Örnek dolgu */
-}
-.danger-html-write strong p {
-    /* Ortak yazı formatı özellikleri buraya eklenir */
-    font-size: 16px; /* Örnek yazı boyutu */
-    font-weight: normal; /* Örnek yazı kalınlığı */
-    font-family: Arial, sans-serif; /* Örnek yazı tipi */
+    font-size: 18px; /* Örnek yazı boyutu */
+    font-weight: 600; /* Örnek yazı kalınlığı */
+    font-family: "Century Gothic Paneuropean", sans-serif !important;
     color: #333; /* Örnek yazı rengi */
     line-height: 1.5; /* Örnek satır yüksekliği */
     margin: 0; /* Örnek kenar boşluğu */
     padding: 0; /* Örnek dolgu */
 }
 
-.danger-html-write p {
+.danger-html-write strong p {
     /* Ortak yazı formatı özellikleri buraya eklenir */
-    font-size: 16px; /* Örnek yazı boyutu */
-    font-weight: normal; /* Örnek yazı kalınlığı */
-    font-family: Arial, sans-serif; /* Örnek yazı tipi */
+    font-size: 18px; /* Örnek yazı boyutu */
+    font-weight: 600; /* Örnek yazı kalınlığı */
+    font-family: "Century Gothic Paneuropean", sans-serif !important;
     color: #333; /* Örnek yazı rengi */
     line-height: 1.5; /* Örnek satır yüksekliği */
     margin: 0; /* Örnek kenar boşluğu */
     padding: 0; /* Örnek dolgu */
+    padding-top: 10px;
+}
+
+.danger-html-write p {
+    /* Ortak yazı formatı özellikleri buraya eklenir */
+    font-size: 18px; /* Örnek yazı boyutu */
+    font-weight: 600; /* Örnek yazı kalınlığı */
+    font-family: "Century Gothic Paneuropean", sans-serif !important;
+    color: #333; /* Örnek yazı rengi */
+    line-height: 1.5; /* Örnek satır yüksekliği */
+    margin: 0; /* Örnek kenar boşluğu */
+    padding: 0; /* Örnek dolgu */
+    padding-top: 10px;
 }
 .danger-html-write div p {
     /* Ortak yazı formatı özellikleri buraya eklenir */
-    font-size: 16px; /* Örnek yazı boyutu */
-    font-weight: normal; /* Örnek yazı kalınlığı */
-    font-family: Arial, sans-serif; /* Örnek yazı tipi */
+    font-size: 18px; /* Örnek yazı boyutu */
+    font-weight: 600; /* Örnek yazı kalınlığı */
+    font-family: "Century Gothic Paneuropean", sans-serif !important;
     color: #333; /* Örnek yazı rengi */
     line-height: 1.5; /* Örnek satır yüksekliği */
     margin: 0; /* Örnek kenar boşluğu */
     padding: 0; /* Örnek dolgu */
+    padding-top: 10px;
 }
 .danger-html-write strong {
     /* Ortak yazı formatı özellikleri buraya eklenir */
-    font-size: 16px; /* Örnek yazı boyutu */
-    font-weight: normal; /* Örnek yazı kalınlığı */
-    font-family: Arial, sans-serif; /* Örnek yazı tipi */
+    font-size: 18px; /* Örnek yazı boyutu */
+    font-weight: 600; /* Örnek yazı kalınlığı */
+    font-family: "Century Gothic Paneuropean", sans-serif !important;
     color: #333; /* Örnek yazı rengi */
     line-height: 1.5; /* Örnek satır yüksekliği */
     margin: 0; /* Örnek kenar boşluğu */
     padding: 0; /* Örnek dolgu */
+    padding-top: 10px;
 }
 
 .circle {
@@ -343,4 +284,89 @@ body {
 }
 html {
     scroll-behavior: smooth;
+}
+
+.slick-slide:focus {
+    outline: none !important;
+}
+.slick-slide:active {
+    outline: none !important;
+}
+.slick-slide {
+    outline: none !important;
+}
+.slick-slide::selection {
+    outline: none !important;
+}
+.slick-slide:active {
+    outline: none !important;
+}
+
+.slick-slide:active div {
+    outline: none !important;
+}
+.slick-slide div {
+    outline: none !important;
+}
+.slick-slide::selection div {
+    outline: none !important;
+}
+.slick-slide:active div {
+    outline: none !important;
+}
+
+.slick-prev {
+    left: 2rem;
+    z-index: 999999999;
+    color: white;
+    font-size: 5rem;
+    width: auto !important;
+    height: auto !important;
+}
+.slick-next {
+    right: 2rem;
+    z-index: 999999999;
+    color: white;
+    font-size: 5rem;
+    width: auto !important;
+    height: auto !important;
+}
+
+.slick-prev:hover {
+    left: 2rem;
+    z-index: 999999999;
+    color: white;
+    font-size: 5rem;
+    width: auto !important;
+    height: auto !important;
+}
+.slick-next:hover {
+    right: 2rem;
+    z-index: 999999999;
+    color: white;
+    font-size: 5rem;
+    width: auto !important;
+    height: auto !important;
+}
+
+@keyframes fadeInLeftToRight {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: -100%;
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, white, transparent);
+    animation: fadeInLeftToRight 4s linear infinite;
 }
