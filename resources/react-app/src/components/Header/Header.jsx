@@ -304,7 +304,7 @@ const Header = ({ data }) => {
                                             </div>
                                         )}
 
-                                        <div className="w-full flex justify-end items-center text-white gap-12 max-xl:gap-4 max-lg:gap-2">
+                                        <div className="w-full flex justify-end items-center text-white gap-10 max-xl:gap-4 max-lg:gap-2">
                                             <a
                                                 className={
                                                     navItem === "/"

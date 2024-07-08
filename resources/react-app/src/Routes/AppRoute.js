@@ -12,6 +12,10 @@ import Catalog from "../pages/Catalog/Catalog";
 import OurDealers from "../pages/OurDealers/OurDealers";
 import ProductDetail from "../pages/ProductDetail/ProductDetail";
 import ProductList from "../pages/ProductList/ProductList";
+import SecondProductList from "../pages/SecondProduct/SecondProductList";
+import SecondProductDetail from "../pages/SecondProduct/SecondProductDetail";
+import ThirtProductDetail from "../pages/ThirtProduct/ThirtProductDetail";
+import ThirtProductList from "../pages/ThirtProduct/ThirtProductList";
 
 function AppRoute() {
     return (
@@ -33,6 +37,22 @@ function AppRoute() {
                     <Route path="/haberler/:slug" element={<NewsDetail />} />
                     <Route path="/katalog" element={<Catalog />} />
                     <Route path="/bayilerimiz" element={<OurDealers />} />
+                    <Route
+                        path="/urunler/gazli-yay-baglanti-elemanlari"
+                        element={<SecondProductList />}
+                    />
+                    <Route
+                        path="/urunler/gazli-yay-baglanti-elemanlari/:slug"
+                        element={<SecondProductDetail />}
+                    />
+                    <Route
+                        path="/urunler/gazli-yay-basinc-takip-cihazi"
+                        element={<ThirtProductList />}
+                    />
+                    <Route
+                        path="/urunler/gazli-yay-basinc-takip-cihazi/:slug"
+                        element={<ThirtProductDetail />}
+                    />
                 </Route>
             </Route>
         </Routes>

@@ -139,7 +139,54 @@ const getProductDetail = async (slug) => {
     });
     return result.data;
 };
+
+const getSecondPorudct = async () => {
+    const result = await axiosInstance.get(`get-second-product`, {
+        headers: {
+            "Content-Type": "application/json",
+            "Accept-Language": "tr",
+        },
+    });
+    return result.data;
+};
+const getSecondPorudctDetail = async (slug) => {
+    const result = await axiosInstance.get(
+        `/get-second-product-detail/${slug}`,
+        {
+            headers: {
+                "Content-Type": "application/json",
+                "Accept-Language": "tr",
+            },
+        }
+    );
+    return result.data;
+};
+const getThirtPorudct = async () => {
+    const result = await axiosInstance.get(`get-thirt-product`, {
+        headers: {
+            "Content-Type": "application/json",
+            "Accept-Language": "tr",
+        },
+    });
+    return result.data;
+};
+const getThirtPorudctDetail = async (slug) => {
+    const result = await axiosInstance.get(
+        `/get-thirt-product-detail/${slug}`,
+        {
+            headers: {
+                "Content-Type": "application/json",
+                "Accept-Language": "tr",
+            },
+        }
+    );
+    return result.data;
+};
 const exportFunction = {
+    getThirtPorudctDetail,
+    getThirtPorudct,
+    getSecondPorudctDetail,
+    getSecondPorudct,
     getProductCategories,
     getProductList,
     getProductDetail,

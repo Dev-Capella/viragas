@@ -32,7 +32,7 @@ const HeroCarousel = ({ products }) => {
     const settings = {
         dots: false,
         fade: true,
-        nextArrow: <SampleNextArrow className="slick-arrow slick-next" />,
+        nextArrow: <SampleNextArrow className="slick-arrow slick-next " />,
         prevArrow: <SamplePrevArrow className="slick-arrow slick-prev" />,
         infinite: true,
         speed: 1000,
@@ -97,7 +97,7 @@ const HeroCarousel = ({ products }) => {
                                     <p className="w-[80%] absolute text-6xl font-extrabold max-xl:text-4xl text-white max-md:text-2xl px-12 max-md:px-2">
                                         {item?.title}
                                     </p>
-                                    <p className=" absolute text-2xl max-xl:text-xl max-md:text-lg font-medium tracking-wider text-white bottom-0">
+                                    <p className=" absolute text-2xl max-xl:text-xl max-md:text-lg font-medium tracking-wider text-white bottom-0 max-sm:-bottom-24">
                                         {item?.content}
                                     </p>
                                 </div>

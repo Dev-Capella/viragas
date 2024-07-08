@@ -127,34 +127,34 @@ function ProductDetail() {
                         <div className="table-container">
                             <div className="w-full detail-table relative ">
                                 <div className="bg-[#ffa500] w-full flex justify-between">
-                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center">
+                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center font-bold">
                                         MODEL
                                     </p>
-                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center">
+                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center font-bold">
                                         Kurs mm
                                     </p>
-                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center">
+                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center font-bold">
                                         L mm
                                     </p>
-                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center">
+                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center font-bold">
                                         L min. mm
                                     </p>
-                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center">
+                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center font-bold">
                                         D mm
                                     </p>
-                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center">
+                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center font-bold">
                                         d mm
                                     </p>
-                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center">
+                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center font-bold">
                                         daN
                                     </p>
-                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center">
+                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center font-bold">
                                         daN
                                     </p>
-                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center">
+                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center font-bold">
                                         Silindirlerin Tabanı
                                     </p>
-                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center">
+                                    <p className="text-center px-6 py-2 w-[20%] flex justify-start items-center font-bold">
                                         Seri Bağlama
                                     </p>
                                 </div>

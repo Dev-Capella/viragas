@@ -14,11 +14,11 @@ const ReferancesComponent = () => {
     }, []);
     return (
         <div className="container mx-auto my-10">
-            <div className="flex flex-wrap justify-start">
+            <div className="flex flex-wrap justify-start gap-4 max-xl:gap-6 max-sm:justify-center">
                 {data?.map((item, i) => (
                     <div
                         key={i}
-                        className="w-1/4 h-96 max-sm:h-44 max-lg:w-2/4 p-4 flex flex-col justify-center items-center "
+                        className="w-[19%] h-60 shadow-xl rounded-md max-sm:h-44 max-sm:w-[46%] max-sm:p-4 max-lg:w-[48%] max-xl:w-[23%] p-12 flex flex-col justify-center items-center "
                     >
                         <img
                             className="cursor-pointer w-full h-full object-contain"

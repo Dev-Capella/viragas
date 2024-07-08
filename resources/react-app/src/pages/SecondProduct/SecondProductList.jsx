@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Loading from "../../components/Loading/Loading.jsx";
 import { useNavigate, useParams } from "react-router-dom/dist";
-function ProductList() {
+function SecondProductList() {
     const [loading, setLoading] = useState(true);
     const [loadingFade, setLoadingFade] = useState(false);
     const { t, i18n } = useTranslation();
@@ -16,7 +16,7 @@ function ProductList() {
 
     //Ürünleri getir.
     const getProductList = async () => {
-        const result = await generalService.getProductList(slug.slug);
+        const result = await generalService.getSecondPorudct();
         setProductList(result);
     };
 
@@ -29,7 +29,6 @@ function ProductList() {
         if (slug) {
             getProductList();
         }
-        scrollToTop();
         getPage();
     }, [i18n.language]);
 
@@ -49,7 +48,6 @@ function ProductList() {
     const navigate = useNavigate();
     useEffect(() => {
         scrollToTop();
-
         setTimeout(() => {
             scrollToTop();
             setLoadingFade(true);
@@ -78,15 +76,16 @@ function ProductList() {
                         {productsList.map((item, i) => (
                             <div
                                 key={i}
-                                className="bg-white p-6 rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105 cursor-pointer"
+                                className="bg-white p-6 rounded-sm shadow-xl transform transition-transform duration-500 hover:scale-105 cursor-pointer"
                                 onClick={() => navigate(item.slug)}
                             >
-                                <div className="flex flex-col items-center relative">
+                                <div className="flex flex-col items-center relative ">
                                     <div className="absolute top-2 -left-12 bg-[#343280] px-2 shadow-xl">
                                         <h2 className="text-lg my-2 font-semibold  text-justify text-white  duration-300  delay-100 cursor-pointer">
-                                            {item.name} Serisi
+                                            {item.title}
                                         </h2>
                                     </div>
+
                                     <div className="w-48 h-48">
                                         <img
                                             src={item.image}
@@ -95,7 +94,7 @@ function ProductList() {
                                         />
                                     </div>
 
-                                    <div className="text-[#343280] flex items-center cursor-pointer transition-all duration-300 hover:text-black hover:underline">
+                                    <div className="text-[#343280] font-semibold flex items-center cursor-pointer transition-all duration-300 hover:text-black hover:underline">
                                         <span
                                             onClick={() => navigate(item.slug)}
                                         >
@@ -126,4 +125,4 @@ function ProductList() {
     );
 }
 
-export default ProductList;
+export default SecondProductList;

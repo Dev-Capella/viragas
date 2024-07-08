@@ -33,7 +33,7 @@ const CertificateComponent = () => {
                         <img
                             src={image.src}
                             alt={image.alt}
-                            className="w-full h-full object-contain" // Adjust the height as needed
+                            className="w-full h-full object-contain p-4" // Adjust the height as needed
                         />
                     </div>
                 ))}

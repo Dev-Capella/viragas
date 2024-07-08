@@ -70,17 +70,21 @@ function Products() {
                                 className="bg-white p-3 rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105 cursor-pointer"
                                 onClick={() => navigate(item.slug)}
                             >
-                                <div className="flex flex-col items-center">
-                                    <h2 className="text-xl my-2 anton-regular text-justify max-sm:text-center max-sm:text-base text-gray-700 hover:text-yellow-500 duration-300  delay-100 cursor-pointer">
-                                        {item.title}
-                                    </h2>
-                                    <img
-                                        src={item.image}
-                                        alt={item.title}
-                                        className="w-full h-full object-cover rounded-lg mb-4"
-                                    />
+                                <div className="flex flex-col items-center relative">
+                                    <div className="absolute top-2 -left-12 bg-[#343280] px-2 shadow-xl">
+                                        <h2 className="text-lg my-2 font-semibold  text-justify text-white  duration-300  delay-100 cursor-pointer">
+                                            {item.title}
+                                        </h2>
+                                    </div>
+                                    <div className="w-48 h-48">
+                                        <img
+                                            src={item.image}
+                                            alt={item.title}
+                                            className="w-full h-full object-contain rounded-lg mb-4"
+                                        />
+                                    </div>
 
-                                    <div className="text-orange-500 flex items-center cursor-pointer transition-all duration-300 hover:text-orange-700 hover:underline">
+                                    <div className="text-[#343280] flex items-center cursor-pointer transition-all duration-300 hover:text-black hover:underline">
                                         <span
                                             onClick={() => navigate(item.slug)}
                                         >

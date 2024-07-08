@@ -108,3 +108,25 @@ Route::get('/get-product-detail/{slug}', [
     ProductController::class,
     'getProductDetail',
 ]);
+Route::get('/get-second-product', [
+    ProductController::class,
+    'GetSecondProduct',
+]);
+Route::get('/get-second-product-detail/{slug}', [
+    ProductController::class,
+    'GetSecondProductDetail',
+]);
+
+Route::get('/get-thirt-product', [
+    ProductController::class,
+    'GetThirtProduct',
+]);
+Route::get('/get-thirt-product-detail/{slug}', [
+    ProductController::class,
+    'GetThirtProductDetail',
+]);
+
+
+
+
+

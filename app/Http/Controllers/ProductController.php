@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\ProductCategory;
-
+use App\SecondProduct;
+use App\ThirtProduct;
 
 class ProductController extends Controller
 {
@@ -154,9 +155,96 @@ class ProductController extends Controller
         return $result;
     }
     
-   
+    public function GetSecondProduct()
+    {
+        $secondProduct = SecondProduct::get();
+        foreach ($secondProduct as $key => $array) {
+            
+                if($array->image)
+                {
+                    $array->image = url('storage/' . str_replace('\\', '/', $array->image));
+                }else
+                {
+                    $array->image=null;
+                }                
+            
+        }
+        return $secondProduct;
+    }
+    public function GetThirtProduct()
+    {
+        $secondProduct = ThirtProduct::get();
+        foreach ($secondProduct as $key => $array) {
+
+                if($array->image)
+                {
+                    $array->image = url('storage/' . str_replace('\\', '/', $array->image));
+                }else
+                {
+                    $array->image=null;
+                }  
+
+                if($array->last_image)
+                {
+                    $array->last_image = url('storage/' . str_replace('\\', '/', $array->last_image));
+                }else
+                {
+                    $array->last_image=null;
+                }                
+            
+        }
+        return $secondProduct;
+    }
+    public function GetSecondProductDetail($slug)
+    {
+        $secondProduct = SecondProduct::where('slug',$slug)->first();
+     
+            if($secondProduct->image)
+            {
+                $secondProduct->image = url('storage/' . str_replace('\\', '/', $secondProduct->image));
+            }else
+            {
+                $secondProduct->image=null;
+            }                
+           
+                $images = json_decode($secondProduct->images);
+                foreach ($images as &$image) {
+                    $image = url('storage/' . str_replace('\\', '/', $image));
+                }
+            
+                $secondProduct->images = $images;
+        
+        return $secondProduct;
+    }
     
-    
+    public function GetThirtProductDetail($slug)
+    {
+        $secondProduct = ThirtProduct::where('slug',$slug)->first();
+     
+            if($secondProduct->image)
+            {
+                $secondProduct->image = url('storage/' . str_replace('\\', '/', $secondProduct->image));
+            }else
+            {
+                $secondProduct->image=null;
+            }   
+            if($secondProduct->last_image)
+            {
+                $secondProduct->last_image = url('storage/' . str_replace('\\', '/', $secondProduct->last_image));
+            }else
+            {
+                $secondProduct->last_image=null;
+            }               
+           
+                $images = json_decode($secondProduct->images);
+                foreach ($images as &$image) {
+                    $image = url('storage/' . str_replace('\\', '/', $image));
+                }
+            
+                $secondProduct->images = $images;
+        
+        return $secondProduct;
+    }
 }
 
 

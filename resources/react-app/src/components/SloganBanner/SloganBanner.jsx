@@ -27,7 +27,9 @@ const SloganBanner = () => {
                     <p className="font-bold text-3xl text-center">
                         {data?.title}
                     </p>
-                    <p className="text-xl font-normal">{data?.description}</p>
+                    <p className="text-xl font-normal text-center">
+                        {data?.description}
+                    </p>
                 </div>
             </h2>
         </div>

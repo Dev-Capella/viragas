@@ -20,7 +20,7 @@ const HomeReference = ({ reference }) => {
                     reference?.map((item, index) => (
                         <div
                             key={index}
-                            className="w-48 h-48 rounded-3xl mx-2 my-2 px-6"
+                            className="w-48 h-48 rounded-3xl mx-2 my-2 px-6 max-sm:px-0"
                         >
                             <img
                                 src={item.image}
