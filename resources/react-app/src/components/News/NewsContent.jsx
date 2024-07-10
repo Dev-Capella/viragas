@@ -1,11 +1,23 @@
-import React from "react";
-import test from "../../assets/News/test.jpg";
+import React, { useEffect, useState } from "react";
 import { IoTimeOutline } from "react-icons/io5";
 import { parse, format } from "date-fns";
-import { tr } from "date-fns/locale";
+import { tr, enUS } from "date-fns/locale";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 function NewsContent({ data }) {
     const navigate = useNavigate();
+    const { t, i18n } = useTranslation();
+    const [locale, setLocale] = useState(tr);
+
+    useEffect(() => {
+        if (i18n.language === "tr") {
+            setLocale(tr);
+        } else {
+            setLocale(enUS); // İngilizce için enUS locale kullanıldı
+        }
+    }, [i18n.language]);
+
     const DateFormatter = (dateStr) => {
         // Tarih dizesini JavaScript Date nesnesine çevirme
         const date = parse(dateStr, "yyyy-MM-dd HH:mm:ss", new Date());
@@ -16,7 +28,7 @@ function NewsContent({ data }) {
         }
 
         // İstenen formatta tarihi oluşturma
-        const formattedDate = format(date, "d MMMM yyyy", { locale: tr });
+        const formattedDate = format(date, "d MMMM yyyy", { locale });
         return formattedDate;
     };
     return (
@@ -43,12 +55,14 @@ function NewsContent({ data }) {
                             <h2 className="text-xl my-2 font-bold  text-justify text-gray-700  duration-300  delay-100 cursor-pointer">
                                 {item.title}
                             </h2>
-                            <button
-                                onClick={() => navigate(item.slug)}
-                                className="mt-3 bg-[#343280] hover:bg-gray-700 duration-300 delay-100 py-4 px-6 text-white  hover:text-white"
-                            >
-                                Devamını Oku
-                            </button>
+                            <div className="flex max-sm:justify-center items-center w-full">
+                                <button
+                                    onClick={() => navigate(item.slug)}
+                                    className="mt-3 max-sm:w-full bg-[#343280] hover:bg-gray-700 duration-300 delay-100 py-4 px-6 text-white  hover:text-white"
+                                >
+                                    {t("ReadContinue")}
+                                </button>
+                            </div>
                         </div>
                     ))}
             </div>

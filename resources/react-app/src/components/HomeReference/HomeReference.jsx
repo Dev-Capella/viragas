@@ -12,20 +12,31 @@ const HomeReference = ({ reference }) => {
         slidesToScroll: 1,
         pauseOnHover: false,
         arrows: false,
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 3,
+                },
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 3,
+                },
+            },
+        ],
     };
     return (
         <div className="container mx-auto my-5">
-            <Slider className="w-full px-4 overflow-hidden" {...settings}>
+            <Slider {...settings}>
                 {reference !== null &&
                     reference?.map((item, index) => (
-                        <div
-                            key={index}
-                            className="w-48 h-48 rounded-3xl mx-2 my-2 px-6 max-sm:px-0"
-                        >
+                        <div key={index} className="w-1/6 h-48   mx-2 my-2">
                             <img
                                 src={item.image}
                                 alt={item.image_alt}
-                                className="w-full h-full object-contain" // Adjust the height as needed
+                                className="w-full h-full object-contain p-4" // İhtiyaca göre yüksekliği ayarlayabilirsiniz
                             />
                         </div>
                     ))}

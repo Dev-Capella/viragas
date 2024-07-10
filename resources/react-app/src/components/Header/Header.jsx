@@ -19,6 +19,7 @@ const Header = ({ data }) => {
     const [navbar, setNavbar] = useState(false);
     const [navItem, setNavItem] = useState(" ");
     const [langOpen, setLangOpen] = useState(false);
+    const [navModal, setNavModal] = useState(false);
     const { t, i18n } = useTranslation();
 
     const navigate = useNavigate();
@@ -342,22 +343,65 @@ const Header = ({ data }) => {
                                                 {t("HeaderAboutUs")}
                                             </a>
                                             <a
+                                                onMouseEnter={() =>
+                                                    setNavModal(true)
+                                                }
+                                                onMouseLeave={() =>
+                                                    setNavModal(false)
+                                                }
                                                 className={
                                                     navItem === "/urunler"
-                                                        ? `text-base font-semibold underline-offset-8 max-lg:text-[0.9rem] ${
+                                                        ? `text-base font-semibold underline-offset-8 relative flex flex-col justify-center items-center max-lg:text-[0.9rem] ${
                                                               navbar
-                                                                  ? "text-black underline"
-                                                                  : "underline"
+                                                                  ? "text-black relative underline flex flex-col justify-center items-center"
+                                                                  : "underline relative flex flex-col justify-center"
                                                           }`
-                                                        : `text-base font-medium  max-lg:text-[0.9rem] ${
+                                                        : `text-base font-medium  relative max-lg:text-[0.9rem] flex flex-col justify-center items-center ${
                                                               navbar
-                                                                  ? "text-black text-with-underline2"
-                                                                  : "text-with-underline"
+                                                                  ? "text-black relative "
+                                                                  : "relative flex flex-col justify-center"
                                                           }`
                                                 }
                                                 href="/urunler"
                                             >
-                                                {t("HeaderProduct")}
+                                                <span>
+                                                    {t("HeaderProduct")}
+                                                </span>
+
+                                                {navModal && (
+                                                    <div class="absolute bg-white top-6 w-max flex flex-col gap-3 border border-gray-400 ">
+                                                        <a
+                                                            href="/urunler/kalip-gazli-yaylari"
+                                                            className="text-black hover:bg-[#343280] hover:text-white"
+                                                        >
+                                                            <p className="  p-2">
+                                                                {t(
+                                                                    "ProductsKalıpGaz"
+                                                                )}
+                                                            </p>
+                                                        </a>
+                                                        <a
+                                                            href="/urunler/gazli-yay-baglanti-elemanlari"
+                                                            className="text-black hover:bg-[#343280] hover:text-white"
+                                                        >
+                                                            <p className="p-2">
+                                                                {t(
+                                                                    "ProductsGazlıYay"
+                                                                )}
+                                                            </p>
+                                                        </a>
+                                                        <a
+                                                            href="/urunler/gazli-yay-basinc-takip-cihazi"
+                                                            className="text-black hover:bg-[#343280] hover:text-white"
+                                                        >
+                                                            <p className=" p-2">
+                                                                {t(
+                                                                    "ProductsBasınc"
+                                                                )}
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                )}
                                             </a>
                                             <a
                                                 className={

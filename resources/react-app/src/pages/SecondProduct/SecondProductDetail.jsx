@@ -17,7 +17,10 @@ function SecondProductDetail() {
 
     //Ürünleri getir.
     const getProductList = async () => {
-        const result = await generalService.getSecondPorudctDetail(slug.slug);
+        const result = await generalService.getSecondPorudctDetail(
+            i18n.language,
+            slug.slug
+        );
         console.log(result);
 
         const imageGallery = result?.images || [];
@@ -102,40 +105,41 @@ function SecondProductDetail() {
                     </div>
                     <div className="w-2/4 p-5 flex flex-col gap-5">
                         <div>
-                            <p className="text-gray-600 text-xl py-3">
-                                Ürün Adı
+                            <p className="text-gray-600 text-xl py-3 max-sm:pb-2 max-sm:pt-0">
+                                {t("ProductName")}
                             </p>
-                            <h1 className="text-gray-600 text-3xl py-3 font-bold border-b-2 ">
+                            <h1 className="text-gray-600 text-3xl py-3 font-bold border-b-2 max-sm:py-0 max-sm:text-base">
                                 {productsDetail?.title}
                             </h1>
                         </div>
 
                         <div>
                             <p className="text-gray-600 text-xl py-3">
-                                Ürün Açıklaması
+                                {t("ProductDescrip")}
                             </p>
-                            <p className="text-gray-600 text-2xl py-3 border-b-2 ">
+                            <p className="text-gray-600 text-2xl py-3 border-b-2 max-sm:py-0 max-sm:text-base">
                                 {productsDetail?.content}
                             </p>
                         </div>
                     </div>
                 </div>
-                {productsDetail?.product_detail !== null && (
-                    <div className="w-full flex flex-col">
-                        <div>
-                            <p className="text-gray-600 text-xl py-3">
-                                Ürün Detayları
-                            </p>
+                {productsDetail?.product_detail !== null &&
+                    productsDetail?.product_detail !== "" && (
+                        <div className="w-full flex flex-col">
+                            <div>
+                                <p className="text-gray-600 font-bold text-xl py-3">
+                                    {t("ProductDetail")}
+                                </p>
+                            </div>
+                            <div>
+                                <div
+                                    dangerouslySetInnerHTML={{
+                                        __html: productsDetail?.product_detail,
+                                    }}
+                                />
+                            </div>
                         </div>
-                        <div>
-                            <div
-                                dangerouslySetInnerHTML={{
-                                    __html: productsDetail?.product_detail,
-                                }}
-                            />
-                        </div>
-                    </div>
-                )}
+                    )}
             </div>
         </div>
     );

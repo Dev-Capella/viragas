@@ -61,7 +61,7 @@ function Products() {
             </Helmet>
 
             <BreadcrumbsNav imageSrc={page?.image} text={page?.title} />
-            <div className="container mx-auto px-5 my-10">
+            <div className="container mx-auto px-5 my-10 max-sm:px-4">
                 {productsCategories && (
                     <div className="grid grid-cols-4 max-xl:grid-cols-2 gap-8 max-sm:gap-2">
                         {productsCategories.map((item, i) => (
@@ -71,12 +71,12 @@ function Products() {
                                 onClick={() => navigate(item.slug)}
                             >
                                 <div className="flex flex-col items-center relative">
-                                    <div className="absolute top-2 -left-12 bg-[#343280] px-2 shadow-xl">
-                                        <h2 className="text-lg my-2 font-semibold  text-justify text-white  duration-300  delay-100 cursor-pointer">
+                                    <div className="absolute top-2 -left-8 max-sm:-left-4 max-lg:-left-4 max-xl:-left-4 max-2xl:-left-4 bg-[#343280] px-2 shadow-xl">
+                                        <h2 className="text-lg my-2 max-sm:text-base font-semibold  text-justify text-white  duration-300  delay-100 cursor-pointer">
                                             {item.title}
                                         </h2>
                                     </div>
-                                    <div className="w-48 h-48">
+                                    <div className="w-48 h-48 max-sm:w-full max-sm:h-full">
                                         <img
                                             src={item.image}
                                             alt={item.title}
@@ -88,7 +88,7 @@ function Products() {
                                         <span
                                             onClick={() => navigate(item.slug)}
                                         >
-                                            Detayları İncele
+                                            {t("ProductsDetay")}
                                         </span>
                                         <svg
                                             className="w-5 h-5 ml-2 transform transition-transform duration-300 group-hover:translate-x-1"

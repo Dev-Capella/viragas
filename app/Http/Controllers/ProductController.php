@@ -7,6 +7,8 @@ use App\Product;
 use App\ProductCategory;
 use App\SecondProduct;
 use App\ThirtProduct;
+use App\FourthProduct;
+
 
 class ProductController extends Controller
 {
@@ -155,9 +157,14 @@ class ProductController extends Controller
         return $result;
     }
     
-    public function GetSecondProduct()
+    public function GetSecondProduct(Request $request)
     {
-        $secondProduct = SecondProduct::get();
+        $acceptLanguage = $request->header('Accept-Language');
+        $languageCode = explode(',', $acceptLanguage)[0];
+        $languageCode = explode('-', $languageCode)[0];
+        $secondProduct = SecondProduct::withTranslations($languageCode)->get();
+        $secondProduct = $secondProduct->translate($languageCode);
+     
         foreach ($secondProduct as $key => $array) {
             
                 if($array->image)
@@ -171,9 +178,14 @@ class ProductController extends Controller
         }
         return $secondProduct;
     }
-    public function GetThirtProduct()
+    public function GetThirtProduct(Request $request)
     {
-        $secondProduct = ThirtProduct::get();
+        $acceptLanguage = $request->header('Accept-Language');
+        $languageCode = explode(',', $acceptLanguage)[0];
+        $languageCode = explode('-', $languageCode)[0];
+        $secondProduct = ThirtProduct::withTranslations($languageCode)->get();
+        $secondProduct = $secondProduct->translate($languageCode);
+
         foreach ($secondProduct as $key => $array) {
 
                 if($array->image)
@@ -195,9 +207,44 @@ class ProductController extends Controller
         }
         return $secondProduct;
     }
-    public function GetSecondProductDetail($slug)
+    public function GetFourthProduct(Request $request)
     {
-        $secondProduct = SecondProduct::where('slug',$slug)->first();
+        $acceptLanguage = $request->header('Accept-Language');
+        $languageCode = explode(',', $acceptLanguage)[0];
+        $languageCode = explode('-', $languageCode)[0];
+        $secondProduct = FourthProduct::withTranslations($languageCode)->get();
+        $secondProduct = $secondProduct->translate($languageCode);
+
+        foreach ($secondProduct as $key => $array) {
+
+                if($array->image)
+                {
+                    $array->image = url('storage/' . str_replace('\\', '/', $array->image));
+                }else
+                {
+                    $array->image=null;
+                }  
+
+                if($array->last_image)
+                {
+                    $array->last_image = url('storage/' . str_replace('\\', '/', $array->last_image));
+                }else
+                {
+                    $array->last_image=null;
+                }                
+            
+        }
+        return $secondProduct;
+    }
+    public function GetSecondProductDetail(Request $request,$slug)
+    {
+        $acceptLanguage = $request->header('Accept-Language');
+        $languageCode = explode(',', $acceptLanguage)[0];
+        $languageCode = explode('-', $languageCode)[0];
+        $secondProduct = SecondProduct::withTranslations($languageCode)->where('slug',$slug)->first();
+        $secondProduct = $secondProduct->translate($languageCode);
+
+     
      
             if($secondProduct->image)
             {
@@ -217,9 +264,15 @@ class ProductController extends Controller
         return $secondProduct;
     }
     
-    public function GetThirtProductDetail($slug)
+    public function GetThirtProductDetail(Request $request,$slug)
     {
-        $secondProduct = ThirtProduct::where('slug',$slug)->first();
+
+        $acceptLanguage = $request->header('Accept-Language');
+        $languageCode = explode(',', $acceptLanguage)[0];
+        $languageCode = explode('-', $languageCode)[0];
+        $secondProduct = ThirtProduct::withTranslations($languageCode)->where('slug',$slug)->first();
+        $secondProduct = $secondProduct->translate($languageCode);
+      
      
             if($secondProduct->image)
             {
@@ -235,6 +288,34 @@ class ProductController extends Controller
             {
                 $secondProduct->last_image=null;
             }               
+           
+                $images = json_decode($secondProduct->images);
+                foreach ($images as &$image) {
+                    $image = url('storage/' . str_replace('\\', '/', $image));
+                }
+            
+                $secondProduct->images = $images;
+        
+        return $secondProduct;
+    }
+    public function GetFourthProductDetail(Request $request,$slug)
+    {
+
+        $acceptLanguage = $request->header('Accept-Language');
+        $languageCode = explode(',', $acceptLanguage)[0];
+        $languageCode = explode('-', $languageCode)[0];
+        $secondProduct = FourthProduct::withTranslations($languageCode)->where('slug',$slug)->first();
+        $secondProduct = $secondProduct->translate($languageCode);
+      
+     
+            if($secondProduct->image)
+            {
+                $secondProduct->image = url('storage/' . str_replace('\\', '/', $secondProduct->image));
+            }else
+            {
+                $secondProduct->image=null;
+            }   
+                         
            
                 $images = json_decode($secondProduct->images);
                 foreach ($images as &$image) {

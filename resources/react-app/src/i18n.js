@@ -4,6 +4,7 @@ import { initReactI18next } from "react-i18next";
 const resources = {
     tr: {
         translation: {
+            series: "Serisi",
             /*Anasayfa*/
             HomePageProduct: "Ürünlerimiz",
             HomePageWhoWeAre: "Biz Kimiz?",
@@ -25,6 +26,14 @@ const resources = {
             ContactBread: "İletişim",
             ReferanceBread: "Referanslar",
             ActivitiesBread: "Faaliyetler",
+            /* ÜRÜNLER*/
+            ProductsKalıpGaz: "Kalıp Gazlı Yayları",
+            ProductsGazlıYay: "Gazlı Yay Bağlantı Elemanları",
+            ProductsBasınc: "Gazlı Yay Basınç Takip Cihazı",
+            ProductsDetay: "Detayları İncele",
+            ProductName: "Ürün Adı",
+            ProductDescrip: "Ürün Açıklaması",
+            ProductDetail: "Ürün Detayları",
             /*Hakkımızda*/
             AboutUsViraGas: "VIRA GAS SPRINGS",
             AboutUsViraGasTwo: "VIRA GAZLI YAY",
@@ -91,6 +100,7 @@ const resources = {
             FooterOurDealers: "Bayilerimiz",
             FooterDocuments: "Belgelerimiz",
             FooterAdress: "Adres",
+            FooterSecret: "© 2024 VİRA Gas Springs, tüm hakları saklıdır.",
             /*OUR DEALERS*/
             Almanya: "Almanya",
             Belcika: "Belçika",
@@ -120,10 +130,13 @@ const resources = {
             Meksika: "Meksika",
             GüneyAfrika: "Güney Afrika",
             Kore: "Kore",
+            InWorld: "Dünyada",
+            Europe: "Avrupada",
         },
     },
     en: {
         translation: {
+            series: "Series",
             /*Anasayfa*/
             HomePageProduct: "Our Products",
             HomePageWhoWeAre: "Who We Are?",
@@ -146,6 +159,16 @@ const resources = {
             ContactBread: "Contact",
             ReferanceBread: "References",
             ActivitiesBread: "Activities",
+
+            /* ÜRÜNLER*/
+            ProductsKalıpGaz: "Mold Gas Springs",
+            ProductsGazlıYay: "Gas Spring Fasteners",
+            ProductsBasınc: "Gas Spring Pressure Monitoring Device",
+            ProductsDetay: "View Details",
+            ProductName: "Product Name",
+            ProductDescrip: "Product Description",
+            ProductDetail: "Product Details",
+
             /*Hakkımızda*/
             AboutUsViraGas: " VIRA GAS SPRINGS ",
             AboutUsViraGasTwo: "VIRA GAS SPRINGS",
@@ -212,12 +235,13 @@ const resources = {
             FooterOurDealers: "Dealers",
             FooterDocuments: "Certificates",
             FooterAdress: "Address",
+            FooterSecret: "© 2024 VIRA Gas Springs, all rights reserved.",
             /* OUR DEALERS*/
             Almanya: "Germany",
             Belcika: "Belgium",
             Slovenya: "Slovenia",
             Fransa: "France",
-            İtalya: "Italy",
+            Italya: "Italy",
             Portekiz: "Portugal",
             CekCumhuriyeti: "Czech Republic",
             Avusturya: "Austria",
@@ -241,6 +265,8 @@ const resources = {
             Meksika: "Mexico",
             GüneyAfrika: "South Africa",
             Kore: "South Korea",
+            InWorld: "In World",
+            Europe: "In Europe",
         },
     },
 };

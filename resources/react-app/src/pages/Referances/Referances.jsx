@@ -11,16 +11,20 @@ const Referances = () => {
     const [loading, setLoading] = useState(true);
     const [loadingFade, setLoadingFade] = useState(false);
     const [page, setPage] = useState(null);
+
     const getPage = async () => {
         const result = await generalService.getPage(
             i18n.language,
             "referanslar"
         );
         setPage(result);
+        console.log("result", result);
     };
+
     useEffect(() => {
         getPage();
     }, [i18n.language]);
+
     useEffect(() => {
         setTimeout(() => {
             scrollToTop();
@@ -30,9 +34,11 @@ const Referances = () => {
             }, 600);
         }, 1500);
     }, []);
+
     const scrollToTop = () => {
         window.scrollTo(0, 0);
     };
+
     return (
         <>
             {loading && <Loading loadingFade={loadingFade} />}
@@ -42,7 +48,7 @@ const Referances = () => {
                 <link rel="canonical" href={`/referanslar`} />
                 <meta name="description" content="Vira Gas" />
             </Helmet>
-            <BreadcrumbsNav imageSrc={references} text={page?.title} />
+            <BreadcrumbsNav imageSrc={references} text={t("ReferanceBread")} />
             <ReferancesComponent />
         </>
     );

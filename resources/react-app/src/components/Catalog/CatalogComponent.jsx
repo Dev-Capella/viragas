@@ -15,18 +15,12 @@ function CatalogComponent({ data }) {
                         target="blank"
                     >
                         <div className="relative w-full h-full transition-all">
+                            <div className="absolute w-full h-full top-0 left-0 hover:bg-[#343280] opacity-30 duration-300  delay-100 cursor-pointer" />
                             <img
                                 className="w-full h-full p-2 cursor-pointer"
                                 src={item.image}
                                 alt="test"
                             />
-                            <div
-                                className="absolute inset-0 bg-white opacity-0 hover:opacity-70 transition-all duration-600 ease-in-out"
-                                style={{
-                                    clipPath:
-                                        "polygon(0% 0%, 100% 0%, 100% 50%, 0% 100%)",
-                                }}
-                            ></div>
                         </div>
 
                         <p className="text-base p-2 max-sm:text-sm font-medium cursor-pointer">

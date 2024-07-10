@@ -16,7 +16,7 @@ function ThirtProductList() {
 
     //Ürünleri getir.
     const getProductList = async () => {
-        const result = await generalService.getThirtPorudct();
+        const result = await generalService.getThirtPorudct(i18n.language);
         setProductList(result);
     };
 

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const ProductCard = ({ item }) => {
     const [imageLoaded, setImageLoaded] = useState(false);
+    const { t, i18n } = useTranslation();
 
     return (
         <div className="bg-white p-6 rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105">
@@ -25,7 +26,7 @@ const ProductCard = ({ item }) => {
                     )}
                 </div>
                 <div className="text-orange-500 flex items-center cursor-pointer transition-all duration-300 hover:text-orange-700 hover:underline">
-                    <span>Detayları İncele</span>
+                    {t("ProductsDetay")}
                     <svg
                         className="w-5 h-5 ml-2 transform transition-transform duration-300 group-hover:translate-x-1"
                         fill="none"

@@ -15,7 +15,7 @@ const Activities = () => {
     const getPage = async () => {
         const result = await generalService.getPage(
             i18n.language,
-            "faliyetler"
+            "faaliyetler"
         );
         setPage(result);
     };

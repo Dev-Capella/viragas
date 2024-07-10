@@ -148,7 +148,7 @@ const Footer = ({ data }) => {
             <div className="border-t flex flex-row justify-between container mx-auto py-4 max-xl:px-4">
                 <div>
                     <p className="text-white max-md:text-[0.9rem] font-extralight">
-                        © 2024 VİRA Gas Springs, tüm hakları saklıdır.
+                        {t("FooterSecret")}
                     </p>
                 </div>
                 <div className="flex flex-row">

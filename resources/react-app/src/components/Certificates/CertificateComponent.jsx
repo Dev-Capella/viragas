@@ -21,15 +21,26 @@ const CertificateComponent = () => {
         slidesToScroll: 1,
         pauseOnHover: false,
         arrows: false,
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 3,
+                },
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 3,
+                },
+            },
+        ],
     };
     return (
         <div className="container mx-auto my-5">
             <Slider {...settings}>
                 {images.concat(images).map((image, index) => (
-                    <div
-                        key={index}
-                        className="w-1/6 h-48 border max-sm:border-0 rounded-3xl mx-2 my-2"
-                    >
+                    <div key={index} className="w-1/6 h-48   mx-2 my-2">
                         <img
                             src={image.src}
                             alt={image.alt}

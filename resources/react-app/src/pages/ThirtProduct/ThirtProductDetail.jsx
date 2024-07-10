@@ -17,7 +17,10 @@ function ThirtProductDetail() {
 
     //Ürünleri getir.
     const getProductList = async () => {
-        const result = await generalService.getThirtPorudctDetail(slug.slug);
+        const result = await generalService.getThirtPorudctDetail(
+            i18n.language,
+            slug.slug
+        );
         console.log(result);
 
         const imageGallery = result?.images || [];
@@ -91,10 +94,7 @@ function ThirtProductDetail() {
             </Helmet>
             {loading && <Loading loadingFade={loadingFade} />}
 
-            <BreadcrumbsNav
-                imageSrc={page?.image}
-                text="Gazlı Yay Basınç Takip Cihazı"
-            />
+            <BreadcrumbsNav imageSrc={page?.image} text={t("ProductsBasınc")} />
             <div className="container mx-auto px-5 my-10">
                 <div className="flex justify-between items-start">
                     <div className="w-2/4">
@@ -102,49 +102,50 @@ function ThirtProductDetail() {
                     </div>
                     <div className="w-2/4 p-5 flex flex-col gap-5">
                         <div>
-                            <p className="text-gray-600 text-xl py-3">
-                                Ürün Adı
+                            <p className="text-gray-600 text-xl py-3 max-sm:py-0">
+                                {t("ProductName")}
                             </p>
-                            <h1 className="text-gray-600 text-3xl py-3 font-bold border-b-2 ">
+                            <h1 className="text-gray-600 text-3xl py-3 font-bold border-b-2 max-sm:text-base max-sm:pt-0">
                                 {productsDetail?.title}
                             </h1>
                         </div>
 
                         <div>
-                            <p className="text-gray-600 text-xl py-3">
-                                Ürün Açıklaması
+                            <p className="text-gray-600 text-xl py-3 max-sm:py-0">
+                                {t("ProductDescrip")}
                             </p>
-                            <p className="text-gray-600 text-2xl py-3 border-b-2 ">
+                            <p className="text-gray-600 text-2xl py-3 border-b-2 max-sm:text-base max-sm:pt-0">
                                 {productsDetail?.content}
                             </p>
                         </div>
                     </div>
                 </div>
-                {productsDetail?.product_detail !== null && (
-                    <>
-                        <div className="w-full flex flex-col">
-                            <div>
-                                <p className="text-gray-600 text-xl py-3">
-                                    Ürün Detayları
-                                </p>
+                {productsDetail?.product_detail !== null &&
+                    productsDetail?.product_detail !== " " && (
+                        <>
+                            <div className="w-full flex flex-col">
+                                <div>
+                                    <p className="text-gray-600 font-bold text-xl py-3">
+                                        {t("ProductDetail")}
+                                    </p>
+                                </div>
+                                <div>
+                                    <div
+                                        dangerouslySetInnerHTML={{
+                                            __html: productsDetail?.product_detail,
+                                        }}
+                                    />
+                                </div>
                             </div>
-                            <div>
-                                <div
-                                    dangerouslySetInnerHTML={{
-                                        __html: productsDetail?.product_detail,
-                                    }}
-                                />
-                            </div>
-                        </div>
-                        <div className="flex justify-center items-center">
-                            <img
-                                className="w-full h-full"
-                                src={productsDetail?.last_image}
-                                alt="Vira Gas Spring"
-                            />
-                        </div>
-                    </>
-                )}
+                        </>
+                    )}
+                <div className="flex justify-center items-center">
+                    <img
+                        className="w-full h-full"
+                        src={productsDetail?.last_image}
+                        alt="Vira Gas Spring"
+                    />
+                </div>
             </div>
         </div>
     );

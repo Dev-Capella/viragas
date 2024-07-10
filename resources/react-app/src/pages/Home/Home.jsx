@@ -70,6 +70,7 @@ function Home() {
             <SloganBanner />
             <ContactForm />
             <CertificateComponent />
+            <HomeReference reference={reference} />
 
             <motion.div
                 initial={{ opacity: 0 }}
@@ -123,7 +124,7 @@ function Home() {
                     </div>
                 </div>
             </motion.div>
-            <HomeReference reference={reference} />
+
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}

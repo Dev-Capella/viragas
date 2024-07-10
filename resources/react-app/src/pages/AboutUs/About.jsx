@@ -61,7 +61,7 @@ const About = () => {
                     setIsVisible(true);
                 }
             },
-            { threshold: 0.5 } // Elementin yarıdan fazlası göründüğünde
+            { threshold: 0.3 } // Elementin yarıdan fazlası göründüğünde
         );
 
         if (aboutRef.current) {
@@ -102,7 +102,7 @@ const About = () => {
                         opacity: isVisible ? 1 : 0,
                         x: isVisible ? 0 : -100,
                     }}
-                    transition={{ duration: 1, delay: 2 }}
+                    transition={{ duration: 0.3, delay: 0.3 }}
                     className="flex flex-row container mx-auto justify-center mb-52 max-md:mb-12 max-md:flex-col-reverse max-md:items-center max-lg:mb-8 "
                 >
                     <div className="w-2/5 px-8 relative max-md:w-full max-md:pt-8 max-lg:w-2/4 max-lg:px-0">
@@ -159,7 +159,7 @@ const About = () => {
                         opacity: isVisible ? 1 : 0,
                         x: isVisible ? 0 : -100,
                     }}
-                    transition={{ duration: 1, delay: 2 }}
+                    transition={{ duration: 0.3, delay: 0.3 }}
                     className="flex flex-row container mx-auto justify-center max-md:flex-col max-md:items-center "
                 >
                     <motion.div className="w-1/3 h-full relative group max-md:w-10/12 max-md:px-8 max-lg:px-0 max-lg:w-5/12 ">

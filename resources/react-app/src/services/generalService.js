@@ -140,49 +140,73 @@ const getProductDetail = async (slug) => {
     return result.data;
 };
 
-const getSecondPorudct = async () => {
+const getSecondPorudct = async (lang) => {
     const result = await axiosInstance.get(`get-second-product`, {
         headers: {
             "Content-Type": "application/json",
-            "Accept-Language": "tr",
+            "Accept-Language": lang,
         },
     });
     return result.data;
 };
-const getSecondPorudctDetail = async (slug) => {
+const getSecondPorudctDetail = async (lang, slug) => {
     const result = await axiosInstance.get(
         `/get-second-product-detail/${slug}`,
         {
             headers: {
                 "Content-Type": "application/json",
-                "Accept-Language": "tr",
+                "Accept-Language": lang,
             },
         }
     );
     return result.data;
 };
-const getThirtPorudct = async () => {
+const getThirtPorudct = async (lang) => {
     const result = await axiosInstance.get(`get-thirt-product`, {
         headers: {
             "Content-Type": "application/json",
-            "Accept-Language": "tr",
+            "Accept-Language": lang,
         },
     });
     return result.data;
 };
-const getThirtPorudctDetail = async (slug) => {
+const getThirtPorudctDetail = async (lang, slug) => {
     const result = await axiosInstance.get(
         `/get-thirt-product-detail/${slug}`,
         {
             headers: {
                 "Content-Type": "application/json",
-                "Accept-Language": "tr",
+                "Accept-Language": lang,
             },
         }
     );
     return result.data;
 };
+const getFourthPorudct = async (lang) => {
+    const result = await axiosInstance.get(`get-fourth-product`, {
+        headers: {
+            "Content-Type": "application/json",
+            "Accept-Language": lang,
+        },
+    });
+    return result.data;
+};
+const getFourthPorudctDetail = async (lang, slug) => {
+    const result = await axiosInstance.get(
+        `/get-fourth-product-detail/${slug}`,
+        {
+            headers: {
+                "Content-Type": "application/json",
+                "Accept-Language": lang,
+            },
+        }
+    );
+    return result.data;
+};
+
 const exportFunction = {
+    getFourthPorudctDetail,
+    getFourthPorudct,
     getThirtPorudctDetail,
     getThirtPorudct,
     getSecondPorudctDetail,

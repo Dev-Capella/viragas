@@ -66,7 +66,7 @@ const OurDealersComponent = () => {
             className="flex flex-col container mx-auto pt-12 w-full"
         >
             <span className="text-5xl pl-2 mb-4 max-sm:flex max-sm:text-4xl max-sm:justify-center ">
-                Dünyada
+                {t("InWorld")}
             </span>
             <motion.div
                 initial="hidden"
@@ -88,7 +88,7 @@ const OurDealersComponent = () => {
                 ))}
             </motion.div>
             <span className="text-5xl pl-2 mb-4 max-sm:text-4xl max-sm:flex max-sm:justify-center">
-                Avrupada
+                {t("Europe")}
             </span>
             <motion.div
                 initial="hidden"
