@@ -40,21 +40,22 @@ function NewsContent({ data }) {
                             key={i}
                             className="bg-white flex flex-col justify-between items-start"
                         >
-                            <div className="w-full h-auto relative">
+                            {/* <div className="w-full h-auto relative">
                                 <div className="absolute w-full h-full top-0 left-0 hover:bg-[#343280] opacity-30 duration-300  delay-100 cursor-pointer" />
                                 <img
                                     className="w-full h-full object-cover"
                                     src={item.image}
                                     alt="Vira Gas Spring"
                                 />
-                            </div>
+                            </div> */}
+
+                            <h2 className="text-xl my-2 font-bold  text-justify text-gray-700  duration-300  delay-100 cursor-pointer">
+                                {item.title}
+                            </h2>
                             <div className="flex justify-start gap-4 items-center font-medium my-2">
                                 <IoTimeOutline className="text-[#343280] text-2xl" />{" "}
                                 <p>{DateFormatter(item.created_at)}</p>
                             </div>
-                            <h2 className="text-xl my-2 font-bold  text-justify text-gray-700  duration-300  delay-100 cursor-pointer">
-                                {item.title}
-                            </h2>
                             <div className="flex max-sm:justify-center items-center w-full">
                                 <button
                                     onClick={() => navigate(item.slug)}

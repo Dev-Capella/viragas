@@ -66,8 +66,8 @@ function Home() {
             </Helmet>
             {loading && <Loading loadingFade={loadingFade} />}
             <HeroCarousel products={products} />
-            <NewsHome />
-            <SloganBanner />
+            {/* <NewsHome /> */}
+            {/* <SloganBanner /> */}
             <ContactForm />
             <CertificateComponent />
             <HomeReference reference={reference} />

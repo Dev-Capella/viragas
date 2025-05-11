@@ -122,7 +122,7 @@ function ProductDetail() {
             <BreadcrumbsNav imageSrc={page?.image} text={page?.title} />
             {productsDetail !== null && (
                 <div className="container mx-auto px-5 my-10">
-                    <div className="flex justify-between items-start">
+                    <div className="flex justify-between items-start max-md:flex-col-reverse sticky top-0 bg-white border-b border-black z-[999999]">
                         <div className="w-2/4">
                             {imageGallery && (
                                 <ImageGallery items={imageGallery} />
@@ -225,13 +225,13 @@ function ProductDetail() {
                                                 {element?.map(
                                                     (item, i) =>
                                                         item.silindir_cap !==
-                                                            null && (
+                                                        null && (
                                                             <div
                                                                 className="w-[60%] flex justify-center items-center"
                                                                 key={i}
                                                             >
                                                                 {item.dmm !==
-                                                                null ? (
+                                                                    null ? (
                                                                     <p className="w-[20%] px-6 ">
                                                                         <p>
                                                                             {
@@ -243,7 +243,7 @@ function ProductDetail() {
                                                                     <p className="w-[20%] px-6  "></p>
                                                                 )}
                                                                 {item.dmmm !==
-                                                                null ? (
+                                                                    null ? (
                                                                     <p className=" w-[20%] px-6 ">
                                                                         <p>
                                                                             {
@@ -255,7 +255,7 @@ function ProductDetail() {
                                                                     <p className=" w-[20%] px-6 "></p>
                                                                 )}
                                                                 {item.dan !==
-                                                                null ? (
+                                                                    null ? (
                                                                     <p className="  w-[20%] px-6 ">
                                                                         {
                                                                             item.dan
@@ -265,7 +265,7 @@ function ProductDetail() {
                                                                     <p className=" w-[20%] px-6 "></p>
                                                                 )}
                                                                 {item.dann !==
-                                                                null ? (
+                                                                    null ? (
                                                                     <p className="  w-[20%] px-6">
                                                                         {
                                                                             item.dann
@@ -275,7 +275,7 @@ function ProductDetail() {
                                                                     <p className=" w-[20%] px-6 "></p>
                                                                 )}
                                                                 {item.silindir_cap !==
-                                                                null ? (
+                                                                    null ? (
                                                                     <p className="  w-[20%] px-6 ">
                                                                         <img
                                                                             src={
@@ -287,7 +287,7 @@ function ProductDetail() {
                                                                     <p className=" w-[20%] px-6 "></p>
                                                                 )}
                                                                 {item.seri_baglama !==
-                                                                null ? (
+                                                                    null ? (
                                                                     <p className=" w-[20%] px-6 ">
                                                                         <img
                                                                             src={

@@ -1,9 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 body {
     font-family: "Century Gothic Paneuropean", sans-serif !important;
 }
+
 @import url("https://fonts.cdnfonts.com/css/century-gothic-paneuropean");
 /* @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"); */
 @import "~react-image-gallery/styles/css/image-gallery.css";
@@ -16,10 +18,21 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 /*hero carousel'in next ve prev ok hover'ı */
 .custom-hover-color-herocarousel:hover {
     color: #343280 !important;
     transition: 0.9 all ease-in-out;
+}
+
+.container {
+
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.image-gallery-content .image-gallery-slide .image-gallery-image {
+    max-height: 200px !important;
 }
 
 /*product carousel merkezleme işlemi */
@@ -48,7 +61,8 @@ body {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -2px; /* Alt çizgi ile metin arasındaki boşluk */
+    bottom: -2px;
+    /* Alt çizgi ile metin arasındaki boşluk */
     width: 100%;
     height: 2px;
     background-color: white;
@@ -114,7 +128,8 @@ body {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -2px; /* Alt çizgi ile metin arasındaki boşluk */
+    bottom: -2px;
+    /* Alt çizgi ile metin arasındaki boşluk */
     width: 100%;
     height: 2px;
     background-color: black;
@@ -132,11 +147,9 @@ body {
 
 /* sLİDER ZOOM */
 .scale-up-center {
-    -webkit-animation: scale-up-center 50s cubic-bezier(0.39, 0.575, 0.565, 1)
-        infinite both;
+    -webkit-animation: scale-up-center 50s cubic-bezier(0.39, 0.575, 0.565, 1) infinite both;
 
-    animation: scale-up-center 50s cubic-bezier(0.39, 0.575, 0.565, 1) infinite
-        both;
+    animation: scale-up-center 50s cubic-bezier(0.39, 0.575, 0.565, 1) infinite both;
 }
 
 @-webkit-keyframes scale-up-center {
@@ -177,20 +190,26 @@ body {
 
 .slick-dots li button:before {
     font-family: "slick";
-    font-size: 0; /* Font boyutunu sıfırlayarak içeriği gizliyoruz */
+    font-size: 0;
+    /* Font boyutunu sıfırlayarak içeriği gizliyoruz */
     position: absolute;
-    top: 50%; /* Dikeyde ortalamak için */
+    top: 50%;
+    /* Dikeyde ortalamak için */
     left: 50%;
-    width: 50px; /* Çizginin genişliği */
-    height: 5px; /* Çizginin kalınlığı */
+    width: 50px;
+    /* Çizginin genişliği */
+    height: 5px;
+    /* Çizginin kalınlığı */
     border-radius: 50px;
-    background-color: white; /* Çizginin rengi */
-    content: ""; /* İçerik boş */
-    opacity: 1; /* Opaklık arttırıldı */
-    transform: translate(
-        -50%,
-        -50%
-    ); /* Hem yatayda hem dikeyde ortalamak için */
+    background-color: white;
+    /* Çizginin rengi */
+    content: "";
+    /* İçerik boş */
+    opacity: 1;
+    /* Opaklık arttırıldı */
+    transform: translate(-50%,
+            -50%);
+    /* Hem yatayda hem dikeyde ortalamak için */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -198,58 +217,90 @@ body {
 /* Danger Html yazıları */
 .danger-html-write {
     /* Ortak yazı formatı özellikleri buraya eklenir */
-    font-size: 18px; /* Örnek yazı boyutu */
-    font-weight: 600; /* Örnek yazı kalınlığı */
+    font-size: 18px;
+    /* Örnek yazı boyutu */
+    font-weight: 600;
+    /* Örnek yazı kalınlığı */
     font-family: "Century Gothic Paneuropean", sans-serif !important;
-    color: #333; /* Örnek yazı rengi */
-    line-height: 1.5; /* Örnek satır yüksekliği */
-    margin: 0; /* Örnek kenar boşluğu */
-    padding: 0; /* Örnek dolgu */
+    color: #333;
+    /* Örnek yazı rengi */
+    line-height: 1.5;
+    /* Örnek satır yüksekliği */
+    margin: 0;
+    /* Örnek kenar boşluğu */
+    padding: 0;
+    /* Örnek dolgu */
 }
 
 .danger-html-write strong p {
     /* Ortak yazı formatı özellikleri buraya eklenir */
-    font-size: 18px; /* Örnek yazı boyutu */
-    font-weight: 600; /* Örnek yazı kalınlığı */
+    font-size: 18px;
+    /* Örnek yazı boyutu */
+    font-weight: 600;
+    /* Örnek yazı kalınlığı */
     font-family: "Century Gothic Paneuropean", sans-serif !important;
-    color: #333; /* Örnek yazı rengi */
-    line-height: 1.5; /* Örnek satır yüksekliği */
-    margin: 0; /* Örnek kenar boşluğu */
-    padding: 0; /* Örnek dolgu */
+    color: #333;
+    /* Örnek yazı rengi */
+    line-height: 1.5;
+    /* Örnek satır yüksekliği */
+    margin: 0;
+    /* Örnek kenar boşluğu */
+    padding: 0;
+    /* Örnek dolgu */
     padding-top: 10px;
 }
 
 .danger-html-write p {
     /* Ortak yazı formatı özellikleri buraya eklenir */
-    font-size: 18px; /* Örnek yazı boyutu */
-    font-weight: 600; /* Örnek yazı kalınlığı */
+    font-size: 18px;
+    /* Örnek yazı boyutu */
+    font-weight: 600;
+    /* Örnek yazı kalınlığı */
     font-family: "Century Gothic Paneuropean", sans-serif !important;
-    color: #333; /* Örnek yazı rengi */
-    line-height: 1.5; /* Örnek satır yüksekliği */
-    margin: 0; /* Örnek kenar boşluğu */
-    padding: 0; /* Örnek dolgu */
+    color: #333;
+    /* Örnek yazı rengi */
+    line-height: 1.5;
+    /* Örnek satır yüksekliği */
+    margin: 0;
+    /* Örnek kenar boşluğu */
+    padding: 0;
+    /* Örnek dolgu */
     padding-top: 10px;
 }
+
 .danger-html-write div p {
     /* Ortak yazı formatı özellikleri buraya eklenir */
-    font-size: 18px; /* Örnek yazı boyutu */
-    font-weight: 600; /* Örnek yazı kalınlığı */
+    font-size: 18px;
+    /* Örnek yazı boyutu */
+    font-weight: 600;
+    /* Örnek yazı kalınlığı */
     font-family: "Century Gothic Paneuropean", sans-serif !important;
-    color: #333; /* Örnek yazı rengi */
-    line-height: 1.5; /* Örnek satır yüksekliği */
-    margin: 0; /* Örnek kenar boşluğu */
-    padding: 0; /* Örnek dolgu */
+    color: #333;
+    /* Örnek yazı rengi */
+    line-height: 1.5;
+    /* Örnek satır yüksekliği */
+    margin: 0;
+    /* Örnek kenar boşluğu */
+    padding: 0;
+    /* Örnek dolgu */
     padding-top: 10px;
 }
+
 .danger-html-write strong {
     /* Ortak yazı formatı özellikleri buraya eklenir */
-    font-size: 18px; /* Örnek yazı boyutu */
-    font-weight: 600; /* Örnek yazı kalınlığı */
+    font-size: 18px;
+    /* Örnek yazı boyutu */
+    font-weight: 600;
+    /* Örnek yazı kalınlığı */
     font-family: "Century Gothic Paneuropean", sans-serif !important;
-    color: #333; /* Örnek yazı rengi */
-    line-height: 1.5; /* Örnek satır yüksekliği */
-    margin: 0; /* Örnek kenar boşluğu */
-    padding: 0; /* Örnek dolgu */
+    color: #333;
+    /* Örnek yazı rengi */
+    line-height: 1.5;
+    /* Örnek satır yüksekliği */
+    margin: 0;
+    /* Örnek kenar boşluğu */
+    padding: 0;
+    /* Örnek dolgu */
     padding-top: 10px;
 }
 
@@ -268,20 +319,21 @@ body {
     0% {
         box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
     }
+
     100% {
         box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
     }
 }
 
-.image-gallery-content .image-gallery-slide .image-gallery-image {
-    max-height: 350px !important;
-}
+
+
 .detail-table tr td {
     padding-right: 1.5rem;
     padding-left: 1.5rem;
     padding-top: 5px;
     padding-bottom: 5px;
 }
+
 html {
     scroll-behavior: smooth;
 }
@@ -289,15 +341,19 @@ html {
 .slick-slide:focus {
     outline: none !important;
 }
+
 .slick-slide:active {
     outline: none !important;
 }
+
 .slick-slide {
     outline: none !important;
 }
+
 .slick-slide::selection {
     outline: none !important;
 }
+
 .slick-slide:active {
     outline: none !important;
 }
@@ -305,12 +361,15 @@ html {
 .slick-slide:active div {
     outline: none !important;
 }
+
 .slick-slide div {
     outline: none !important;
 }
+
 .slick-slide::selection div {
     outline: none !important;
 }
+
 .slick-slide:active div {
     outline: none !important;
 }
@@ -323,6 +382,7 @@ html {
     width: auto !important;
     height: auto !important;
 }
+
 .slick-next {
     right: 2rem;
     z-index: 999999999;
@@ -340,6 +400,7 @@ html {
     width: auto !important;
     height: auto !important;
 }
+
 .slick-next:hover {
     right: 2rem;
     z-index: 999999999;
@@ -353,9 +414,11 @@ html {
     0% {
         left: -100%;
     }
+
     50% {
         left: 100%;
     }
+
     100% {
         left: -100%;
     }
@@ -383,7 +446,8 @@ html {
     width: max-content;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    transition: opacity 0.3s ease; /* Örnek bir geçiş efekti */
+    transition: opacity 0.3s ease;
+    /* Örnek bir geçiş efekti */
 }
 
 .dropdown:hover .dropdown-content {

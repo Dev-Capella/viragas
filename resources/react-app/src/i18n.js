@@ -5,6 +5,7 @@ const resources = {
     tr: {
         translation: {
             series: "Serisi",
+            headtext: "Kalıp Gazlı Yayları İlk Defa Türkiye'de VIRA Tarafından üretilmiştir.",
             /*Anasayfa*/
             HomePageProduct: "Ürünlerimiz",
             HomePageWhoWeAre: "Biz Kimiz?",
@@ -140,7 +141,7 @@ const resources = {
             /*Anasayfa*/
             HomePageProduct: "Our Products",
             HomePageWhoWeAre: "Who We Are?",
-
+            headtext: "Molded Gas Springs were produced for the first time in Türkiye by VIRA.",
             HomePageMission: "Mission",
             HomePageMissionText:
                 "Maintaining its leading position in the industry, it aims to offer a combination of advanced technology and craftsmanship in the fields of welded manufacturing, surface treatment and metal coating.",
