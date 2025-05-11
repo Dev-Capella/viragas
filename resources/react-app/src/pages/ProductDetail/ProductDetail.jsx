@@ -154,7 +154,7 @@ function ProductDetail() {
                                 {t("ProductDetail")}
                             </p>
                         </div>
-                        <div>
+                        {productsDetail?.test_image !== null ? <div className="w-full h-full"><img className="w-full h-full" src={productsDetail?.test_image} alt={productsDetail?.image_alt} /></div> : <div>
                             <div className="table-container">
                                 <div className="w-full detail-table relative ">
                                     <div className="bg-[#343280] text-white  w-full flex justify-between">
@@ -308,7 +308,9 @@ function ProductDetail() {
                                     )}
                                 </div>
                             </div>
-                        </div>
+                        </div>}
+
+
                     </div>
                 </div>
             )}
